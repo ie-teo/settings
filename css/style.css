@@ -1,0 +1,274 @@
+
+body {
+	margin: 0;
+    background-color: #eef3f5;
+    color: #131313;
+    font-family: "Roboto", sant-serif;
+    line-height: 1.5;
+}
+
+body.no-scroll,body.show-nav {overflow: hidden;}
+
+h1, h2, h3, h4, h5, h6 {margin: 0;}
+
+p {margin: 0 0 10px;}
+
+ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+html {
+	box-sizing: border-box;
+	/*background-color:  #eaeaea;*/
+	scroll-behavior: smooth;
+}
+
+*, *:after, *:before {box-sizing: inherit;}
+
+.container {
+	display: flex;
+	max-width: 960px;
+	justify-content: spase-between;
+	margin: 20px auto;
+}
+
+.profile {
+	flex-basis: 35%;
+	background-color:  #39383a;
+	color: #ababab;	
+}
+
+.resume {
+	padding: 25px 30px;
+	flex-basis: 63%;
+	background-color: #fff;
+}
+
+.resume-wrap {padding: 30px 10px 30px 10px;}
+
+.logo-add {
+    position: relative;
+    margin-top: 15px;
+    display: block;
+    height: 170px;
+    width: 214px;
+    margin: 0 auto;
+    background: url(../img/logo-t.png) no-repeat center center / 250px auto;
+    opacity: 0.5;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logo-add:hover {
+	opacity: 1;
+}
+
+.menu-add a:hover {
+	color: #39383a;
+	background-color: #c6c6c6;
+}
+
+.menu-add a {
+		color: #fff;
+  	text-decoration: none;
+  	width: 100%;
+  	height: 10px;
+  	display: block;
+  	padding: 10px 30px 35px 30px;
+} 
+
+
+#pre {
+	width: 540px;
+    font-family: 'Roboto';
+    line-height: 1;
+}
+
+.pre-s {
+	width: 540px;
+    font-family: 'Roboto';
+    line-height: 1.6;
+}
+
+/* adaptiv */
+@media (max-width: 992px){
+	.container {
+		flex-direction: column;
+		width: 70%;
+	}
+}
+
+@media (max-width: 768px){
+	.container {width: 80%;}
+}
+@media (max-width: 567px){}
+
+
+pre[class*=language-] {
+	margin: 0px 0!important;
+}
+
+.language-js {
+	width: 540px;
+}
+
+/* tabs */
+.tabs, .tabs2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tabs label, .tabs2 label {
+	order: 1;
+    color: #fff;
+    display: block;
+    padding: 6px 5px;
+    background: #39383a;
+    cursor: pointer;
+    font-weight: normal;
+    transition: background ease 0.2s;
+    outline: 1px solid #fff;
+}
+
+.tabs .tab, .tabs2 .tab {
+  order: 99;
+  flex-grow: 1;
+  width: 100%;
+  display: none;
+  padding: 16px 0px;
+  background: #fff;
+}
+
+.tabs input[type="radio"], .tabs2 input[type="radio"] {
+  display: none;
+}
+
+.tabs input[type="radio"]:checked+label, .tabs2 input[type="radio"]:checked+label {
+	background: #cccc;
+    color: #000;
+}
+
+.tabs input[type="radio"]:checked+label+.tab, .tabs2 input[type="radio"]:checked+label+.tab {
+  display: block;
+}
+
+@media(max-width: 425px) {
+  .tabs .tab, .tabs label {
+    order: initial;
+  }
+
+  .tabs label {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.pass_panel {
+    display: none;
+    margin-top: 10px;
+}
+
+.pass_link {
+    cursor: pointer;
+    color: blue;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+/* открытие блока */
+.pass_panel.active {
+    display: block;
+}
+
+/* backlight html */
+.code-wrapper{
+    position:relative;
+    overflow:hidden;
+    background:#2b2b2b;
+    border:1px solid #444;
+    width: 543px;
+}
+}
+
+.code-wrapper pre{
+    margin:0;
+    padding:25px;
+    overflow:auto;
+    font-size:15px;
+    line-height:1.7;
+    font-family:Consolas, monospace;
+    background:#2b2b2b;
+}
+
+.copy-btn{
+    position:absolute;
+    top:12px;
+    right:12px;
+    border:none;
+    padding:8px 16px;
+    border-radius:8px;
+    cursor:pointer;
+    background:#444;
+    color:#fff;
+    font-size:14px;
+    transition:0.3s;
+}
+
+.copy-btn:hover{
+    background:#666;
+}
+
+/* button up  */
+#scrollToTopBtn {
+  display: none; /* Скрыта по умолчанию */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  padding: 12px 20px;
+  background-color: #39383a;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease, background-color 0.3s;
+}
+
+#scrollToTopBtn.show {
+  display: block;
+  opacity: 0.5;
+}
+
+#scrollToTopBtn:hover {
+  opacity: 1;
+}
+
+.wrapper{
+    display:flex;
+    gap:20px;
+}
+
+.col{
+    flex:1;
+    padding:20px;
+    background:#eee;
+}
+
+.col ul li a {
+	text-decoration: none;
+	color: #706e6e;
+}
+
+.col ul li a:hover {
+	text-decoration: underline;
+}
