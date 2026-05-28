@@ -19,22 +19,28 @@
 		<div class="profile">
 			<a class="logo-add" href="index.html"></a>
 			<div class="menu-add">
-				<a href="index.html">Main page</a>
-				<a href="scripts.html">Scripts</a>
+				<a href="index.html">English</a>
+				<a href="scripts.html" class="checked">Scripts</a>
+                <a href="seo.html">SEO constect</a>
 				<a href="git.html">Git guide</a>
 				<a href="linux.html">Linux commands</a>
+                <!--a href="abooks.html">Audio books list</a>
+                <a href="app.html">Application</a>
+                <a href="itbooks.html">It books</a-->
+                <a href="telegram.html">Telegram</a>
 			</div>
 		</div>
 		<div class="resume">
 			<h1>All scripts</h1>
 
 			<ul>
-				<li><a href="#tabs">Tabs without JavaScript</a></li>
+				<li><a href="#tabs">Tabs</a></li>
 				<li><a href="#up">Button "Up"</a></li>
+                <li><a href="#ac">Accordion</a></li>
 			</ul>
 
 
-			<h3 id="tabs">Tabs code only in CSS without JavaScript.</h3>
+	<!---->		<h3 id="tabs">Tabs code only in CSS without JavaScript.</h3>
 			<div class="tabs">
 				<input type="radio" name="tabs" id="tabone" checked="checked">
 				<label for="tabone">HTML</label>
@@ -123,7 +129,7 @@
 </pre>
 </div>
 </div> <!-- ./tabs -->
-
+<!-- -->
 <hr>
 <h2 id="up">Button "Up"</h2>
 <div class="tabs2">
@@ -132,23 +138,18 @@
     <label for="tab1"> HTML </label>
 
     <div class="tab">
-        <h3> HTML Code </h3>
-
-<div class="code-wrapper">
-<pre><code class="language-html">
-&lt;button id="scrollToTopBtn" aria-label="up"&gt;&amp;#9650; up&lt;/button&gt;
-</code></pre>
-</div>
-
-
-
+        <div class="code-wrapper">
+            <pre>
+                <code class="language-html">
+                &lt;button id="scrollToTopBtn" aria-label="up"&gt;&amp;#9650; up&lt;/button&gt;
+                </code>
+            </pre>
+        </div>
     </div>
-
     <input type="radio" name="tabs2" id="tab2">
     <label for="tab2"> CSS Code </label>
 
     <div class="tab">
-        <h3> CSS Code</h3>
 <pre><code class="language-css">
 #scrollToTopBtn {
   display: none; /* Скрыта по умолчанию */
@@ -182,7 +183,6 @@
     <label for="tab3"> JS Code</label>
 
     <div class="tab">
-        <h3>JS Code</h3>
 <pre><code class="language-js">
 const btn = document.getElementById('scrollToTopBtn');
 
@@ -205,6 +205,128 @@ btn.addEventListener('click', () => {
 </code></pre>
     </div>
 </div>
+
+
+<hr>
+<!---->
+<h2 id="ac">Accordion code only in CSS without JavaScript.</h2>
+
+<div class="tabs2">
+    <input type="radio" name="tabs3" id="tabone3" checked="checked">
+    <label for="tabone3"> HTML </label>
+
+    <div class="tab">
+        <div class="code-wrapper">
+            <pre>
+                <code class="language-html">
+&lt;div class="accordion"&gt;
+    &lt;div class="accordion-item"&gt;
+        &lt;input type="checkbox" id="item1" class="accordion-input"&gt;
+        &lt;label for="item1" class="accordion-title"&gt;
+            Section 1&lt;/label&gt; 
+        &lt;div class="accordion-content"&gt;
+            &lt;p&gt;Content for section 1.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="accordion-item"&gt;
+        &lt;input type="checkbox" id="item2" class="accordion-input"&gt;
+        &lt;label for="item2" class="accordion-title"&gt;
+            Section 2&lt;/label&gt; 
+        &lt;div class="accordion-content"&gt;
+            &lt;p&gt;Content for section 2.&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                </code>
+            </pre>
+        </div>
+    </div>
+
+    <input type="radio" name="tabs3" id="tabtwo3">
+    <label for="tabtwo3"> CSS </label>
+
+    <div class="tab">
+        <div class="code-wrapper">
+            <pre>
+                <code class="language-css">
+.accordion {
+    width: 100%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+    border: 1px solid #39383a;
+    overflow: hidden;
+}
+
+.accordion-input {
+    display: none;
+}
+
+.accordion-title {
+    display: block;
+    padding: 15px;
+    background: #39383a;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.3s;
+    color: #fff;
+}
+
+.accordion-title:hover {
+    opacity: 0.8;
+}
+
+.accordion-content {
+    max-height: 0;
+    padding: 0 15px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: white;
+}
+
+.accordion-input:checked ~ .accordion-content {
+    max-height: 500px;
+    padding: 15px;
+}
+
+.accordion-input:checked ~ .accordion-title {
+    opacity: 0.8;
+}
+                </code>
+            </pre>
+        </div>
+    </div>
+</div>
+
+
+<h3>Example</h3>
+<div class="accordion">
+    <div class="accordion-item">
+        <input type="checkbox" id="item1" class="accordion-input">
+        <label for="item1" class="accordion-title">
+            Section 1</label> 
+        <div class="accordion-content">
+            <p>Content for section 1.</p>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <input type="checkbox" id="item2" class="accordion-input">
+        <label for="item2" class="accordion-title">
+            Section 2</label> 
+        <div class="accordion-content">
+            <p>Content for section 2.</p>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<br>
 
 </div>
 </div>

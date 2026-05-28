@@ -12,24 +12,993 @@
 <link rel="stylesheet" href="css/style.css?v=1.0.2">
 <link rel="icon" type="image/png" href="img/logo.png" />
 </head>
-	<title>Git</title>
+	<title>Git guide</title>
 </head>
 <body>
 	<div class="container">
 		<div class="profile">
 			<a class="logo-add" href="index.html"></a>
 			<div class="menu-add">
-				<a href="index.html">Main page</a>
+				<a href="index.html">English</a>
 				<a href="scripts.html">Scripts</a>
+				<a href="seo.html">SEO constect</a>
                 <a href="git.html">Git guide</a>
-                <a href="linux.html">Linux commands</a>
+                <a href="linux.html" class="checked">Linux commands</a>
+                <!--a href="abooks.html">Audio books list</a>
+                <a href="app.html">Application</a>
+                <a href="itbooks.html">It books</a-->
+                <a href="telegram.html">Telegram</a>
 			</div>
 		</div>
 		<div class="resume">
 			<h1>Linux commands</h1>
-            <p>Linux commands</p>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+			<!--div class="accordion">
+			    <div class="accordion-item">
+			        <input type="checkbox" id="item1" class="accordion-input">
+			        <label for="item1" class="accordion-title">Section 1</label> 
+			        <div class="accordion-content">
+			            <p>Content for section 1.</p>
+			        </div>
+			    </div>
+				<div class="accordion-item">
+			        <input type="checkbox" id="item2" class="accordion-input">
+			        <label for="item2" class="accordion-title">Section 2</label> 
+			        <div class="accordion-content">
+			            <p>Content for section 2.</p>
+			        </div>
+			    </div>
+			</div-->
+
+
+
+
+<div class="accordion">
+    <div class="accordion-item">
+        <input type="checkbox" id="item1" class="accordion-input">
+        <label for="item1" class="accordion-title">Linux commands</label> 
+        <div class="accordion-content">
+
+<h3>LPIC 101.1</h3>
+
+<p><b>pwd</b> - в какой директории сейчас нахожусь</p>
+
+<p><b>ls</b> - выводит список файлов и папок</p>
+
+<p><b>ls /dev/</b> - выводит список файлов в определенной папке</p>
+
+<p><b>ls -lh /dev/</b> - выводит список устройств</p>
+
+<p>Полазил по директориям достаточно бегло.</p>
+
+<br>
+<h3>LPIC 101.2</h3>
+
+<p><b>lsmod</b> - выводит список модулей ядра</p>
+
+<p><b>rmmod e1000</b> - удаляет драйвер</p>
+
+<p><b>lsusb</b> - показывает подключенные USB устройства</p>
+
+<p><b>pstree</b> - показывает дерево процессов</p>
+
+<p>Запомнил что BIOS сейчас заменен на UEFI.</p>
+
+<p>В папке /boot хранятся ядра Linux и образы дисков.</p>
+
+<p>Есть разные уровни пользователей.</p>
+
+<p>Можно отправлять сообщения всем пользователям сервера.</p>
+
+<br>
+<h3>LPIC 101.3</h3>
+
+<p><b>cat</b> - выводит содержимое файла</p>
+
+<p><b>cat > storm</b> - создает файл и записывает текст</p>
+
+<p><b>Ctrl + C</b> - выйти из режима записи</p>
+
+<p><b>chmod +x storm</b> - делает файл исполняемым</p>
+
+<p><b>ABC=123</b> - создание переменной</p>
+
+<p><b>export ABC</b> - экспорт переменной</p>
+
+<p><b>env</b> - список переменных окружения</p>
+
+<p><b>echo $ABC</b> - вывести значение переменной</p>
+
+<p><b>unset ABC</b> - удалить переменную</p>
+
+<p><b>touch 2.txt</b> - создать файл</p>
+
+<p><b>ls *.txt</b> - вывести txt файлы</p>
+
+<p><b>ls [1-3].txt</b> - показать диапазон файлов</p>
+
+<p><b>touch {6,7,8}.txt</b> - создать несколько файлов</p>
+
+<p><b>file storm</b> - информация о файле</p>
+
+<p><b>history</b> - история команд</p>
+
+<br>
+<h3>Работа с текстом</h3>
+
+<p><b>vim hello.txt</b> - открыть файл в vim</p>
+
+<p><b>Esc + Shift + ZZ</b> - сохранить и выйти</p>
+
+<p><b>cat hello1.txt hello2.txt > hello3.txt</b> - объединить файлы</p>
+
+<p><b>rm hello3.txt</b> - удалить файл</p>
+
+<p><b>head /var/log/syslog</b> - показать первые строки файла</p>
+
+<p><b>head -n 2 /var/log/syslog</b> - показать первые 2 строки</p>
+
+<p><b>less /var/log/syslog</b> - постраничный просмотр</p>
+
+<p><b>tail</b> - показать последние строки</p>
+
+<p><b>wc hello.txt</b> - статистика файла</p>
+
+<p><b>wc</b> выводит:</p>
+
+<p>1. количество строк</p>
+
+<p>2. количество слов</p>
+
+<p>3. количество символов</p>
+   
+<p>Работа с файлами и директориями</p>
+
+<p><b>mkdir folder</b> - создать папку</p>
+
+<p><b>ls -l</b> - вывести файлы списком</p>
+
+<p><b>cp 123.txt copy123.txt</b> - копирование файла</p>
+
+<p><b>cp -R folder1 folder2</b> - копирование папки со всем содержимым</p>
+
+<p><b>mv 1.txt lalai.txt</b> - переименование файла</p>
+
+<p><b>rm 123.txt</b> - удалить файл</p>
+
+<p><b>rm -r folder3</b> - удалить папку с содержимым</p>
+
+<p><b>rm -rf folder3</b> - принудительное удаление папки</p>
+
+<p><b>rmdir folder</b> - удалить пустую директорию</p>
+
+<p><b>file 456.txt</b> - определить тип файла</p>
+
+<p><b>file *</b> - показать типы всех файлов</p>
+
+<br>
+<h3>Шаблоны и маски</h3>
+
+<p><b>?</b> - заменяет один любой символ</p>
+
+<p><b>*</b> - любое количество символов</p>
+
+<p><b>[ac]</b> - символ a или c</p>
+
+<p><b>[a-c]</b> - диапазон символов a,b,c</p>
+
+<p><b>ls ?at.txt</b> - показать файлы заканчивающиеся на at.txt</p>
+
+<p><b>ls [ab]*</b> - показать файлы начинающиеся на a или b</p>
+
+<p><b>ls [a-m]*</b> - показать файлы от a до m</p>
+
+<p><b>ls [!a-m]*</b> - показать все кроме диапазона a-m</p>
+
+<br>
+<h3>Поиск файлов</h3>
+
+<p><b>find . -name "1*"</b> - найти файлы начинающиеся с 1</p>
+
+<p><b>find . -name "[A-Z].*"</b> - поиск файлов с заглавной буквы</p>
+
+<p><b>find . -size +5M</b> - найти файлы больше 5 мегабайт</p>
+
+<p><b>find . -size -5M</b> - найти файлы меньше 5 мегабайт</p>
+
+<p><b>find . -type f</b> - показать только файлы</p>
+
+<p><b>find . -type d</b> - показать только директории</p>
+
+<p><b>find . -atime +5</b> - файлы к которым был доступ больше 5 дней назад</p>
+
+<p><b>find . -name "*.txt" | cpio -o > test2.cpio</b> - архивировать txt файлы</p>
+
+<br>
+<h3>Архивирование и сжатие</h3>
+
+<p><b>gzip text.txt</b> - сжатие файла gzip</p>
+
+<p><b>gunzip text.txt.gz</b> - распаковка gzip архива</p>
+
+<p><b>bzip2 text.txt</b> - сжатие bzip2</p>
+
+<p><b>bunzip2 text.txt.bz2</b> - распаковка bzip2</p>
+
+<p><b>xz text.txt</b> - сжатие xz</p>
+
+<p><b>unxz text.txt.xz</b> - распаковка xz</p>
+
+<p><b>tar cvf archive.tar extract</b> - создать tar архив</p>
+
+<p><b>tar cvfz archive.tar.gz extract</b> - архивировать с gzip</p>
+
+<p><b>tar xvf archive.tar</b> - распаковать tar архив</p>
+
+<br>
+<h3>Перенаправление потоков</h3>
+
+<p><b>ls > list.txt</b> - записать вывод команды в файл</p>
+
+<p><b>ls >> list.txt</b> - дописать вывод в файл</p>
+
+<p><b>ls bob 2> list.txt</b> - записать ошибки в файл</p>
+
+<p><b>ls bob > result.txt 2> error.txt</b> - разделить вывод и ошибки</p>
+
+<p><b>ls | grep r</b> - фильтрация вывода через grep</p>
+
+<p><b>ls | tee output.txt</b> - вывести результат в терминал и файл</p>
+
+<p><b>find . -name "*.txt" | xargs rm -f</b> - удалить все txt файлы</p>
+
+<br>
+<h3>Процессы Linux</h3>
+
+<p><b>sleep 1000</b> - долгий процесс</p>
+
+<p><b>Ctrl + C</b> - остановить процесс</p>
+
+<p><b>ps aux</b> - список процессов</p>
+
+<p><b>ps aux | grep sleep</b> - поиск процесса sleep</p>
+
+<p><b>jobs</b> - показать фоновые процессы</p>
+
+<p><b>kill 4353</b> - завершить процесс по PID</p>
+
+<p><b>killall sleep</b> - завершить все процессы sleep</p>
+
+<p><b>exit</b> - выйти из терминала</p>
+
+<p><b>pgrep -u sasha -l</b> - показать процессы пользователя</p>
+
+<p><b>top</b> - мониторинг процессов в реальном времени</p>
+
+<p><b>ping liferead.ru</b> - проверка соединения</p>
+
+<br>
+<h3>Приоритеты процессов</h3>
+
+<p><b>ps -eo user,pid,pcpu,nice,comm</b> - показать процессы и приоритеты</p>
+
+<p><b>nice sleep 6000 &</b> - запустить процесс с измененным приоритетом</p>
+
+<p><b>nice -n 19 sleep 6000 &</b> - минимальный приоритет процесса</p>
+
+<p><b>sudo renice 5 -p 13676</b> - изменить приоритет процесса</p>
+
+<p><b>renice 15 -u sasha</b> - изменить приоритет процессов пользователя</p>
+
+<p>Диапазон приоритетов Linux:</p>
+
+<p><b>-20</b> - максимальный приоритет</p>
+
+<p><b>19</b> - минимальный приоритет</p>
+
+<br>
+<h3>Регулярные выражения и grep</h3>
+
+<p><b>grep oo 1.txt</b> - найти строки содержащие oo</p>
+
+<p><b>grep -n oo 1.txt</b> - показать номера строк с oo</p>
+
+<p><b>grep -i boo 1.txt</b> - поиск без учета регистра</p>
+
+<p><b>cat 1.txt | grep oo</b> - фильтрация содержимого файла</p>
+
+<p><b>grep ple 1.txt</b> - найти строки содержащие ple</p>
+
+<p><b>grep ^ple 1.txt</b> - строки начинающиеся с ple</p>
+
+<p><b>grep ple$ 1.txt</b> - строки заканчивающиеся на ple</p>
+
+<p><b>grep .o 1.txt</b> - любой символ перед o</p>
+
+<p><b>grep .ple 1.txt</b> - символ перед ple</p>
+
+<p><b>egrep '^b|d' 1.txt</b> - строки начинающиеся с b или d</p>
+
+<p><b>egrep '^[a-k]' 1.txt</b> - строки от a до k</p>
+
+<p><b>egrep '^([a-k]|[A-K])' 1.txt</b> - строки от a до k в любом регистре</p>
+
+<p><b>grep s$ 1.txt</b> - строки заканчивающиеся на s</p>
+
+<p><b>fgrep c$ 1.txt</b> - буквальный поиск c$</p>
+
+<p><b>echo "Hello" > lalai/grep.txt</b> - записать текст в файл</p>
+
+<p><b>rgrep Hello *</b> - рекурсивный поиск Hello</p>
+
+<br>
+<h3>Команда sed</h3>
+
+<p><b>sed -e 's/oo/aa/' 1.txt</b> - заменить oo на aa</p>
+
+<p><b>sed -e 's/oo/aa/' 1.txt > new.txt</b> - сохранить результат в файл</p>
+
+<p><b>sed -re 's/^(B|b)/C/' 1.txt</b> - заменить B или b на C</p>
+
+<br>
+<h3>Редактор Vi/Vim</h3>
+
+<p><b>vi file.txt</b> - открыть файл в vi</p>
+
+<p><b>vi newfile.txt</b> - создать новый файл</p>
+
+<p><b>:wq</b> - сохранить и выйти</p>
+
+<p><b>Esc</b> - выйти в командный режим</p>
+
+<p><b>/text</b> - поиск текста</p>
+
+<p><b>n</b> - следующий результат поиска</p>
+
+<p><b>N</b> - предыдущий результат поиска</p>
+
+<p><b>:w new.txt</b> - сохранить копию файла</p>
+
+<p><b>Shift + Z + Z</b> - сохранить и выйти</p>
+
+<br>
+<h3>Права доступа Linux</h3>
+
+<p><b>chmod -R a+rwx 111/</b> - дать все права папке и содержимому</p>
+
+<p><b>ls -l file</b> - показать права файла</p>
+
+<p><b>chmod a-r 1.txt</b> - убрать права на чтение</p>
+
+<p><b>chmod 777 myfile.txt</b> - полный доступ всем</p>
+
+<p><b>chmod 741 myfile.txt</b> - установить специальные права</p>
+
+<p><b>chmod ugo+x myfile.txt</b> - добавить выполнение всем</p>
+
+<p><b>chmod g-rw myfile.txt</b> - убрать rw у группы</p>
+
+<p><b>chmod o=rw myfile.txt</b> - установить rw для остальных</p>
+
+<p><b>chmod 1777 myDir</b> - включить Sticky Bit</p>
+
+<p><b>chmod 0777 myDir</b> - выключить Sticky Bit</p>
+
+<br>
+<h3>Владельцы и группы</h3>
+
+<p><b>chown</b> - изменить владельца файла</p>
+
+<p><b>chgrp</b> - изменить группу файла</p>
+
+<p><b>chown -R</b> - изменить владельца рекурсивно</p>
+
+<br>
+<h3>Ссылки Linux</h3>
+
+<p><b>ln</b> - создать жесткую ссылку</p>
+
+<p><b>ln -s /home/sasha/php mylink</b> - создать symbolic link</p>
+
+<br>
+<h3>Просмотр файлов</h3>
+
+<p><b>more text.txt</b> - постраничный просмотр файла</p>
+
+<p><b>less text.txt</b> - удобный просмотр файла</p>
+
+<p><b>head -n 3 444</b> - показать первые 3 строки</p>
+
+<p><b>tail -n 3 333</b> - показать последние 3 строки</p>
+
+<p><b>wc -l 1.txt</b> - количество строк</p>
+
+<p><b>grep "chmod" 444</b> - поиск слова chmod</p>
+
+<p><b>grep -i text file</b> - поиск без учета регистра</p>
+
+<br>
+<h3>Потоки и перенаправления</h3>
+
+<p><b>ls -l > stdout</b> - записать вывод в файл</p>
+
+<p><b>ls -l 1> file 2> error</b> - разделить вывод и ошибки</p>
+
+<p><b>ls -l 1>> file 2> error</b> - дозаписать вывод</p>
+
+<p><b>cat stdout | grep ^</b> - фильтрация содержимого файла</p>
+
+<p><b>ls -l | tee stdout</b> - вывод в терминал и файл</p>
+
+<p><b>ls -l && echo OK</b> - выполнить вторую команду если первая успешна</p>
+
+<p><b>ls -l ; echo err</b> - выполнить команды по очереди</p>
+
+<br>
+<h3>Система и процессы</h3>
+
+<p><b>df -h</b> - показать примонтированные диски</p>
+
+<p><b>mount</b> - подробная информация о монтировании</p>
+
+<p><b>pstree</b> - дерево процессов</p>
+
+<p><b>grep 111</b> - поиск строки</p>
+
+<p><b>free</b> - показать использование памяти</p>
+
+<p><b>free -h</b> - память в MB и GB</p>
+
+<p><b>ps</b> - процессы текущего пользователя</p>
+
+<p><b>ps aux</b> - все процессы системы</p>
+
+<p><b>ps aux | grep bash</b> - поиск bash процессов</p>
+
+<br>
+<h3>Пользователи и группы Linux</h3>
+
+<p><b>sudo</b> - выполнить команду от суперпользователя</p>
+
+<p><b>su</b> - сменить текущего пользователя</p>
+
+<p><b>whoami</b> - показать текущего пользователя</p>
+
+<p><b>id</b> - показать группы пользователя</p>
+
+<p><b>who</b> - показать кто находится в системе</p>
+
+<p><b>w</b> - показать кто в системе и что делает</p>
+
+<p><b>last</b> - последние входы пользователей</p>
+
+<p><b>useradd -m vasya</b> - создать пользователя с домашней директорией</p>
+
+<p><b>userdel -r vasya</b> - удалить пользователя и домашнюю папку</p>
+
+<p><b>passwd vasya</b> - изменить пароль пользователя</p>
+
+<p><b>groupadd Programmers</b> - создать группу</p>
+
+<p><b>groupdel Programmers</b> - удалить группу</p>
+
+<p><b>usermod -aG Programmers vasya</b> - добавить пользователя в группу</p>
+
+<p><b>deluser vasya Programmers</b> - удалить пользователя из группы</p>
+
+<p><b>/etc/passwd</b> - файл пользователей</p>
+
+<p><b>/etc/shadow</b> - файл хэшей паролей</p>
+
+<p><b>/etc/group</b> - файл групп</p>
+
+<p><b>/etc/skel</b> - шаблон домашней директории</p>
+
+<br>
+<h3>Сетевые команды Linux</h3>
+
+<p><b>ifconfig</b> - показать IP адрес</p>
+
+<p><b>ip addr show</b> - показать сетевые интерфейсы</p>
+
+<p><b>route</b> - показать gateway</p>
+
+<p><b>ping google.com</b> - проверить соединение</p>
+
+<p><b>host google.com</b> - узнать IP сайта</p>
+
+<p><b>dig google.com</b> - DNS информация о сайте</p>
+
+<p><b>netstat</b> - сетевые подключения</p>
+
+<p><b>wget https://site.com/file.zip</b> - скачать файл</p>
+
+
+<br>
+<h3>Установка пакетов Debian/Ubuntu</h3>
+
+<p><b>apt-get install package</b> - установить пакет</p>
+
+<p><b>apt-get remove package</b> - удалить пакет</p>
+
+<p><b>apt-get autoremove</b> - удалить ненужные пакеты</p>
+
+<p><b>apt-cache search chrome</b> - поиск пакета</p>
+
+<p><b>apt-cache show chrome</b> - информация о пакете</p>
+
+<p><b>apt-cache depends gmail-notify</b> - зависимости пакета</p>
+
+<p><b>apt-cache rdepends gmail-notify</b> - обратные зависимости</p>
+
+<p><b>aptitude</b> - менеджер пакетов</p>
+
+<p><b>/etc/apt/sources.list</b> - список репозиториев</p>
+
+<p><b>dpkg -i file.deb</b> - установить deb пакет</p>
+
+<p><b>dpkg -r package</b> - удалить пакет</p>
+
+<p><b>dpkg -I file.deb</b> - информация о пакете</p>
+
+<p><b>dpkg-reconfigure tzdata</b> - перенастроить timezone</p>
+
+<br>
+<h3>RedHat / CentOS / RPM</h3>
+
+<p><b>yum install package</b> - установить пакет</p>
+
+<p><b>yum remove package</b> - удалить пакет</p>
+
+<p><b>rpm -i file.rpm</b> - установить rpm пакет</p>
+
+<p><b>rpm -e package</b> - удалить rpm пакет</p>
+
+<br>
+<h3>Архиваторы ZIP / RAR</h3>
+
+<p><b>zip -r myZIP.zip Folder1</b> - создать zip архив</p>
+
+<p><b>unzip myZIP.zip</b> - распаковать zip архив</p>
+
+<p><b>sudo apt install unrar</b> - установить unrar</p>
+
+<p><b>unrar e file.rar</b> - распаковать rar архив</p>
+
+<p><b>unrar x file.rar</b> - распаковать с путями</p>
+
+<p><b>unrar l file.rar</b> - список файлов в архиве</p>
+
+<p><b>unrar t file.rar</b> - проверить архив</p>
+
+<p><b>unrar p file.rar</b> - вывести файл в консоль</p>
+
+<p><b>unrar v file.rar</b> - подробная информация</p>
+
+<p><b>unrar x archive.rar</b> - извлечь архив с путями</p>
+
+<br>
+<h3>Опции unrar</h3>
+
+<p><b>-ad</b> - добавить имя архива к пути</p>
+
+<p><b>-ai</b> - игнорировать атрибуты файлов</p>
+
+<p><b>-inul</b> - скрыть ошибки</p>
+
+<p><b>-p</b> - указать пароль</p>
+
+<p><b>-sl</b> - распаковать файлы меньше размера</p>
+
+<p><b>-u</b> - обновить распакованные файлы</p>
+
+<p><b>-y</b> - автоматически отвечать yes</p>
+
+<p><b>-x</b> - исключить файлы</p>
+
+<p><b>-ts</b> - сохранить timestamp файлов</p>
+
+<br>
+<h3>Дополнительные команды</h3>
+
+<p><b>reboot now</b> - перезагрузить компьютер</p>
+
+<p><b>shutdown now</b> - выключить компьютер</p>
+
+<p><b>whereis clear</b> - найти расположение команды</p>
+
+<p><b>man uptime</b> - открыть manual команды</p>
+
+<p><b>Ctrl + Alt + F3</b> - перейти в tty режим</p>
+
+<p><b>Ctrl + Alt + F7</b> - вернуться в GUI</p>
+
+<p><b>nano file.txt</b> - открыть nano редактор</p>
+
+<p><b>pico file.txt</b> - открыть pico редактор</p>
+
+<p><b>gedit file.txt</b> - графический редактор</p>
+
+<p><b>top</b> - аналог диспетчера задач Windows</p>
+
+<br>
+<h3>Работа с дисками и файловыми системами</h3>
+
+<p><b>fdisk -l</b> - показать диски и разделы</p>
+
+<p><b>mount</b> - смонтировать файловую систему</p>
+
+<p><b>umount</b> - размонтировать файловую систему</p>
+
+<p><b>pvdisplay</b> - показать физические тома LVM</p>
+
+<p><b>df -h</b> - показать свободное место на дисках</p>
+
+<p><b>mount</b> - подробная информация о примонтированных разделах</p>
+
+<p><b>mkdir /mnt/disk</b> - создать точку монтирования</p>
+
+<p>В Linux существуют разные файловые системы.</p>
+
+<p>Диски можно разбивать на разделы.</p>
+
+<p>Для практики лучше использовать виртуальную машину.</p>
+
+<br>
+<h3>Квоты дисков</h3>
+
+<p>Квоты позволяют ограничивать использование дискового пространства.</p>
+
+<p>Есть мягкие квоты и жесткие квоты.</p>
+
+<p>Мягкие квоты предупреждают пользователя.</p>
+
+<p>Жесткие квоты запрещают превышать лимит.</p>
+
+<br>
+<h3>Мягкие и жесткие ссылки</h3>
+
+<p><b>ln file1 file2</b> - создать жесткую ссылку</p>
+
+<p><b>ln -s /home/user/docs linkname</b> - создать symbolic link</p>
+
+<p>Жесткие ссылки связаны напрямую с inode.</p>
+
+<p>Symbolic links работают как shortcut.</p>
+
+<br>
+<h3>Работа с логами и просмотром файлов</h3>
+
+<p><b>more text.txt</b> - просмотр файла постранично</p>
+
+<p><b>less text.txt</b> - удобный просмотр файла</p>
+
+<p><b>head file.txt</b> - показать начало файла</p>
+
+<p><b>tail file.txt</b> - показать конец файла</p>
+
+<p><b>tail -f log.txt</b> - следить за логом в реальном времени</p>
+
+<p><b>nl file.txt</b> - показать строки с номерами</p>
+
+<p><b>paste 1.txt 2.txt</b> - объединить строки файлов</p>
+
+<p><b>sort file.txt</b> - сортировка строк</p>
+
+<p><b>sort -n file.txt</b> - сортировка чисел</p>
+
+<p><b>uniq file.txt</b> - удалить повторяющиеся строки</p>
+
+<p><b>tr A-Z a-z</b> - преобразовать текст в lowercase</p>
+
+<p><b>fmt file.txt</b> - форматирование текста</p>
+
+<p><b>split file.txt</b> - разбить файл на части</p>
+
+<p><b>od file.txt</b> - показать файл в octal формате</p>
+
+<br>
+<h3>Команда cut</h3>
+
+<p><b>cut -d ":" -f 1 /etc/passwd</b> - вывести первое поле</p>
+
+<p><b>cut -d "&gt;" -f 3 1.txt</b> - разделить строку по символу &gt;</p>
+
+<p><b>cut -c 1-5 file.txt</b> - вывести символы с 1 по 5</p>
+
+<br>
+<h3>Регулярные выражения</h3>
+
+<p><b>[A-Z]</b> - большие буквы</p>
+
+<p><b>[0-9]</b> - цифры</p>
+
+<p><b>[A-Za-z]</b> - буквы любого регистра</p>
+
+<p><b>www.[a-z]*.com</b> - простой шаблон URL</p>
+
+<p><b>[A-Za-z.]@[A-Za-z].com</b> - шаблон email</p>
+
+<br>
+<h3>Поиск и фильтрация</h3>
+
+<p><b>grep text file.txt</b> - поиск текста</p>
+
+<p><b>grep -i text file.txt</b> - поиск без учета регистра</p>
+
+<p><b>grep -E "[A-Za-z.]@[A-Za-z].ru" 1.txt</b> - поиск email адресов</p>
+
+<p><b>find /home/user -name "*.txt"</b> - поиск txt файлов</p>
+
+<p><b>whereis file</b> - найти расположение программы</p>
+
+<p><b>which python</b> - путь до исполняемого файла</p>
+
+<br>
+<h3>Конвейеры и перенаправления</h3>
+
+<p><b>ls -l | grep txt</b> - фильтрация через pipe</p>
+
+<p><b>cat file.txt | grep hello</b> - поиск через pipe</p>
+
+<p><b>sort names.txt &gt; sorted.txt</b> - сохранить сортировку в файл</p>
+
+<p><b>sort names.txt &gt;&gt; sorted.txt</b> - дописать сортировку</p>
+
+<p><b>grep /etc/* 2&gt; err.txt</b> - ошибки в отдельный файл</p>
+
+<p><b>ls -l &amp;&amp; echo OK</b> - выполнить вторую команду если первая успешна</p>
+
+<p><b>ls -l ; echo ERR</b> - выполнить команды последовательно</p>
+
+<br>
+<h3>Bash и скрипты</h3>
+
+<p>Bash скрипты похожи на PHP по синтаксису.</p>
+
+<p>Можно автоматизировать задачи Linux.</p>
+
+<p>Скрипты запускаются через bash.</p>
+
+<p><b>chmod +x script.sh</b> - сделать скрипт исполняемым</p>
+
+<p><b>./script.sh</b> - запуск скрипта</p>
+
+<br>
+<h3>Cron и автоматизация</h3>
+
+<p>Cron используется для запуска задач по расписанию.</p>
+
+<p><b>crontab -e</b> - редактировать cron задачи</p>
+
+<p><b>crontab -l</b> - показать cron задачи</p>
+
+<br>
+<h3>SSH и серверы</h3>
+
+<p><b>ssh user@server</b> - подключение к серверу по SSH</p>
+
+<p>SSH используется для удаленного управления сервером.</p>
+
+<p>Можно подключаться к Ubuntu серверу и Windows.</p>
+
         </div>
+    </div>
+
+    <div class="accordion-item">
+        <input type="checkbox" id="item2" class="accordion-input">
+        <label for="item2" class="accordion-title">
+            Settings</label> 
+        <div class="accordion-content">
+            
+
+
+
+
+<!-- -->
+
+<h3>lamp-server</h3>
+
+<p>sudo apt install lamp-server^</p>
+
+<p>php -v</p>
+<p>mysql --version</p>
+
+<p>ip addr - ip adress | вводим адрес в строку брайзера и убеждаемся что апач работает</p>
+
+<p>настраиваем пользователя базу данных и связываем друг c другом <b>sudo mysql -u root -p</b></p>
+
+<p>create database wp_db default character set utf8;</p>
+
+<p>create user 'wp_user'@'localhost' identified by '312312';</p>
+<p>тоже самое но когда была ошибка начал разбираться<b>
+<p>CREATE USER 'wp_user'@'localhost' IDENTIFIED BY '312312';</b>
+<p>grant all on wp_db.* to 'wp_user '@'localhost';</b>
+<p>flush privileges;</p> 
+<p>exit</b>
+<p>sudo apt install php-curl php-gd php-intl php-mbstring php-soap php-xml php-zip php-xmlrpc php-mysql php-cli</p>
+<p>wget http://wordpress.org/latest.tar.gz</p>
+<p>sudo tar -xzvf latest.tar.gz</p>
+<p>sudo rsync -av wordpress/* /var/www/html/
+<p>chown -R www-data:www-data /var/www/html<p>
+<p>sudo chmod -R 755 /var/www/html<p>
+sudo rm /var/www/html/index.html<p>
+<br>
+<p>после этих команд обновляем страницу апача а там уже установщик вордпресса</p>
+<br>
+
+<p>имя базы данных: wp_db<p>
+<p>pass: 312<p>
+<p>prefix _wp<p>
+
+<br>
+<p>
+все вордпресс установлен<br>
+загружаются посты
+</p>
+
+<br>
+<p><b>install apache linux</b></p>
+<p>Command install apache for Linux</p>
+
+<p>
+<a target="_blank" href="https://www.youtube.com/watch?v=XmN7FUIYycA&list=PL9x2twfbtCCNL4KXsDTpa3i9S2YgpY2AM&index=15">Установка Apache на  Ubuntu и публикация сайта</a>
+</p>
+
+<hr>
+
+
+<h3>sudo apt install apache2</h3>
+
+<p>потом по ip из команды заходим и смотрим что apacha работает</p>
+
+<p><b>команда sudo service apache2 stop</b> - останавливает сервер</p>
+
+<p>в папке <b>ver / www / html</b> находится тестовая страница</p>
+
+<p><b>sudo service apache2 stop</b></p>
+<p><b>sudo service apache2 start</b></p>
+<hr>
+
+<h3>create jango project</h3>
+<p>1) mkdir .venv</p>
+<p>2) ipenv install django==3.0.8</p>
+<p>3) pipenv shell</p>
+<p>4) sudo django-admin startproject base .</p>
+<p>5) sudo python3 manage.py runserver</p>
+<br>
+<p><b>путь</b> - /home/teo/project/ python/courses/.venv</p>
+
+<p>чтобы узнать полный путь к интерпритатору вводим</p>
+<p>pipenv --venv</p>
+<p>эта команда выводит полный путь и ввиде вводиться путь чтобы работали подсказки</p>
+
+<p>
+<ul>
+<li>при установке вордпресса на xampp при установке нового шаблона просит доступ к ftp.</li>
+<li>чтобы это решить в wp-canfig.php</li>
+<li>добавляем стороку</li>
+<li>define('FS_METHOD','direct');</li>
+<li>после этого скачиваются шаблоны и клагины на локальный сайт</li>
+<li>define('FS_METHOD','direct');</li>
+<li>sudo /opt/lampp/manager-linux-x64.run</li>
+</ul>
+</p>
+<hr>
+<h3>xampp</h3>
+<p>sudo /opt/lampp/lampp start</p>
+<p>start gui xampp</p>
+        </div>
+    </div>
+</div>
+
+
+
+
+<p><b>apt install guake</b></p>
+<hr>
+<b>Install Playonlinux</b>
+<p>wget -q "http://deb.playonlinux.com/public.gpg" -O- | sudo apt-key add -</p>
+<p>sudo wget http://deb.playonlinux.com /playonlinux_cosmic.list -O /etc/apt/sources.list.d/playonlinux.list</p>
+<p>sudo apt-get update</p>
+<p>sudo apt-get install playonlinux</p>
+<hr>
+
+<h3>openshot</h3>
+<ul>
+	<li>sudo add-apt-repository</li>
+	<li>ppa:openshot.developers/ppa</li>
+	<li>sudo apt-get update</li>
+	<li>sudo apt-get install openshot-qt</li>
+</ul>
+<hr>
+
+
+<h3>krita</h3>
+<ul>
+	<li>sudo add-apt-repository ppa:kritalime/ppa</li>
+	<li>sudo apt-get update</li>
+	<li>sudo apt-get install krita</li>
+</ul>
+<hr>
+
+
+<h3>krita</h3>
+<ul>
+	<li>sudo add-apt-repository ppa:kritalime/ppa</li>
+	<li>sudo apt-get update</li>
+	<li>sudo apt-get install krita</li>
+</ul>
+<hr>
+
+
+<h3>atom</h3> 
+<ul>
+<li>заходим на https://atom.io/ и скачиваем прогу для linux</li>
+<li>после скачки пишем</li>
+<li>sudo dpkg --install atom-amd64.deb</li>
+<li>sudo apt install -f</li>
+</ul>
+<hr>
+
+<h3>telegram</h3>
+<ul>
+<li>sudo add-apt-repository ppa:atareao/telegram</li>
+<li>sudo apt-get update</li>
+<li>sudo apt-get install telegram</li>
+</ul>
+<p>or</p>
+<ul>
+<li>sudo apt update</li>
+<li>sudo apt install telegram</li>
+</ul>
+<p>удаление</p>
+<p>sudo apt remove telegram</p>
+<ul>
+<li>sudo add-apt-repository ppa:atareao/telegram</li>
+<li>sudo apt update && sudo apt install telegram</li>
+</ul>
+<hr>
+
+<h3>vlc</h3>
+<p>sudo snap install phpstorm --classicsudo apt install vlc</p>
+<p>sudo apt install vlc</p>
+<hr>
+
+<h3>keepassxc</h3>
+<p>sudo apt install keepassxc</p>
+
+<hr>
+<h3>libreoffice</h3>
+ 
+<ul>
+<li>sudo add-apt-repository ppa:libreoffice/libreoffice-prereleases</li>
+<li>sudo apt update</li>
+<li>sudo apt install libreoffice</li>
+</ul>
+
+
+<hr>
+<h3>chromium</h3>
+<p>sudo apt install chromium-browser</p>
+
+
+<hr>
+<h3>transmission</h3>
+<p>sudo apt-get upgrade</p>
+<p>sudo apt-cache search transmission</p>
+<p>sudo apt-get install transmission</p>
+
+<hr>
+<h3>simplenote</h3>
+<p>snap install simplenote</p>
+
+<hr>
+<h3>simplenote</h3>
+<p>sudo snap install pycharm-professional --classic</p>
+<p>sudo snap install pycharm-community --classic</p>
+
+
     </div>
 <button id="scrollToTopBtn" aria-label="up">&#9650; up</button>
 </body>

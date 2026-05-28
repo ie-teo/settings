@@ -11,7 +11,9 @@ body.no-scroll,body.show-nav {overflow: hidden;}
 
 h1, h2, h3, h4, h5, h6 {margin: 0;}
 
-p {margin: 0 0 10px;}
+p {margin: 0 0 0px;}
+
+
 
 ul, ol {
     margin: 0;
@@ -33,6 +35,31 @@ html {
 
 *, *:after, *:before {box-sizing: inherit;}
 
+table {
+    border-collapse: collapse; /* Убирает двойные рамки */
+    border-spacing: 0; /* Убирает расстояние между ячейками */
+    border: none; /* Убирает внешнюю рамку */
+    border-top: 1px solid #666;
+    border-left: 1px solid #666;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+th,
+td {
+    border: none; /* Убирает рамки у ячеек */
+    padding: 10px;
+    border-bottom: 1px solid #666;
+    border-right: 1px solid #666;
+}
+
+table td,
+table th {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
 .container {
 	display: flex;
 	max-width: 960px;
@@ -47,7 +74,8 @@ html {
 }
 
 .resume {
-	padding: 25px 30px;
+	/*padding: 25px 30px;*/
+    padding: 15px 15px;
 	flex-basis: 63%;
 	background-color: #fff;
 }
@@ -70,8 +98,8 @@ html {
 	opacity: 1;
 }
 
-.menu-add a:hover {
-	color: #39383a;
+.menu-add a:hover, .checked {
+	color: #39383a!important;
 	background-color: #c6c6c6;
 }
 
@@ -85,14 +113,45 @@ html {
 } 
 
 
-#pre {
-	width: 540px;
+.pre {
+	/*width: 540px;*/
     font-family: 'Roboto';
-    line-height: 1;
+	line-height: 1.5;
+  --overflow: auto;
+display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 5px;
+
+}
+
+.pre > p {
+    outline: 1px solid #000;
+    display: inline-block;
+    padding: 5px 5px 5px 5px;
+    background-color: fff;
+    color: #fff;
+    float: center;
+    background-color: #2d3748;  
+    margin: 2px 2px 2px 2px;
+    cursor: pointer;
+}
+
+.pre > p > a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.pre > p > .linux_app {
+    color: #45f33a;
+}
+
+.pre > p > .game_app {
+    color: #bcbeeb;
 }
 
 .pre-s {
-	width: 540px;
+	/*width: 540px;*/
     font-family: 'Roboto';
     line-height: 1.6;
 }
@@ -112,20 +171,28 @@ html {
 
 
 pre[class*=language-] {
-	margin: 0px 0!important;
+    margin: 0px 0 !important;
+    max-width: 574px;
 }
 
 .language-js {
-	width: 540px;
+	--width: 540px;
+    --width: 500px;
 }
 
+.language-html {
+    --width: 540px;
+    width: 500px;
+}
+
+
 /* tabs */
-.tabs, .tabs2 {
+.tabs, .tabs2, .tabs3 {
   display: flex;
   flex-wrap: wrap;
 }
 
-.tabs label, .tabs2 label {
+.tabs label, .tabs2 label, .tabs3 label {
 	order: 1;
     color: #fff;
     display: block;
@@ -137,7 +204,10 @@ pre[class*=language-] {
     outline: 1px solid #fff;
 }
 
-.tabs .tab, .tabs2 .tab {
+.tabs .tab, 
+.tabs2 .tab, 
+.tabs3 .tab,
+.tabs4 .tab {
   order: 99;
   flex-grow: 1;
   width: 100%;
@@ -146,26 +216,38 @@ pre[class*=language-] {
   background: #fff;
 }
 
-.tabs input[type="radio"], .tabs2 input[type="radio"] {
+.tabs input[type="radio"],
+.tabs2 input[type="radio"],
+.tabs3 input[type="radio"],
+.tabs4 input[type="radio"],
+.tabs5 input[type="radio"] {
   display: none;
 }
 
-.tabs input[type="radio"]:checked+label, .tabs2 input[type="radio"]:checked+label {
+.tabs input[type="radio"]:checked+label,
+.tabs2 input[type="radio"]:checked+label,
+.tabs3 input[type="radio"]:checked+label,
+.tabs4 input[type="radio"]:checked+label,
+.tabs5 input[type="radio"]:checked+label {
 	background: #cccc;
     color: #000;
 }
 
-.tabs input[type="radio"]:checked+label+.tab, .tabs2 input[type="radio"]:checked+label+.tab {
+.tabs input[type="radio"]:checked+label+.tab,
+.tabs2 input[type="radio"]:checked+label+.tab, 
+.tabs3 input[type="radio"]:checked+label+.tab,
+.tabs4 input[type="radio"]:checked+label+.tab,
+.tabs5 input[type="radio"]:checked+label+.tab {
   display: block;
 }
 
 @media(max-width: 425px) {
   .tabs .tab, .tabs label {
-    order: initial;
+    --order: initial;
   }
 
   .tabs label {
-    width: 100%;
+    --width: 100%;
     margin-right: 0;
   }
 }
@@ -194,8 +276,6 @@ pre[class*=language-] {
     overflow:hidden;
     background:#2b2b2b;
     border:1px solid #444;
-    width: 543px;
-}
 }
 
 .code-wrapper pre{
@@ -256,6 +336,7 @@ pre[class*=language-] {
 .wrapper{
     display:flex;
     gap:20px;
+    padding-bottom: 15px;
 }
 
 .col{
@@ -264,11 +345,145 @@ pre[class*=language-] {
     background:#eee;
 }
 
-.col ul li a {
+.col1 {
+    flex:1;
+    background:#eee;
+}
+
+.col ul li a, .col1 ul li a {
 	text-decoration: none;
 	color: #706e6e;
 }
 
-.col ul li a:hover {
+.col ul li a:hover, .col1 ul li a:hover {
 	text-decoration: underline;
+}
+
+.accordion {
+    margin: 10px auto;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+    border: 1px solid #39383a;
+    overflow: hidden;
+}
+
+.accordion-input {
+    display: none;
+}
+
+.accordion-title {
+    display: block;
+    padding: 15px;
+    background: #39383a;
+    cursor: pointer;
+    font-weight: bold;
+    transition: opacity 0.3s;
+    color: #fff;
+}
+
+.accordion-title:hover {
+    opacity: 0.8;
+}
+
+.accordion-content {
+    max-height: 0;
+    padding: 0 15px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: white;
+}
+
+hr {
+    width: 95%;
+}
+
+.accordion-content p, h3, p ul, p ul li {
+    margin: 0px 10px 0px;
+}
+
+.accordion-input:checked ~ .accordion-content {
+    --max-height: 100%;
+    padding: 15px 15px 30px 15px;
+    display: inline;
+}
+
+.accordion-input:checked ~ .accordion-title {
+    opacity: 0.8;
+}
+
+.irregular-verbs {
+    width: 100%;
+    border-collapse: collapse;
+    --font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+
+
+.irregular-verbs th,
+.irregular-verbs td,
+.ir th,
+.ir td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+
+
+.irregular-verbs th,
+.ir th {
+    background: #2d3748;
+    color: white;
+}
+
+.irregular-verbs tr:nth-child(even) td,
+.ir tr:nth-child(even) td {
+    background: #f3f3f3;
+}
+
+.irregular-verbs tr:nth-child(odd) td,
+.ir tr:nth-child(odd) td {
+    background: #ffffff;
+}
+
+.irregular-verbs tr:hover td,
+.ir tr:hover td {
+    background: #e2e8f0;
+}
+
+.irregular-verbs,
+.ir {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+/* Столбик № */
+.irregular-verbs th:nth-child(1),
+.irregular-verbs td:nth-child(1) {
+    width: 50px;
+    text-align: center;
+}
+
+/* Столбик Author */
+.irregular-verbs th:nth-child(2),
+.irregular-verbs td:nth-child(2) {
+    width: 30%;
+}
+
+/* Столбик Name */
+.irregular-verbs th:nth-child(3),
+.irregular-verbs td:nth-child(3) {
+    width: auto;
+}
+
+.low-case {
+    text-transform: lowercase;
+}
+
+.one_file {
+    background-color: #000;
 }

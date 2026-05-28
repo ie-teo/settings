@@ -19,16 +19,81 @@
 		<div class="profile">
 			<a class="logo-add" href="index.html"></a>
 			<div class="menu-add">
-				<a href="index.html">Main page</a>
+				<a href="index.html">English</a>
 				<a href="scripts.html">Scripts</a>
-                <a href="git.html">Git guide</a>
+				<a href="seo.html">SEO constect</a>
+                <a href="git.html" class="checked">Git guide</a>
                 <a href="linux.html">Linux commands</a>
+                <!--a href="abooks.html">Audio books list</a>
+                <a href="app.html">Application</a>
+                <a href="itbooks.html">It books</a-->
+                <a href="telegram.html">Telegram</a>
 			</div>
 		</div>
 		<div class="resume">
-			<h1>Git guide</h1>
-            <p>lol</p>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<h1>Main git commants</h1>
+            <p>git config --global user.name "Alex Yakovlev"</p>
+			<p>git config --global user.email "teod@gmail.com"</p>
+			<p title="выводит список файлов и папок с деталями на win">dir</p>
+			<p title="выводит список файлов и папок без деталей с полным путем">dir /b /s</p>
+			<p title="выводит только файлы и папки без полного пути">dir /b</p>
+			<p title="создание репозитория">git init .</p>
+			<p title="показывает отслеживание изминений">git status</b>
+			<p title="загрузить в репозиторий все файлы">git add * | git add .</p>
+			<p title="делает снимок нашей дирректории">git commit -m "First commit"</p>
+			<p title="выводит все коммиты за все время">git log</b>
+			<p title="выводит последний что именно было добавлено">git log -1 -p</p> 
+			<p title="если что-то напортачил и ничего не загружал в локальный репозиторий, эта команда восстановит все изминения">git checkout -- .</b>
+			<p title="если изминения занести в локальный репозиторий через git add . то эта команнда построчно покажет изминения">git diff --staged</p>
+			<p title="загружает все в общий репозиторий (тут просит логин и пароль)">git push origin</p>
+			<div class="accordion">
+			    <div class="accordion-item">
+			        <input type="checkbox" id="item1" class="accordion-input">
+			        <label for="item1" class="accordion-title">Add commands</label> 
+			        <div class="accordion-content">
+						<p><b>git diff</b> - изменения которые не были закоммичены</p>
+						<p><b>git log -p</b> - показывает изменения всех файлов</p>
+						<p><b>git log -p -n1</b> - сколько коммитов вывести, тут один</p>
+						<p><b>git checkout fc6a</b> - возвращаемся на предыдущий коммит, 4 цифры коммита</p>
+						<p><b>git log --oneline</b> - показывает хеш и комментарий к коммиту в виде аккуратного списка</p>
+						<p><b>git branch -v</b> - показывает данные о текущем коммите</p>
+						<p><b>git branch feature</b> - создание новой ветки</p>
+						<p><b>git checkout -b fix</b> - создать ветку и сразу переключиться на нее</p>
+						<p><b>git reflog --date=iso</b> - показывает коммиты с датой</p>
+						<p><b>git log --pretty=format:'%h %cd | %s%d | [%an]'</b> - красиво выводит список коммитов</p>
+						<p><b>git branch</b> - показывает ветки и гит</p>
+						<p><b>git branch new-feature</b> - создается ветка new-feature</p>
+						<p><b>git checkout</b> - переключение веток</p>
+						<p><b>git checkout -b another</b> - создание новой ветки и сразу переключение на нее</p>
+						<p><b>git branch -d another</b> - удаление ветки (нужно быть на другой ветке прежде чем удалять)</p>
+						<p><b>git branch -m main</b> - переименует текущую ветку</p>
+						<p><b>git log --pretty=format:'%h %cd | %s%d | [%an]'</b> - настройка алиасов</p>
+						<p><b>git log --pretty=my</b> - выведется удобный список</p>
+						<p><b>git config --global format.pretty my</b> - команда задает формат вывода по умолчанию</p>
+						<p><b>git log</b> - теперь выводится список по алиасу</p>
+						<p><b>git log --grep 111</b> - показывает все коммиты где упоминается слово 111</p>
+						<p><b>git log --grep 111 feature</b> - будет искать коммиты в ветке feature</p>
+						<p><b>git log -Gtitle</b> - выведет коммиты со словом title</p>
+						<p><b>git log -L 3,6:1.txt</b> - выводит все коммиты где есть файл 1.txt с 3 по 6 строку</p>
+						<p><b>git log -L '&lt;title&gt;','&lt;\/title&gt;':hello.html</b> - покажет изменения от тега title до /title</p>
+						<p><b>git log -1 -p</b> - выводит последний коммит и показывает что было изменено</p>
+						<p><b>git checkout -- file5.txt</b> - откатить конкретный файл до последнего коммита</p>
+						<p><b>git log</b> - выводит хеши коммитов</p>
+						<p><b>git checkout 32d5</b> - переключиться на определенный коммит по первым символам хеша</p>
+						<p><b>git checkout master</b> - вернуться на последний коммит</p>
+						<p><b>git commit -am "добавление в индекс и сразу коммит одной командой"</b> - добавление и коммит одной командой</p>
+						<p><b>git config --global alias.commitall '!git add .;git commit'</b> - создание алиаса для add и commit</p>
+						<p><b>git branch -v</b> - показывает все ветки</p>
+						<p><b>git branch feature</b> - создаем новую ветку feature</p>
+						<p><b>git checkout feature</b> - переключение на ветку feature</p>
+						<p><b>git checkout -b feature</b> - создает и сразу переключает на новую ветку</p>
+						<p><b>git show --pretty=fuller</b> - подробная информация о коммитах</p>
+						<p><b>git log --pretty=oneline</b> - красивый вывод всех коммитов</p>
+						<p><b>git log --oneline --no-decorate</b> - короткий вывод коммитов без декораций</p>
+						<p><b>git log --pretty=format:'%h %cd | %s%d' --date=short</b> - еще один красивый вывод коммитов</p>
+			        </div>
+			    </div>
+			</div>
         </div>
     </div>
 <button id="scrollToTopBtn" aria-label="up">&#9650; up</button>
