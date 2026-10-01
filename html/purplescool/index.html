@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Development School PurpleSchool</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/components.css" />
+    <link rel="stylesheet" href="./styles/page.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__wrapper">
+        <a href="#"
+          ><img
+            class="header__logo"
+            src="./images/logo.svg"
+            alt="Логотип PurpleSchool"
+        /></a>
+        <nav>
+          <ul class="menu">
+            <li class="menu__item menu__item_active"><a href="#">Courses</a></li>
+            <li class="menu__item"><a href="#">About the School</a></li>
+            <li class="menu__item"><a href="#">Blog</a></li>
+            <li class="menu__item"><a href="#">Knowledge Base</a></li>
+          </ul>
+        </nav>
+        <a class="header__login" href="#" aria-label="Log in to your personal account">
+          <img src="./images/user.svg" alt="User icon" />
+          <div>Entrance</div>
+        </a>
+        <button
+          class="header__mobile-menu-button"
+          aria-expanded="false"
+          aria-haspopup="true"
+        >
+          <img src="./images/menu.svg" alt="Mobile menu" />
+        </button>
+      </div>
+    </header>
+    <section class="section section_light">
+      <div class="hero">
+        <div class="hero__left">
+          <h1 class="hero__h1">
+            Available courses for<br />
+            <span class="hero__h1_gradient">Development and DevOps</span>
+          </h1>
+          <div class="hero__cta">
+            <button class="button button_primary">Select a course</button>
+            <button class="button button_ghost">About the School</button>
+          </div>
+        </div>
+        <img class="hero__right" src="./images/video.png" alt="Видео с автором" style="width: 450px; margin-top: 20px;border-radius: 15px;" />
+      </div>
+    </section>
+	<section class="section">
+      <div class="section__wrapper">
+        <div class="headling">
+          <div class="headling__top">Select a course</div>
+          <h2 class="headling__buttom">Select a course</h2>
+        </div>
+		<div class="chip_wrapper">
+			<button class="chip chip_active">All</button>
+			<button class="chip">Frontend</button>
+			<button class="chip">Backend</button>
+			<button class="chip">DevOps</button>
+			<button class="chip">Soft Skills</button>
+		</div>
+		<div class="courses_wrapper">
+			<div class="course-card">
+				<div class="course-card__cover">
+					<img src="./images/cover.png" alt="Image course">
+				</div>
+				<div class="course-card__body">
+					<div>
+						<div class="course-card__title">React + Next.js - from scratch</div>
+						<div class="course-card__author">Alex Yakovlev</div>
+					</div>
+					<div class="course-card__tags">
+						<span class="tag">
+							<img src="./images/star-icon.svg" alt="Rating iconа">
+							4.9</span>
+						<span class="tag">Frontend</span>
+					</div>
+				</div>
+				<div class="course-card__footer">
+					<div>from 290$</div>
+					<button class="button button_primary">Read more</button>
+				</div>
+			</div>
+			<div class="course-card">
+				<div class="course-card__cover">
+					<img src="./images/178d7792-86e5-4bef-bfd4-7ddbf6b7847a.avif" alt="Image couse">
+				</div>
+				<div class="course-card__body">
+					<div>
+						<div class="course-card__title">Kubernetis - from scratch</div>
+						<div class="course-card__author">Alex Yakovlev</div>
+					</div>
+					<div class="course-card__tags">
+						<span class="tag">
+							<img src="./images/star-icon.svg" alt="Image couse">
+							4.9</span>
+						<span class="tag">Frontend</span>
+					</div>
+				</div>
+				<div class="course-card__footer">
+					<div>from 180$</div>
+					<button class="button button_primary">Read more</button>
+				</div>
+			</div>
+			<div class="course-card">
+				<div class="course-card__cover">
+					<img src="./images/3fd9cc44-95dc-477b-a880-77c59af31376.avif" alt="Image couse">
+				</div>
+				<div class="course-card__body">
+					<div>
+						<div class="course-card__title">Next.js - from scratch</div>
+						<div class="course-card__author">Alex Yakovlev</div>
+					</div>
+					<div class="course-card__tags">
+						<span class="tag">
+							<img src="./images/star-icon.svg" alt="Иконка рейтинга">
+							4.9</span>
+						<span class="tag">Frontend</span>
+					</div>
+				</div>
+				<div class="course-card__footer">
+					<div>from  180$</div>
+					<button class="button button_primary">Read more</button>
+				</div>
+			</div>
+			<div class="course-card">
+				<div class="course-card__cover">
+					<img src="./images/10cbc1cc-0e55-405b-ba91-32b182e9589f.avif" alt="Image couse">
+				</div>
+				<div class="course-card__body">
+					<div>
+						<div class="course-card__title">Fiber - from scratch</div>
+						<div class="course-card__author">Alex Yakovlev</div>
+					</div>
+					<div class="course-card__tags">
+						<span class="tag">
+							<img src="./images/star-icon.svg" alt="Image couse">
+							4.9</span>
+						<span class="tag">Frontend</span>
+					</div>
+				</div>
+				<div class="course-card__footer">
+					<div>from 95$</div>
+					<button class="button button_primary">Read more</button>
+				</div>
+			</div>
+			<div class="course-card">
+				<div class="course-card__cover">
+					<img src="./images/a63f5304-1756-4f30-bb09-0c9ccd180ebe.avif" alt="Image couse">
+				</div>
+				<div class="course-card__body">
+					<div>
+						<div class="course-card__title">React.js - from scratch</div>
+						<div class="course-card__author">Alex Yakovlev</div>
+					</div>
+					<div class="course-card__tags">
+						<span class="tag">
+							<img src="./images/star-icon.svg" alt="Image couse">
+							4.9</span>
+						<span class="tag">Frontend</span>
+					</div>
+				</div>
+				<div class="course-card__footer">
+					<div>from  890$</div>
+					<button class="button button_primary">Read more</button>
+				</div>
+			</div>
+		</div>
+    </section>
+	<section class="section section_light">
+      <div class="section__wrapper trust-wrapper">
+		<div class="trust-wrapper__top">
+			<div class="headling">
+			<div class="headling__top">About the School</div>
+			<h2 class="headling__buttom">We are trusted</h2>
+			</div>
+			<p class="paragraph paragraph_32">
+			The school’s founder and author, Anton Larichev, has over 13 years of development experience, having advanced from developer to CTO. The courses offer up-to-date, no-fluff content based on real-world projects, with a strong emphasis on practical application.
+			</p>
+		</div>
+		<div class="card card_light card_48x24 trust-wrapper__stat">
+			<div class="trust-wrapper__num">15 000</div>
+			<div class="trust-wrapper__desc">students around the world</div>
+		</div>
+		<div class="card card_light card_48x24 trust-wrapper__stat">
+			<div class="trust-wrapper__num">30 days</div>
+			<div class="trust-wrapper__desc">money-back guarantee</div>
+		</div>
+		<div class="card card_light card_48x24 trust-wrapper__stat">
+			<div class="trust-wrapper__num">90%</div>
+			<div class="trust-wrapper__desc">students recommend the courses.</div>
+		</div>
+        <h3 class="trust-wrapper__h3">
+			Ratings on independent platforms
+		</h3>
+		<div class="card card_light card_24x32 trust-wrapper__rating">
+			<div class="trust-wrapper__rate">4.8</div>
+			<div><img src="./images/logos/ct.svg" alt="Logo КурсесТоп"></div>
+		</div>
+		<div class="card card_light card_24x32 trust-wrapper__rating">
+			<div class="trust-wrapper__rate">4.8</div>
+			<div><img src="./images/logos/st.svg" alt="Logo КурсесТоп"></div>
+		</div>
+		<div class="card card_light card_24x32 trust-wrapper__rating">
+			<div class="trust-wrapper__rate">4.8</div>
+			<div><img src="./images/logos/ud.svg" alt="Logo КурсесТоп"></div>
+		</div>
+	  </div>
+	</section>
+    <section class="section">
+      <div class="section__wrapper">
+        <div class="headling">
+          <div class="headling__top">Blog and social media</div>
+          <h2 class="headling__buttom">Useful Resources</h2>
+        </div>
+        <p class="paragraph paragraph_32">
+          Every week, we publish news, updates, and additional useful materials on social media:
+        </p>
+        <div class="social-icons">
+          <a href="#" class="social-icons__icon">
+            <img src="./images/social/youtube.svg" alt="Youtube PurpleSchool" />
+          </a>
+          <a href="#" class="social-icons__icon">
+            <img
+              src="./images/social/telegram.svg"
+              alt="Telegram PurpleSchool"
+            />
+          </a>
+          <a href="#" class="social-icons__icon">
+            <img src="./images/social/vk.svg" alt="ВКонтакте PurpleSchool" />
+          </a>
+        </div>
+        <div class="post-wrapper">
+          <article class="post card card_32">
+            <div class="post__content">
+              <div class="post__stats">
+                <div class="post__stat">
+                  <img
+                    src="./images/calendar-icon.svg"
+                    alt="Иконка календаря"
+                  />
+                  06 may 2023
+                </div>
+                <div class="post__stat">
+                  <img src="./images/view-icon.svg" alt="Иконка календаря" />
+                  2 584 views
+                </div>
+              </div>
+              <h3 class="post__header">
+                Workplace criticism is your friend—but not always.
+              </h3>
+              <div class="post__description">
+                Code reviews are supposed to help improve the code, but sometimes they turn into an argument between people. A simple suggestion about a function, variable name, or implementation can be taken as a personal attack. When that happens, it becomes difficult to have a productive discussion. Good feedback should focus on the code rather than the person, and good developers should be willing to consider arguments even when they disagree. In this post, I want to discuss how to respond to criticism without taking it personally.
+              </div>
+            </div>
+            <div class="post__button">
+              <a href="#" class="button button_ghost">Read</a>
+            </div>
+          </article>
+          <article class="post card card_32">
+            <div class="post__content">
+              <div class="post__stats">
+                <div class="post__stat">
+                  <img
+                    src="./images/calendar-icon.svg"
+                    alt="Calendar icon"
+                  />
+                  06 may 2023
+                </div>
+                <div class="post__stat">
+                  <img src="./images/view-icon.svg" alt="Иконка календаря" />
+                  2 584 views
+                </div>
+              </div>
+              <h3 class="post__header">
+                When conducting code reviews, you sometime
+              </h3>
+              <div class="post__description">
+                Receiving criticism is one of the hardest parts of working with other developers. Even when the feedback is technically correct, it can sometimes feel like someone is questioning your skills or experience. This reaction is understandable, especially when you have spent a lot of time working on a particular solution. However, rejecting every criticism immediately prevents you from learning and improving. In this post, I want to look at some practical ways to accept feedback and use it to become a better developer.
+              </div>
+            </div>
+            <div class="post__button">
+              <a href="#" class="button button_ghost">Читать</a>
+            </div>
+          </article>
+          <article class="post card card_32">
+            <div class="post__content">
+              <div class="post__stats">
+                <div class="post__stat">
+                  <img
+                    src="./images/calendar-icon.svg"
+                    alt="Иконка календаря"
+                  />
+                  06 may 2023
+                </div>
+                <div class="post__stat">
+                  <img src="./images/view-icon.svg" alt="Иконка календаря" />
+                  2 584 views
+                </div>
+              </div>
+              <h3 class="post__header">
+                When conducting code reviews, you sometime
+              </h3>
+              <div class="post__description">
+                There is a big difference between criticism that helps you improve and criticism that simply creates conflict. During code reviews, developers may disagree about architecture, style, or the way a particular problem should be solved. The important thing is not to treat every disagreement as a personal conflict. Instead, both sides should explain their reasoning and listen to the other perspective. In this post, I want to talk about how developers can handle disagreements during code reviews in a professional way.
+              </div>
+            </div>
+            <div class="post__button">
+              <a href="#" class="button button_ghost">Read</a>
+            </div>
+          </article>
+        </div>
+        <div class="button-more">
+          <a href="#" class="button button_ghost">All publications</a>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer__wrapper">
+        <div class="footer__social">
+          <a href="#"
+            ><img
+              class="footer__logo"
+              src="./images/logo.svg"
+              alt="Logo PurpleSchool"
+          /></a>
+          <div class="social-icons">
+            <a href="#" class="social-icons__icon">
+              <img
+                src="./images/social/youtube.svg"
+                alt="Youtube PurpleSchool"
+              />
+            </a>
+            <a href="#" class="social-icons__icon">
+              <img
+                src="./images/social/telegram.svg"
+                alt="Telegram PurpleSchool"
+              />
+            </a>
+            <a href="#" class="social-icons__icon">
+              <img src="./images/social/vk.svg" alt="ВКонтакте PurpleSchool" />
+            </a>
+          </div>
+        </div>
+        <div class="footer__menu">
+          <nav>
+            <div class="footer__menu-header">Menu</div>
+            <ul class="menu-small">
+              <li class="menu-small__item"><a href="#">Courses</a></li>
+              <li class="menu-small__item"><a href="#">About the School</a></li>
+              <li class="menu-small__item"><a href="#">Blog</a></li>
+              <li class="menu-small__item"><a href="#">Knowledge Base</a></li>
+            </ul>
+          </nav>
+          <div>
+            <div class="footer__menu-header">Documents</div>
+            <ul class="menu-small">
+              <li class="menu-small__item"><a href="#">Offer Agreement</a></li>
+              <li class="menu-small__item">
+                <a href="#">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <div class="footer__menu-header">Payment Details</div>
+            <ul class="menu-small">
+              <li class="menu-small__item">ip Yakovlev Oleksandr</li>
+              <li class="menu-small__item">ИНН 773373764352</li>
+              <li class="menu-small__item">
+                <a href="mailto:teod3665@gmail.com">contact@gmail.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__copywrite">
+          PurpleSchool © 2022 - 2027 All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

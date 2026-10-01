@@ -1,0 +1,175 @@
+@import url(https://fonts.googleapis.com/css?family=Manrope:200,300,regular,500,600,700,800);
+
+img,
+svg {
+	max-width: 100%;
+	height: auto;
+}
+
+body {
+	font-family: Manrope, system-ui, sans-serif;
+}
+
+.header {
+	padding: 80px 20px 100px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
+
+	background-color: #022c22;
+	color: #fff;
+	text-align: center;
+}
+
+.header__title {
+	font-size: 38px;
+	font-weight: 200;
+	max-width: 600px;
+}
+
+.header__text {
+	max-width: 600px;
+	text-align: center;
+}
+
+.header__btns {
+	display: flex;
+	gap: 20px;
+}
+
+.btn {
+	display: inline-block;
+	padding: 12px 20px;
+	border-radius: 80px;
+	background-color: #bef264;
+	color: #000;
+
+	transition: all 0.2s ease-in;
+}
+
+.btn:hover {
+	background-color: #e4ffb6;
+	color: #000;
+}
+
+.btn-outline {
+	color: #fff;
+	border: 2px solid #fff;
+	border-radius: 80px;
+	padding: 10px 20px;
+	transition: all 0.2s ease-in;
+	text-decoration: none;
+}
+
+.btn-outline:hover {
+	border-color: #bef264;
+	color: #bef264;
+}
+
+.main {
+	padding-top: 60px;
+}
+
+.main__title {
+	margin-bottom: 40px;
+}
+
+/* Blog */
+
+.posts-wrapper {
+	display: grid;
+	gap: 40px;
+}
+
+.post {
+	display: flex;
+	gap: 40px;
+	align-items: flex-start;
+}
+
+.post__img-wrapper {
+	flex-shrink: 0;
+	width: 280px;
+}
+
+.post__img {
+	border-radius: 20px;
+}
+
+.post__content {
+}
+
+.footer {
+	margin-top: 60px;
+}
+
+/* Post page */
+
+.post-page {
+}
+.post-page__title {
+	font-size: 38px;
+	margin-bottom: 0.5em;
+}
+.post-page__img-wrapper {
+	margin: 2rem 0;
+}
+.post-page__img {
+	width: 100%;
+	border-radius: 20px;
+}
+.post-page__content {
+}
+
+@media (max-width: 991px) {
+	.post {
+		/* display: flex; */
+		gap: 20px;
+		/* align-items: flex-start; */
+	}
+
+	.post__img-wrapper {
+		flex-shrink: 0;
+		width: 180px;
+	}
+
+	.post__img {
+		border-radius: 10px;
+	}
+}
+
+@media (max-width: 499px) {
+	.header {
+		padding: 40px 20px;
+	}
+
+	.main {
+		padding-top: 20px;
+	}
+
+	.main__title {
+		margin-bottom: 20px;
+	}
+
+	.header__btns {
+		flex-direction: column;
+	}
+	.post {
+		/* display: flex; */
+		gap: 20px;
+		/* align-items: flex-start; */
+		flex-direction: column;
+	}
+
+	.post__img-wrapper {
+		flex-shrink: 0;
+		width: 100%;
+	}
+
+	.post__img {
+		width: 100%;
+		height: auto;
+	}
+}

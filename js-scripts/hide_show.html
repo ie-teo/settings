@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css?v=1.0.2">
+<link rel="icon" type="image/png" href="img/logo.png" />
+</head>
+	<title>hide show</title>
+</head>
+<style>
+	* {font-family: Verdana, sans-serif;}
+
+	.pass_panel {
+	    display: none;
+	    margin-top: 10px;
+	}
+
+	/* открытие блока */
+	.pass_panel.active {
+	    display: block;
+	}
+</style>
+<body>
+	<div class="resume">
+			<h1>Block <a href="#" class="pass_link">show</a></h1> 
+				
+			<div class="pass_panel">
+				<div class="wrapper">
+				    <div class="col1"><h2>Simply text</h2></div>
+				    <div class="col1"><p>js Рекомендация к просмотру: Установка GitHub - https://youtu.be/SKy ... сайта для новичков - https://youtu.be/Dx8YZiaRvj4?t=5275.</p></div>
+				</div>
+			</div>
+	</div>
+</body>
+	<script>
+	document.addEventListener('DOMContentLoaded', function () {
+
+	    const btn = document.querySelector('.pass_link');
+	    const panel = document.querySelector('.pass_panel');
+
+	    btn.addEventListener('click', function(e) {
+	        e.preventDefault();
+	        panel.classList.toggle('active');
+
+	        if (panel.classList.contains('active')) {
+	       		btn.textContent = 'hide';
+	        } else {
+	        	btn.textContent = 'show';
+	        }
+	    });
+	});
+	</script>
+</html>

@@ -3,53 +3,65 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-	<!-- Prism.js -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
-<link rel="stylesheet" href="css/style.css?v=1.0.2">
-<link rel="icon" type="image/png" href="img/logo.png" />
-</head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=block" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css?v=1.0.2">
+	<link rel="icon" type="image/png" href="img/logo.png" />
 	<title>Telegram books</title>
 </head>
 <body>
 	<div class="container">
 		<div class="profile">
-			<a class="logo-add" href="index.html"></a>
-			<div class="menu-add">
-				<a href="index.html">English</a>
-				<a href="scripts.html">Scripts</a>
-				<a href="seo.html">SEO constect</a>
-                <a href="git.html">Git guide</a>
-                <a href="linux.html">Linux commands</a>
-                <!--a href="abooks.html">Audio books list</a>
-                <a href="app.html">Application</a>
-                <a href="itbooks.html">It books</a>
-                <a href="telegram.html" class="checked">Telegram</a-->
+            <a class="logo-add" href="index.html">
+                <div class="arr"></div>
+            </a>
+            <div class="menu-add">
                 <a href="telegram.html" class="checked">Telegram</a>
-				<a href="html_template.html">HTML templates</a>
-			</div>
-		</div>
+                <div class="menu_option2">
+                      <a href="html_template.html">HTML templates</a>
+                      <a href="img.html">Images</a>       
+                </div>
+                <div class="menu_option">
+                    <a href="html.html">Html</a>
+                    <a href="css.html">Css</a>
+                    <a href="scripts.html">Js</a>          
+                </div>
+                <div class="menu_option">
+                    <a href="seo.html">SEO</a>
+                    <a href="git.html">Git</a>
+                    <a href="linux.html">Linux</a>          
+                </div>
+                <a href="eng/index.html" class="active_eng" target="_blank">English</a>
+            </div>
+        </div>
 		<div class="resume">
 			<h1>Audio books</h1>
+            <nav class="tabs">
+                <label id="tab-btn-1" onclick="setTab('1')" class="tabs label">
+                    IT books
+                </label>
+                <label id="tab-btn-2" onclick="setTab('2')" class="tabs label">
+                    Movies
+                </label>
+                <label id="tab-btn-3" onclick="setTab('3')" class="tabs label">
+                    Sourse code
+                </label>
 
+                <label id="tab-btn-4" onclick="setTab('4')" class="tabs label">
+                    Audio books
+                </label>
 
+                <label id="tab-btn-5" onclick="setTab('5')" class="tabs label">
+                    Telegram books
+                </label>
+            </nav>
 
-
-
-
-
-<div class="tabs">
-    <input type="radio" name="tabs" id="tabone" checked="checked">
-    <label for="tabone">IT books</label>
-
-    <div class="tab">
-    	
-        <p>
-           <a href="https://t.me/var_it" target="_blank">It books</a>
-        </p>
+        <section>
+            <div id="tab-content-1" class="tab-content">
+        
+        <span>telegram link: <a href="https://t.me/var_it" target="_blank">It books</a></span>
+        
 <table class="irregular-verbs low-case">
     <tr>
         <th>№</th>
@@ -193,16 +205,14 @@
 <tr><td>135</td><td>Рик Гаско</td><td><a target="_blank" href="https://t.me/var_it/4008">Python — это просто</a></td></tr>
 <tr><td>136</td><td>—</td><td><a target="_blank" href="https://t.me/var_it/4010">PIP: менеджер пакетов в Python (гайд)</a></td></tr>
 <tr><td>137</td><td>Лафуркад П., Мор М.</td><td><a target="_blank" href="https://t.me/var_it/4027">Python для начинающих</a></td></tr>
+
+<tr><td>138</td><td> - </td><td><a target="_blank" href="https://t.me/var_it/4032">профессиональная работа с git</a></td></tr>
+
+<tr><td>139</td><td>Краснобаев А Г</td><td><a target="_blank" href="https://t.me/var_it/4034">Продвижение сайтов с использованием искусственного интеллекта</a></td></tr>
 </table>
-
-</div>
-
-    <input type="radio" name="tabs" id="tabtwo">
-    <label for="tabtwo">Movies</label>
-
-    <div class="tab">
-        <p>
-           <a href="https://t.me/teo_english" target="_blank">Movies</a>
+            </div>
+            <div id="tab-content-2" class="tab-content">
+            <span>telegram link: <a href="https://t.me/teo_english" target="_blank">Movies</a></span>
 <ul>
 <li>shot_into_the_empty</li>
 <li>ford_v_ferrari</li>
@@ -397,18 +407,31 @@
 <li>бойцовский_клуб</li>
 <li>rh3 only_eng</li>
 <li>hz</li>
-<li>max_payne
+<li>max_payne</li>
 <li>зомби_2</li>
-</ul>
+<li><a href="https://t.me/teo_english/986">Тони Роббинс</a></li>
+<li><a href="https://t.me/teo_english/987">ютуб ролик документирование своих видео</a></li>
+<li><a href="https://t.me/teo_english/988">Оставайся голодным 1976</a></li>
+<li><a href="https://t.me/teo_english/989">Близнецы 1988</a></li>
+<li><a href="https://t.me/teo_english/990">the running man 2025</a></li>
+<li><a href="https://t.me/teo_english/991"></a>terminator - dark fate 2019</li>
+<li><a href="https://t.me/teo_english/992">RazumNews</a></li>
+<li><a href="https://t.me/teo_english/993">Raw Iron - The Making of Pumping Iron</a></li>
+<li><a href="https://t.me/teo_english/994">Krasnaya jara 1988</a></li>
+<li><a href="https://t.me/teo_english/995">Kindergarten Cop 1990</a></li>
+<li><a href="https://t.me/teo_english/996">Bezumnyi_Maks_Doroga_yarosti_2015</a></li>
+<li><a href="https://t.me/teo_english/998">сериалы о выживании которые не смотрел но очень ценные</a></li>
+<li><a href="https://t.me/teo_english/1002">наука выживать</a></li>
+<li><a href="https://t.me/teo_english/1005">искусство выживания рэя мирса</a></li>
+<li><a href="https://t.me/teo_english/1011"></a>Бои без правил_2017</li>
+<li><a href="https://t.me/teo_english/1036">Hochu v tyurmu</a></li>
+<li><a href="https://t.me/teo_english/1037"></a>я не твой гуру</li>
+
     </p>
-</div>
+            </div>
 
-    <input type="radio" name="tabs" id="tabthree">
-    <label for="tabthree">Sourse code</label>
-
-    <div class="tab">
-        <p><a href="https://t.me/teo_netbook" target="_blank">Sourse code</a></p>
-
+            <div id="tab-content-3" class="tab-content">
+                 <span>telegram link: <a href="https://t.me/teo_netbook" target="_blank">Sourse code</a></span>
 <div class="pre">
 <p><a target="_blank" href="https://t.me/teo_netbook/604" title="vscodeusersetup-x64-1.102.1.exe">vs code</a></p>
 <p><a target="_blank" href="https://t.me/teo_netbook/605" title="сrystaldiskIn проверка на состояние диска">сrystaldiskIn</a></p>
@@ -451,34 +474,24 @@
 <p><a target="_blank" href="https://t.me/teo_netbook/648" class="game_app" title="max payne.rar">max payne</a></p>
 <p><a target="_blank" href="https://t.me/teo_netbook/649" class="game_app" title="half-life.exe">half-life</a></p>
 <p><a target="_blank" href="https://t.me/teo_netbook/650" class="game_app" title="hitman 1 2 3.rar">hitman 1 2 3</a></p>
+
+<p><a target="_blank" href="https://t.me/teo_netbook/651">ebook reader setup</a></p>
+<p><a target="_blank" href="https://t.me/teo_netbook/652">whatsapp</a></p>
+<p><a target="_blank" href="https://t.me/teo_netbook/653">figmasetup</a></p>
+<p><a target="_blank" href="https://t.me/teo_netbook/654">microsoft sticky notes installer</a></p>
+<p><a target="_blank" href="https://t.me/teo_netbook/655">notepad++</a></p>
+<p><a target="_blank" href="" class="game_app" title="https://t.me/teo_netbook/656">need for speed - underground 2</a></p>
 </div>
-    </div>
+            </div>
 
-
-<input type="radio" name="tabs" id="tabfour">
-    <label for="tabfour">Audio books</label>
-
-    <div class="tab">
-
-
-
-
-
-
-
-
-
-
-
-
-
+            <div id="tab-content-4" class="tab-content">
+                <span>telegram link: <a href="https://t.me/c/1286944909/1550" target="_blank">Audio books</a></span>
 <table class="irregular-verbs low-case">
     <tr>
         <th>№</th>
         <th>Author</th>
         <th>Name</th>
     </tr>
-
     <tr class="one_file" title="эти книги сохранены в виде одного файла"><td>1</td><td>cтейнбек</td><td>джон к востоку от эдема</td></tr>
     <tr class="one_file" title="эти книги сохранены в виде одного файла"><td>2</td><td>арнольд шварцнеггер</td><td>будь нужным</td></tr>
     <tr class="one_file" title="эти книги сохранены в виде одного файла"><td>3</td><td>брайан трейси</td><td>100 законов в бизнесе</td></tr>
@@ -511,138 +524,133 @@
     <tr class="one_file" title="эти книги сохранены в виде одного файла"><td>30</td><td>энсон хайнлайн</td><td>колумб был остолопом</td></tr>
     <tr class="one_file" title="эти книги сохранены в виде одного файла"><td>31</td><td>эрнест хэмингуэй</td><td>старик и море</td></tr>
 
-<tr class="one_file2" title="книги которые когда-то слушал"><td>32</td><td>станислав лем</td><td>солярис</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>33</td><td>айзек азимов</td><td>я робот</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>34</td><td>алекс новак</td><td>книга которой нет</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>35</td><td>алексей марков</td><td>жлобология</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>36</td><td>алексей ситников</td><td>karmalogic</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>37</td><td>аллан пиз</td><td>язык телодвижений</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>38</td><td>арнольд шварценеггер</td><td>вспомнить все</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>39</td><td>бабайкин</td><td>на пенсию в 35 лет</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>40</td><td>бабайкин</td><td>фак ю мани</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>41</td><td>барбара шер</td><td>о чем мечтать</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>42</td><td>бас каст</td><td>компас питания</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>43</td><td>бах ричард</td><td>чайка по имени джонатан ливингстон</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>44</td><td>беттина лемке</td><td>икигай японское искусство поиска счастья и смысла</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>45</td><td>бодо шевер</td><td>мани, или азбука денег</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>46</td><td>бодо шефер</td><td>законы победителей</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>47</td><td>бодо шефер</td><td>миллион за 7 лет</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>48</td><td>боно эдвард де</td><td>шесть шляп мышления</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>49</td><td>борис акунин</td><td>детская книга для девочек</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>50</td><td>борис березовский</td><td>как заработать большие деньги</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>51</td><td>брайан трейси</td><td>выйди из зоны комфорта</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>52</td><td>вадим зеланд</td><td>вершитель реальности</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>53</td><td>вадим зеланд</td><td>взлом техногенной системы</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>54</td><td>вадим зеланд</td><td>дрица итфат</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>55</td><td>вадим зеланд</td><td>живая кухня</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>56</td><td>вадим зеланд</td><td>клибе</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>57</td><td>вадим зеланд</td><td>практика трансерфинга</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>58</td><td>вики робин, джо домингес</td><td>кошелёк или жизнь</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>59</td><td>виктор пелевин</td><td>искусство лёгких касаний</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>60</td><td>виктор пелевин</td><td>чапаев и пустота</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>61</td><td>виктор франкл</td><td>сказать жизни да</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>62</td><td>владимир древс</td><td>миллионер с хорошей кармой</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>63</td><td>говард бехар</td><td>дело не в кофе</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>64</td><td>грег маккеон</td><td>«эссенциализм путь к простоте»</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>65</td><td>грег маккеон</td><td>эссенциализм</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>66</td><td>гэри уилсон</td><td>на порноигле</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>67</td><td>гэри чепмен</td><td>пять путей к сердцу подростка</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>68</td><td>гэри чепмен</td><td>пять языков любви</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>69</td><td>даниель канеман</td><td>думай медленно решай быстро</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>70</td><td>даниэль кенеман</td><td>думай медленно решай быстро</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>71</td><td>дас сатья</td><td>верный и заботливый муж</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>72</td><td>дез деарлав</td><td>бизнес путь ричард бренсон</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>73</td><td>дез деарлав</td><td>билл гейтс 10 секретов бизнес лидера</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>74</td><td>дейл карнеги</td><td>как завоёвывать друзей и оказывать влияние на людей</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>75</td><td>джек кэнфилд</td><td>куриный бульон для души 101 лучшая история</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>76</td><td>джен синсеро</td><td>не ной</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>77</td><td>джен синсеро</td><td>не тупи</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>78</td><td>джен синсеро</td><td>ни зя</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>79</td><td>джен</td><td>синсеро ни сы</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>80</td><td>джон грей</td><td>мужчины с марса женщины с венеры</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>81</td><td>джон грэй, барбара эннис</td><td>мужчины с марса, женщины с венеры… работают</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>82</td><td>джорж клейсон</td><td>самый богатый человек в вавилоне</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>83</td><td>джорж оруэлл</td><td>скотный двор</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>84</td><td>дмитрий глуховский</td><td>родине</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>85</td><td>дмитрий глуховский</td><td>будущее</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>86</td><td>дмитрий глуховский</td><td>сумерки</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>87</td><td>дмитрий глуховский</td><td>текст</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>88</td><td>дмитрий портнягин</td><td>трансформатор</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>89</td><td>дмитрий портнягин</td><td>трансформатор 2</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>90</td><td>дмитрий портнягин</td><td>трансформатор 3</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>91</td><td>дональд трамп</td><td>как стать богатым</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>92</td><td>жуль верн</td><td>20000 лье под водой</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>93</td><td>карен прайор</td><td>не рычите на собаку</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>94</td><td>катерина ленгольд</td><td>росто космос</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>95</td><td>кевин митник</td><td>исскуство взлома</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>96</td><td>кейт фландерс</td><td>год без покупок</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>97</td><td>колин</td><td>типпинг радикальное прощение</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>98</td><td>леонид кучма</td><td>украина не россия</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>99</td><td>макиавеллли</td><td>государь</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>100</td><td>максим котин</td><td>чичваркин</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>101</td><td>малкольм гладуэлл</td><td>разговор с незнакомцем</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>102</td><td>михай чиксентмихайи</td><td>поток</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>103</td><td>михаил булгаков</td><td>белая гвардия</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>104</td><td>михаил булгаков</td><td>мастер и маргарита</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>105</td><td>михаил лабковский</td><td>хочу и буду</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>106</td><td>найт фил</td><td>продавец обуви</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>107</td><td>никколо макиавелли</td><td>государь</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>108</td><td>николаев юрий</td><td>голодание ради здоровья</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>109</td><td>николай амомов</td><td>книга о счастье и несчастьях</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>110</td><td>николай амосов</td><td>мысли и сердце</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>111</td><td>николай амосов</td><td>записки из будущего</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>112</td><td>николай амосов</td><td>книга о счастье и несчастье</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>113</td><td>николай амосов</td><td>мысли и сердце повести</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>114</td><td>николай амосов</td><td>повести</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>115</td><td>николай амосов</td><td>раздумья о здоровье</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>116</td><td>николай островский</td><td>как закалялась сталь</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>117</td><td>пауло коэльо</td><td>алхимик</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>118</td><td>поль брегг</td><td>чудо голодания</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>119</td><td>практика</td><td>брахмачарьи</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>120</td><td>радислав гандапас</td><td>харизма лидера</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>121</td><td>регина бретт</td><td>бог никогда не моргает</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>122</td><td>ремарк</td><td>жизнь взаймы</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>123</td><td>роберт кийосаки</td><td>дар мидаса</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>124</td><td>роберт чалдини</td><td>психология влияния</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>125</td><td>робин шарма</td><td>монах который продал свой феррари</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>126</td><td>сергей зайцев</td><td>как бросить курить за 3 дня</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>127</td><td>сет годин</td><td>яма</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>128</td><td>слава курилов</td><td>один в океане</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>129</td><td>станислав ковтун</td><td>свидетели иеговы некуда идти</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>130</td><td>станислав лем</td><td>солярис</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>131</td><td>стефан цвейг</td><td>амок</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>132</td><td>стефан цвейг</td><td>жгучая тайна</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>133</td><td>стефан цвейг</td><td>нетерпение сердца</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>134</td><td>стефан цвейг</td><td>оплаченный долг</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>135</td><td>стефан цвейг</td><td>улица в лунном свете</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>136</td><td>стефан цвейг</td><td>шахматная новелла</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>137</td><td>стивен кови</td><td>7 навыков высокоэффективных людей</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>138</td><td>стивен хокинг</td><td>краткая история времени</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>139</td><td>стивен хокинг</td><td>моя краткая история</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>140</td><td>сугралинов данияр</td><td>кирпичи</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>141</td><td>сэм уолтон</td><td>сделано в америке как я создал wal mart</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>142</td><td>тимофей кудряшов</td><td>бросаем курить за два вечера</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>143</td><td>федор достоевский</td><td>идиот</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>144</td><td>федор углов</td><td>сердце хирурга</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>145</td><td>франс де вааль</td><td>истоки морали</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>146</td><td>франс де вааль</td><td>политика у шимпанзе</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>147</td><td>фредерик лалу</td><td>открывая организации будущего</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>148</td><td>фредрик бакман</td><td>вторая жизнь уве</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>149</td><td>хоаким де пассада</td><td>не набрасывайтесь на мармелад</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>150</td><td>цвейг стефан</td><td>страх</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>151</td><td>чарли энгл</td><td>running man</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>152</td><td>шеперд</td><td>неестественные причины</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>153</td><td>экхарт толле</td><td>сила момента</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>154</td><td>экхарт толле</td><td>сила настоящего</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>155</td><td>элиезер юдковски</td><td>гарри поттер и методы рационального мышления</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>156</td><td>эшли вэнс</td><td>илон маск</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>157</td><td>юваль ной харари</td><td>краткая история будущего</td></tr>
-<tr class="one_file2" title="книги которые когда-то слушал"><td>158</td><td>юваль ной харари</td><td>краткая история человечества</td></tr>
-
-
-
-
-
+<tr class="readed" title="книги которые когда-то слушал"><td>32</td><td>станислав лем</td><td>солярис</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>33</td><td>айзек азимов</td><td>я робот</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>34</td><td>алекс новак</td><td>книга которой нет</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>35</td><td>алексей марков</td><td>жлобология</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>36</td><td>алексей ситников</td><td>karmalogic</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>37</td><td>аллан пиз</td><td>язык телодвижений</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>38</td><td>арнольд шварценеггер</td><td>вспомнить все</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>39</td><td>бабайкин</td><td>на пенсию в 35 лет</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>40</td><td>бабайкин</td><td>фак ю мани</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>41</td><td>барбара шер</td><td>о чем мечтать</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>42</td><td>бас каст</td><td>компас питания</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>43</td><td>бах ричард</td><td>чайка по имени джонатан ливингстон</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>44</td><td>беттина лемке</td><td>икигай японское искусство поиска счастья и смысла</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>45</td><td>бодо шевер</td><td>мани, или азбука денег</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>46</td><td>бодо шефер</td><td>законы победителей</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>47</td><td>бодо шефер</td><td>миллион за 7 лет</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>48</td><td>боно эдвард де</td><td>шесть шляп мышления</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>49</td><td>борис акунин</td><td>детская книга для девочек</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>50</td><td>борис березовский</td><td>как заработать большие деньги</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>51</td><td>брайан трейси</td><td>выйди из зоны комфорта</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>52</td><td>вадим зеланд</td><td>вершитель реальности</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>53</td><td>вадим зеланд</td><td>взлом техногенной системы</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>54</td><td>вадим зеланд</td><td>дрица итфат</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>55</td><td>вадим зеланд</td><td>живая кухня</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>56</td><td>вадим зеланд</td><td>клибе</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>57</td><td>вадим зеланд</td><td>практика трансерфинга</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>58</td><td>вики робин, джо домингес</td><td>кошелёк или жизнь</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>59</td><td>виктор пелевин</td><td>искусство лёгких касаний</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>60</td><td>виктор пелевин</td><td>чапаев и пустота</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>61</td><td>виктор франкл</td><td>сказать жизни да</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>62</td><td>владимир древс</td><td>миллионер с хорошей кармой</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>63</td><td>говард бехар</td><td>дело не в кофе</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>64</td><td>грег маккеон</td><td>«эссенциализм путь к простоте»</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>65</td><td>грег маккеон</td><td>эссенциализм</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>66</td><td>гэри уилсон</td><td>на порноигле</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>67</td><td>гэри чепмен</td><td>пять путей к сердцу подростка</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>68</td><td>гэри чепмен</td><td>пять языков любви</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>69</td><td>даниель канеман</td><td>думай медленно решай быстро</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>70</td><td>даниэль кенеман</td><td>думай медленно решай быстро</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>71</td><td>дас сатья</td><td>верный и заботливый муж</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>72</td><td>дез деарлав</td><td>бизнес путь ричард бренсон</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>73</td><td>дез деарлав</td><td>билл гейтс 10 секретов бизнес лидера</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>74</td><td>дейл карнеги</td><td>как завоёвывать друзей и оказывать влияние на людей</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>75</td><td>джек кэнфилд</td><td>куриный бульон для души 101 лучшая история</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>76</td><td>джен синсеро</td><td>не ной</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>77</td><td>джен синсеро</td><td>не тупи</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>78</td><td>джен синсеро</td><td>ни зя</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>79</td><td>джен</td><td>синсеро ни сы</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>80</td><td>джон грей</td><td>мужчины с марса женщины с венеры</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>81</td><td>джон грэй, барбара эннис</td><td>мужчины с марса, женщины с венеры… работают</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>82</td><td>джорж клейсон</td><td>самый богатый человек в вавилоне</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>83</td><td>джорж оруэлл</td><td>скотный двор</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>84</td><td>дмитрий глуховский</td><td>родине</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>85</td><td>дмитрий глуховский</td><td>будущее</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>86</td><td>дмитрий глуховский</td><td>сумерки</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>87</td><td>дмитрий глуховский</td><td>текст</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>88</td><td>дмитрий портнягин</td><td>трансформатор</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>89</td><td>дмитрий портнягин</td><td>трансформатор 2</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>90</td><td>дмитрий портнягин</td><td>трансформатор 3</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>91</td><td>дональд трамп</td><td>как стать богатым</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>92</td><td>жуль верн</td><td>20000 лье под водой</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>93</td><td>карен прайор</td><td>не рычите на собаку</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>94</td><td>катерина ленгольд</td><td>росто космос</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>95</td><td>кевин митник</td><td>исскуство взлома</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>96</td><td>кейт фландерс</td><td>год без покупок</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>97</td><td>колин</td><td>типпинг радикальное прощение</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>98</td><td>леонид кучма</td><td>украина не россия</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>99</td><td>макиавеллли</td><td>государь</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>100</td><td>максим котин</td><td>чичваркин</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>101</td><td>малкольм гладуэлл</td><td>разговор с незнакомцем</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>102</td><td>михай чиксентмихайи</td><td>поток</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>103</td><td>михаил булгаков</td><td>белая гвардия</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>104</td><td>михаил булгаков</td><td>мастер и маргарита</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>105</td><td>михаил лабковский</td><td>хочу и буду</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>106</td><td>найт фил</td><td>продавец обуви</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>107</td><td>никколо макиавелли</td><td>государь</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>108</td><td>николаев юрий</td><td>голодание ради здоровья</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>109</td><td>николай амомов</td><td>книга о счастье и несчастьях</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>110</td><td>николай амосов</td><td>мысли и сердце</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>111</td><td>николай амосов</td><td>записки из будущего</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>112</td><td>николай амосов</td><td>книга о счастье и несчастье</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>113</td><td>николай амосов</td><td>мысли и сердце повести</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>114</td><td>николай амосов</td><td>повести</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>115</td><td>николай амосов</td><td>раздумья о здоровье</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>116</td><td>николай островский</td><td>как закалялась сталь</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>117</td><td>пауло коэльо</td><td>алхимик</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>118</td><td>поль брегг</td><td>чудо голодания</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>119</td><td>практика</td><td>брахмачарьи</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>120</td><td>радислав гандапас</td><td>харизма лидера</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>121</td><td>регина бретт</td><td>бог никогда не моргает</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>122</td><td>ремарк</td><td>жизнь взаймы</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>123</td><td>роберт кийосаки</td><td>дар мидаса</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>124</td><td>роберт чалдини</td><td>психология влияния</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>125</td><td>робин шарма</td><td>монах который продал свой феррари</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>126</td><td>сергей зайцев</td><td>как бросить курить за 3 дня</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>127</td><td>сет годин</td><td>яма</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>128</td><td>слава курилов</td><td>один в океане</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>129</td><td>станислав ковтун</td><td>свидетели иеговы некуда идти</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>130</td><td>станислав лем</td><td>солярис</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>131</td><td>стефан цвейг</td><td>амок</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>132</td><td>стефан цвейг</td><td>жгучая тайна</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>133</td><td>стефан цвейг</td><td>нетерпение сердца</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>134</td><td>стефан цвейг</td><td>оплаченный долг</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>135</td><td>стефан цвейг</td><td>улица в лунном свете</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>136</td><td>стефан цвейг</td><td>шахматная новелла</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>137</td><td>стивен кови</td><td>7 навыков высокоэффективных людей</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>138</td><td>стивен хокинг</td><td>краткая история времени</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>139</td><td>стивен хокинг</td><td>моя краткая история</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>140</td><td>сугралинов данияр</td><td>кирпичи</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>141</td><td>сэм уолтон</td><td>сделано в америке как я создал wal mart</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>142</td><td>тимофей кудряшов</td><td>бросаем курить за два вечера</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>143</td><td>федор достоевский</td><td>идиот</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>144</td><td>федор углов</td><td>сердце хирурга</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>145</td><td>франс де вааль</td><td>истоки морали</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>146</td><td>франс де вааль</td><td>политика у шимпанзе</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>147</td><td>фредерик лалу</td><td>открывая организации будущего</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>148</td><td>фредрик бакман</td><td>вторая жизнь уве</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>149</td><td>хоаким де пассада</td><td>не набрасывайтесь на мармелад</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>150</td><td>цвейг стефан</td><td>страх</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>151</td><td>чарли энгл</td><td>running man</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>152</td><td>шеперд</td><td>неестественные причины</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>153</td><td>экхарт толле</td><td>сила момента</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>154</td><td>экхарт толле</td><td>сила настоящего</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>155</td><td>элиезер юдковски</td><td>гарри поттер и методы рационального мышления</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>156</td><td>эшли вэнс</td><td>илон маск</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>157</td><td>юваль ной харари</td><td>краткая история будущего</td></tr>
+<tr class="readed" title="книги которые когда-то слушал"><td>158</td><td>юваль ной харари</td><td>краткая история человечества</td></tr>
 <tr class="one_file3"><td>159</td><td>aбука масару</td><td>после трех уже поздно</td></tr>
 <tr class="one_file3"><td>160</td><td>cакс оливер</td><td>нога как точка опоры</td></tr>
 <tr class="one_file3"><td>161</td><td>агата кристи</td><td>вилла белый конь</td></tr>
@@ -671,7 +679,7 @@
 <tr class="one_file3"><td>184</td><td>барбара оакли</td><td>думай как математик</td></tr>
 <tr class="one_file3"><td>185</td><td>бен линч</td><td>грязные гены</td></tr>
 <tr class="one_file3"><td>186</td><td>бенджамин грэм</td><td>разумный инвестор</td></tr>
-<tr class="one_file3"><td>187</td><td>бенджамин франклин</td><td>время деньги</td></tr>
+<tr class="readed"><td>187</td><td>бенджамин франклин</td><td>время деньги</td></tr>
 <tr class="one_file3"><td>188</td><td>бернард вербер</td><td>танатонавты, империя ангелов</td></tr>
 <tr class="one_file3"><td>189</td><td>бернард марр</td><td>искусственный интеллект на практике</td></tr>
 <tr class="one_file3"><td>190</td><td>бернгард келлерман</td><td>ляска смерти</td></tr>
@@ -760,7 +768,7 @@
 <tr class="one_file3"><td>273</td><td>даниэль дефо</td><td>робинзон крузо</td></tr>
 <tr class="one_file3"><td>274</td><td>дарон аджемоглу</td><td>почему одни страны богатые а другие бедные</td></tr>
 <tr class="one_file3"><td>275</td><td>девид аллан</td><td>как привести дела в порядок</td></tr>
-<tr class="one_file3"><td>276</td><td>джайлс льюри</td><td>как coca cola завоевала мир</td></tr>
+<tr class="readed"><td>276</td><td>джайлс льюри</td><td>как coca cola завоевала мир</td></tr>
 <tr class="one_file3"><td>277</td><td>джаннетт уоллс</td><td>замок из стекла</td></tr>
 <tr class="one_file3"><td>278</td><td>джей ди вэнс</td><td>элегия хиллбилли</td></tr>
 <tr class="one_file3"><td>279</td><td>джеймс аллен</td><td>как человек мыслит</td></tr>
@@ -799,7 +807,7 @@
 <tr class="one_file3"><td>312</td><td>джордан питерсон</td><td>12 правил жизни</td></tr>
 <tr class="one_file3"><td>313</td><td>джордан питерсон</td><td>карты смысла</td></tr>
 <tr class="one_file3"><td>314</td><td>дипак чопра</td><td>7 духовных законов успеха</td></tr>
-<tr class="one_file3"><td>315</td><td>дмитрий глуховский</td><td>метро 2035</td></tr>
+<tr class="readed"><td>315</td><td>дмитрий глуховский</td><td>метро 2035</td></tr>
 <tr class="one_file3"><td>316</td><td>дмитрий глуховский</td><td>пост</td></tr>
 <tr class="one_file3"><td>317</td><td>дональд трамп, тони шварц</td><td>искусство сделки</td></tr>
 <tr class="one_file3"><td>318</td><td>донна наказава</td><td>осколки детских травм</td></tr>
@@ -840,15 +848,15 @@
 <tr class="one_file3"><td>353</td><td>ицхак адизес</td><td>идеальный руководитель</td></tr>
 <tr class="one_file3"><td>354</td><td>каверин вениамин</td><td>два капитана</td></tr>
 <tr class="one_file3"><td>355</td><td>каку мичио</td><td>будущее разума</td></tr>
-<tr class="one_file3"><td>356</td><td>карен прайор</td><td>не рычите на собаку</td></tr>
+<tr class="readed"><td>356</td><td>карен прайор</td><td>не рычите на собаку</td></tr>
 <tr class="one_file3"><td>357</td><td>карл сьюэл</td><td>клиенты на всю жизнь</td></tr>
-<tr class="one_file3"><td>358</td><td>карлос кастанеда</td><td>колесо времени</td></tr>
+<tr class="readed"><td>358</td><td>карлос кастанеда</td><td>колесо времени</td></tr>
 <tr class="one_file3"><td>359</td><td>карлос кастанеда</td><td>огонь изнутри</td></tr>
 <tr class="one_file3"><td>360</td><td>карлос кастанеда</td><td>сказки о силе</td></tr>
 <tr class="one_file3"><td>361</td><td>карстен бредемайер</td><td>искусство словесной атаки</td></tr>
 <tr class="one_file3"><td>362</td><td>карстен бредемайер</td><td>черная риторика</td></tr>
 <tr class="one_file3"><td>363</td><td>катарина</td><td>вестре 280 дней до вашего рождения</td></tr>
-<tr class="one_file3"><td>364</td><td>кевин митник</td><td>исскуство взлома</td></tr>
+<tr class="readed"><td>364</td><td>кевин митник</td><td>исскуство взлома</td></tr>
 <tr class="one_file3"><td>365</td><td>кинг стивен, брэдбери</td><td>рэй адамово яблоко сборник_рассказов</td></tr>
 <tr class="one_file3"><td>366</td><td>китами масао</td><td>самурай без меча</td></tr>
 <tr class="one_file3"><td>367</td><td>китами масао</td><td>самурай без меча</td></tr>
@@ -877,8 +885,8 @@
 <tr class="one_file3"><td>390</td><td>лоренц конрад</td><td>агрессия, или так называемое зло</td></tr>
 <tr class="one_file3"><td>391</td><td>лоренц конрад</td><td>кольуо царя солосона</td></tr>
 <tr class="one_file3"><td>392</td><td>лоренц конрад</td><td>человек находит друга</td></tr>
-<tr class="one_file3"><td>393</td><td>лоретта бройнинг</td><td>гормоны счастья</td></tr>
-<tr class="one_file3"><td>394</td><td>льюис клайв</td><td>стейплз письма баламута</td></tr>
+<tr class="readed"><td>393</td><td>лоретта бройнинг</td><td>гормоны счастья</td></tr>
+<tr class="readed"><td>394</td><td>льюис клайв</td><td>стейплз письма баламута</td></tr>
 <tr class="one_file3"><td>395</td><td>майкл роуч</td><td>рармический менеджмент</td></tr>
 <tr class="one_file3"><td>396</td><td>макки роберт</td><td>диалог</td></tr>
 <tr class="one_file3"><td>397</td><td>макр фишер</td><td>секрет миллионера</td></tr>
@@ -908,7 +916,7 @@
 <tr class="one_file3"><td>421</td><td>михаил булгаков</td><td>дьяволиада</td></tr>
 <tr class="one_file3"><td>422</td><td>михаил булгаков</td><td>кабала святош</td></tr>
 <tr class="one_file3"><td>423</td><td>михаил булгаков</td><td>рассказы 2</td></tr>
-<tr class="one_file3"><td>424</td><td>михаил булгаков</td><td>собачье сердце</td></tr>
+<tr class="one_file3" class="readed"><td>424</td><td>михаил булгаков</td><td>собачье сердце</td></tr>
 <tr class="one_file3"><td>425</td><td>михаил булгаков</td><td>стальное горло</td></tr>
 <tr class="one_file3"><td>426</td><td>михаил зыгарь</td><td>империя должна умереть часть_1</td></tr>
 <tr class="one_file3"><td>427</td><td>михаил ходорковский</td><td>как убить дракона</td></tr>
@@ -948,7 +956,7 @@
 <tr class="one_file3"><td>461</td><td>ренди гейдж</td><td>почему вы бедны, больны и глупы</td></tr>
 <tr class="one_file3"><td>462</td><td>рид хастингс</td><td>никаких правил уникальная культура netflix</td></tr>
 <tr class="one_file3"><td>463</td><td>ридли мэтт</td><td>геном автобиография вида в 23 главах</td></tr>
-<tr class="one_file3"><td>464</td><td>ричард бренсон</td><td>к черту все берись и делай</td></tr>
+<tr class="readed"><td>464</td><td>ричард бренсон</td><td>к черту все берись и делай</td></tr>
 <tr class="one_file3"><td>465</td><td>ричард брэнсон</td><td>бизнес в стиле virgin</td></tr>
 <tr class="one_file3"><td>466</td><td>ричард брэнсон</td><td>мои правила слушай, учись, смейся и будь лидером</td></tr>
 <tr class="one_file3"><td>467</td><td>ричард брэнсон</td><td>теряя невинность</td></tr>
@@ -981,9 +989,9 @@
 <tr class="one_file3"><td>494</td><td>робинсон</td><td>почему одни страны богатые а другие бедные</td></tr>
 <tr class="one_file3"><td>495</td><td>роджер ловенстайн</td><td>когда гений терпит поражение</td></tr>
 <tr class="one_file3"><td>496</td><td>рок дэвид мозг</td><td>инструкция по применению</td></tr>
-<tr class="one_file3"><td>497</td><td>рон хаббард</td><td>дианетика</td></tr>
-<tr class="one_file3"><td>498</td><td>рон хаббард</td><td>дианетика современная наука о разуме</td></tr>
-<tr class="one_file3"><td>499</td><td>рон хаббард</td><td>саентология основы жизни</td></tr>
+<tr class="readed"><td>497</td><td>рон хаббард</td><td>дианетика</td></tr>
+<tr class="readed"><td>498</td><td>рон хаббард</td><td>дианетика современная наука о разуме</td></tr>
+<tr class="readed"><td>499</td><td>рон хаббард</td><td>саентология основы жизни</td></tr>
 <tr class="one_file3"><td>500</td><td>рон хаббард</td><td>страх</td></tr>
 <tr class="one_file3"><td>501</td><td>рэй далио</td><td>принципы жизнь и работа</td></tr>
 <tr class="one_file3"><td>502</td><td>садхгуру</td><td>внутренняя инженерия</td></tr>
@@ -1001,18 +1009,18 @@
 <tr class="one_file3"><td>514</td><td>серен кьеркегор</td><td>страх и трепет исполнитель неизвестен</td></tr>
 <tr class="one_file3"><td>515</td><td>сет годин</td><td>идея-вирус</td></tr>
 <tr class="one_file3"><td>516</td><td>сильвия лёкен</td><td>сила интровертов</td></tr>
-<tr class="one_file3"><td>517</td><td>спаффорд а, ким а, бер</td><td>к проект феникс</td></tr>
+<tr class="readed"><td>517</td><td>спаффорд а, ким а, бер</td><td>к проект феникс</td></tr>
 <tr class="one_file3"><td>518</td><td>спотсвуд стивен</td><td>смерть под ее кожей</td></tr>
 <tr class="one_file3"><td>519</td><td>станислав гроф</td><td>зов ягуара</td></tr>
 <tr class="one_file3"><td>520</td><td>станислав гроф</td><td>трансатлантический диалог</td></tr>
 <tr class="one_file3"><td>521</td><td>станислав гроф</td><td>трансатлантический диалог 2</td></tr>
-<tr class="one_file3"><td>522</td><td>стефан цвейг</td><td>звездные часы человечества</td></tr>
+<tr class="readed"><td>522</td><td>стефан цвейг</td><td>звездные часы человечества</td></tr>
 <tr class="one_file3"><td>523</td><td>стефан цвейг</td><td>иторические миниатюры</td></tr>
 <tr class="one_file3"><td>524</td><td>стефан цвейг</td><td>кристина</td></tr>
-<tr class="one_file3"><td>525</td><td>стефан цвейг</td><td>ницше и фрейд</td></tr>
-<tr class="one_file3"><td>526</td><td>стефан цвейг</td><td>новеллы</td></tr>
-<tr class="one_file3"><td>527</td><td>стефан цвейг</td><td>подвиг магеллана</td></tr>
-<tr class="one_file3"><td>528</td><td>стефан цвейг</td><td>сборник новелл</td></tr>
+<tr class="readed"><td>525</td><td>стефан цвейг</td><td>ницше и фрейд</td></tr>
+<tr class="readed"><td>526</td><td>стефан цвейг</td><td>новеллы</td></tr>
+<tr class="readed"><td>527</td><td>стефан цвейг</td><td>подвиг магеллана</td></tr>
+<tr class="readed"><td>528</td><td>стефан цвейг</td><td>сборник новелл</td></tr>
 <tr class="one_file3"><td>529</td><td>стефани шталь</td><td>ребенок в тебе должен обрести дом</td></tr>
 <tr class="one_file3"><td>530</td><td>стефано манкузо</td><td>революция растений</td></tr>
 <tr class="one_file3"><td>531</td><td>стивен кинг</td><td>долгая прогулка</td></tr>
@@ -1027,7 +1035,7 @@
 <tr class="one_file3"><td>540</td><td>столешников</td><td>чем наполнить огранизм</td></tr>
 <tr class="one_file3"><td>541</td><td>столешников в</td><td>как вернуться к жизни</td></tr>
 <tr class="one_file3"><td>542</td><td>сьюзен джефферс</td><td>бойся… но действуй!</td></tr>
-<tr class="one_file3"><td>543</td><td>сэм уолтон</td><td>сделано в америке</td></tr>
+<tr class="readed"><td>543</td><td>сэм уолтон</td><td>сделано в америке</td></tr>
 <tr class="one_file3"><td>544</td><td>такаси цукияма</td><td>забывчивость мое второе… что то там</td></tr>
 <tr class="one_file3"><td>545</td><td>такаси цукияма</td><td>забывчивость мое_второе… что то там</td></tr>
 <tr class="one_file3"><td>546</td><td>твен марк</td><td>том сойер - сыщик</td></tr>
@@ -1041,7 +1049,7 @@
 <tr class="one_file3"><td>554</td><td>том питерс</td><td>стратегия совершенства</td></tr>
 <tr class="one_file3"><td>555</td><td>томас манн</td><td>смерть в венеции</td></tr>
 <tr class="one_file3"><td>556</td><td>томас эриксон</td><td>кругом одни психопаты</td></tr>
-<tr class="one_file3"><td>557</td><td>тони троббинс</td><td>разбуди в себе исполина</td></tr>
+<tr class="readed"><td>557</td><td>тони троббинс</td><td>разбуди в себе исполина</td></tr>
 <tr class="one_file3"><td>558</td><td>уильям аткинсон</td><td>закон привлечения и сила мысли</td></tr>
 <tr class="one_file3"><td>559</td><td>уильям бернстайн</td><td>великолепный обмен</td></tr>
 <tr class="one_file3"><td>560</td><td>уильям бернстайн</td><td>манифест инвестора</td></tr>
@@ -1050,19 +1058,19 @@
 <tr class="one_file3"><td>563</td><td>уолтер айзексон</td><td>инноваторы</td></tr>
 <tr class="one_file3"><td>564</td><td>уолтер айзексон</td><td>леонардо да винчи</td></tr>
 <tr class="one_file3"><td>565</td><td>федор достоевский</td><td>братья карамазовы</td></tr>
-<tr class="one_file3"><td>566</td><td>федор углов</td><td>из плена иллюзий</td></tr>
+<tr  class="readed"><td>566</td><td>федор углов</td><td>из плена иллюзий</td></tr>
 <tr class="one_file3"><td>567</td><td>фергисон стивен хокинг</td><td>жизнь и наука</td></tr>
 <tr class="one_file3"><td>568</td><td>филип зимбардо</td><td>эффект люцифера</td></tr>
 <tr class="one_file3"><td>569</td><td>хьюз младший джеймс</td><td>богатство семьи</td></tr>
 <tr class="one_file3"><td>570</td><td>хэл элрод</td><td>магия утра для финансовой свободы</td></tr>
-<tr class="one_file3"><td>571</td><td>хэмингуей</td><td>по ком звонит колокол</td></tr>
-<tr class="one_file3"><td>572</td><td>хэролд литл</td><td>психология привычки</td></tr>
-<tr class="one_file3"><td>573</td><td>чан ким</td><td>стратегия голубого океана</td></tr>
-<tr class="one_file3"><td>574</td><td>чанг ха джун</td><td>как устроена экономика</td></tr>
+<tr class="readed"><td>571</td><td>хэмингуей</td><td>по ком звонит колокол</td></tr>
+<tr class="readed"><td>572</td><td>хэролд литл</td><td>психология привычки</td></tr>
+<tr class="readed"><td>573</td><td>чан ким</td><td>стратегия голубого океана</td></tr>
+<tr class="readed"><td>574</td><td>чанг ха джун</td><td>как устроена экономика</td></tr>
 <tr class="one_file3"><td>575</td><td>чарлз дахигг</td><td>восемь правил эффективности</td></tr>
 <tr class="one_file3"><td>576</td><td>чарльз буковски</td><td>музыка горячей воды</td></tr>
 <tr class="one_file3"><td>577</td><td>чарльз буковски</td><td>почтант</td></tr>
-<tr class="one_file3"><td>578</td><td>чарльз дарвин</td><td>происхождение видов</td></tr>
+<tr class="readed"><td>578</td><td>чарльз дарвин</td><td>происхождение видов</td></tr>
 <tr class="one_file3"><td>579</td><td>чехов</td><td>рассказы</td></tr>
 <tr class="one_file3"><td>580</td><td>чулпан хаматова</td><td>время колоть лёд</td></tr>
 <tr class="one_file3"><td>581</td><td>эдвин лефевр</td><td>воспоминания биржевого спеулянта</td></tr>
@@ -1073,57 +1081,101 @@
 <tr class="one_file3"><td>586</td><td>элия голдред</td><td>цель непрерывное совершенствование</td></tr>
 <tr class="one_file3"><td>587</td><td>энтони роберт</td><td>главные секреты абсолютной уверенности в_себе</td></tr>
 <tr class="one_file3"><td>588</td><td>эрик берн</td><td>введение в психиатрию и психоанализ для непосвященных</td></tr>
-<tr class="one_file3"><td>589</td><td>эрик берн</td><td>люди которые играют в игры</td></tr>
-<tr class="one_file3"><td>590</td><td>эрик шмидт</td><td>как работает google</td></tr>
+<tr class="readed"><td>589</td><td>эрик берн</td><td>люди которые играют в игры</td></tr>
+<tr class="readed"><td>590</td><td>эрик шмидт</td><td>как работает google</td></tr>
 <tr class="one_file3"><td>591</td><td>эстер и джерри хикс</td><td>учение о воплощении желаний в жизнь</td></tr>
 <tr class="one_file3"><td>592</td><td>юваль ной харари</td><td>21 урок для xxi_века</td></tr>
 <tr class="one_file3"><td>593</td><td>юлия гипернейтер</td><td>у нас разные характеры</td></tr>
 <tr class="one_file3"><td>594</td><td>юлия гиппенрейтер</td><td>поведение ребенка в руках родителей</td></tr>
 <tr class="one_file3"><td>595</td><td>юлия гиппенрейтер</td><td>родителям книга вопросов и ответов</td></tr>
 <tr class="one_file3"><td>596</td><td>юлия гиппенрейтер</td><td>счастливый ребенок, новые вопросы и новые ответы</td></tr>
-
-<tr class="one_file3"><td>597</td><td>арнольд шварцнеггер</td><td>будь нужным - семь правил жизни</td></tr>
-<tr class="one_file3"><td>598</td><td>арнольд шварцнеггер</td><td>классическая энциклопедия бодибилдинга</td></tr>
-
+<tr class="readed"><td>597</td><td>арнольд шварцнеггер</td><td>будь нужным - семь правил жизни</td></tr>
+<tr class="readed"><td>598</td><td>арнольд шварцнеггер</td><td>классическая энциклопедия бодибилдинга</td></tr>
+<tr class="readed"><td>599</td><td>ицхак пинтосевич</td><td>«действуй! 10 заповедей успеха»</td></tr>
+<tr class="one_file3"><td>600</td><td>гёте</td><td>фауст</td></tr>
+<tr class="one_file3"><td>601</td><td>энтони роббинс</td><td>деньги мастер игры</td></tr>
 </table>
+            </div>
 
-
-
-
-
-
-
-
-
-
-
-        
-    </div>
-
-
-
-
-<input type="radio" name="tabs" id="tabfive">
-    <label for="tabfive">Telegram books</label>
-
-    <div class="tab">
-         <h4>Other channels</h4>
+            <div id="tab-content-5" class="tab-content">
+                <span>Other channels</span>
         
         <p>
-        	<ul>
-	        	<li><a target="_blank" href="https://t.me/libsuccess" class="">LIB-IT Книги которые делают нас лучше</a></li>
-	        	<li><a target="_blank" href="https://t.me/arch_musics" class="">music</a></li>
-	           	<li>reels <b>(not link)</b></li>
-	           	<li><a target="_blank" href="https://t.me/a26_90" class="">archive</a></li>
-	           	<li>memes <b>(not link)</li>
-	        </ul>
-    	</p>
+            <ul>
+                <li>pr <b>(not link)</b></li>
+                <li>memes <b>(not link)</b></li>
+                <li><a href="https://t.me/teo_english" target="_blank"> movies</a></li>
+                <li><a target="_blank" href="https://t.me/a26_90" class="">archive</a></li>
+                <li><a href="https://t.me/libsuccess" target="_blank"> LIB-IT 633</a></li>
+                <li>audio books <b>(not link)</li>
+                <li><a href="https://t.me/var_it" target="_blank">It books</a></li>
+                <li><a href="https://t.me/teo_netbook" target="_blank"> source code</a></li>
+                <li>reels <b>(not link)</b></li>
+                <li><a target="_blank" href="https://t.me/arch_musics" class="">music</a></li>
+            </ul>
+        </p>
+            </div>
+        </section>
     </div>
-</div>
-
-        </div>
     </div>
 <button id="scrollToTopBtn" aria-label="up">&#9650; up</button>
 </body>
+
+<script>
+        const DEFAULT_TAB = '1';
+
+        /**
+         * Sets tab by changing URL hash which triggers hashchange listener
+         * @param {string} tabNum - Tab number identifier ('1', '2', '3')
+         */
+        function setTab(tabNum) {
+            window.location.hash = `tab=${tabNum}`;
+        }
+
+        /**
+         * Reads active tab from window.location.hash and updates UI
+         */
+        function updateTabFromHash() {
+            // Match pattern #tab=1, #tab=2, etc.
+            const match = window.location.hash.match(/^#tab=([1-5])$/);
+            const activeTabNum = match ? match[1] : DEFAULT_TAB;
+
+            // Update tab contents
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            const activeContent = document.getElementById(`tab-content-${activeTabNum}`);
+            if (activeContent) activeContent.classList.add('active');
+
+            // Update tab buttons
+            document.querySelectorAll('.tabs').forEach(btn => {
+                //btn.classList.remove('bg-white', 'text-indigo-600', 'shadow-sm', 'font-semibold');
+                //btn.classList.add('text-slate-600');
+                btn.setAttribute('aria-selected', 'false');
+            });
+
+            const activeBtn = document.getElementById(`tab-btn-${activeTabNum}`);
+
+
+            //btn.setAttribute('aria-selected', 'false');
+
+
+            if (activeBtn) {
+                //activeBtn.classList.add('bg-white', 'text-indigo-600', 'shadow-sm', 'font-semibold');
+                //activeBtn.classList.remove('text-slate-600');
+                 //btn.setAttribute('aria-selected', 'false');
+
+                //activeBtn.setAttribute('aria-selected', 'false');
+
+                activeBtn.setAttribute('aria-selected', 'true');
+            }
+        }
+
+        // React to hash changes in URL
+        window.addEventListener('hashchange', updateTabFromHash);
+
+        // Initialize state on page load
+        document.addEventListener('DOMContentLoaded', updateTabFromHash);
+    </script>
+
+
 <script src="js/main.js"></script>
 </html>

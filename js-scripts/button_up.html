@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="js.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
+<style>
+#scrollToTopBtn {
+  display: none; /* Скрыта по умолчанию */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease, background-color 0.3s;
+}
+
+#scrollToTopBtn.show {
+  display: block;
+  opacity: 1;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #0056b3;
+}
+</style>
+
+</head>
+<body>
+
+
+    <pre>
+        <code class="language-html">
+            &lt;button id="scrollToTopBtn" aria-label="up"&gt;&amp;#9650; up&lt;/button&gt;
+        </code>
+    </pre>
+
+    <pre><code class="language-css">
+#scrollToTopBtn {
+  display: none; /* Скрыта по умолчанию */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease, background-color 0.3s;
+}
+
+#scrollToTopBtn.show {
+  display: block;
+  opacity: 1;
+}
+
+#scrollToTopBtn:hover {
+  background-color: #0056b3;
+}
+</code></pre>
+<br>
+<pre>
+<code class="language-js">
+const btn = document.getElementById('scrollToTopBtn');
+
+// Показываем кнопку, если прокрутили страницу более чем на 300px
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    btn.classList.add('show');
+  } else {
+    btn.classList.remove('show');
+  }
+});
+
+// Возвращаем в начало при клике
+btn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // Обеспечивает плавную прокрутку
+  });
+});
+</code>
+</pre>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<button id="scrollToTopBtn" aria-label="up">&#9650; up</button>
+</body>
+<script>
+const btn = document.getElementById('scrollToTopBtn');
+
+// Показываем кнопку, если прокрутили страницу более чем на 300px
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    btn.classList.add('show');
+  } else {
+    btn.classList.remove('show');
+  }
+});
+
+// Возвращаем в начало при клике
+btn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // Обеспечивает плавную прокрутку
+  });
+});
+</script>
+</html>

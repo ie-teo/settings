@@ -1,0 +1,121 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+body {
+    font-family: Arial, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header {
+    background-color: rgba(0, 0, 0, .7);
+}
+
+.header__nav {}
+
+.menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
+
+.menu__item {
+    position: relative;
+}
+
+.menu__button {
+    position: relative;
+    background-color: transparent;
+    border: none;
+    border-radius: none;
+    padding: 15px;
+    padding-right: 30px;
+    color: white;
+    transition: background-color .2s;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.menu__button:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.menu__button:active {
+    background-color: rgba(0, 0, 0, .9);
+}
+
+.menu__button:after {
+    content: "";
+    position: absolute;
+    display: block;
+    border: solid rgb(255, 255, 255);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    right: 12px;
+    top: 20px;
+    transition: transform .2s;
+}
+
+.dropdown-menu {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    background-color: rgba(0, 0, 0, .9);
+    position: absolute;
+    min-width: 200px;
+    transform: translateX(-50px) scale(0.6);
+    opacity: 0;
+    visibility: hidden;
+    transition: visibility .2s, opacity .2s, transform .2s;
+    z-index: 1;
+}
+
+.menu__item.menu__item_open .menu__button:after {
+    transform: rotate(-135deg);
+}
+
+.menu__item.menu__item_open .dropdown-menu {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu__link {
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    transition: background-color .2s;
+}
+
+.dropdown-menu__link:hover {
+    background-color: rgba(255, 255, 255, .2);
+}
+
+.dropdown-menu__link:active {
+    background-color: rgba(0, 0, 0, .2);
+}

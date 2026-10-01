@@ -3,334 +3,113 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-	<!-- Prism.js -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-markup.min.js"></script>
-<link rel="stylesheet" href="css/style.css?v=1.0.2">
-<link rel="icon" type="image/png" href="img/logo.png" />
-</head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=block" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=1.0.2">
+    <link rel="icon" type="image/png" href="img/logo.png" />
 	<title>Scripts</title>
 </head>
 <body>
 	<div class="container">
 		<div class="profile">
-			<a class="logo-add" href="index.html"></a>
-			<div class="menu-add">
-				<a href="index.html">English</a>
-				<a href="scripts.html" class="checked">Scripts</a>
-                <a href="seo.html">SEO constect</a>
-				<a href="git.html">Git guide</a>
-				<a href="linux.html">Linux commands</a>
-                <!--a href="abooks.html">Audio books list</a>
-                <a href="app.html">Application</a>
-                <a href="itbooks.html">It books</a-->
+            <a class="logo-add" href="index.html">
+                <div class="arr"></div>
+            </a>
+            <div class="menu-add">
                 <a href="telegram.html">Telegram</a>
-                <a href="html_template.html">HTML templates</a>
-			</div>
-		</div>
+                <div class="menu_option2">
+                      <a href="html_template.html">HTML templates</a>
+                      <a href="img.html">Images</a>       
+                </div>
+                <div class="menu_option">
+                    <a href="html.html">Html</a>
+                    <a href="css.html">Css</a>
+                    <a href="scripts.html" class="checked">Js</a>          
+                </div>
+                <div class="menu_option">
+                    <a href="seo.html">SEO</a>
+                    <a href="git.html">Git</a>
+                    <a href="linux.html">Linux</a>          
+                </div>
+                <a href="eng/index.html" class="active_eng" target="_blank">English</a>
+            </div>
+        </div>
 		<div class="resume">
-			<h1>All scripts</h1>
+            <h2>JS applications</h2>
 
-			<ul>
-				<li><a href="#tabs">Tabs</a></li>
-				<li><a href="#up">Button "Up"</a></li>
-                <li><a href="#ac">Accordion</a></li>
-			</ul>
-
-
-	<!---->		<h3 id="tabs">Tabs code only in CSS without JavaScript.</h3>
-			<div class="tabs">
-				<input type="radio" name="tabs" id="tabone" checked="checked">
-				<label for="tabone">HTML</label>
-				<div class="tab">
-<div class="code-wrapper">
-	<pre>
-		<code class="language-html">
-&lt;div class="tabs"&gt;
-    &lt;input type="radio" name="tabs" id="tabone" checked="checked"&gt;
-    &lt;label for="tabone"&gt; First tab &lt;/label&gt;
-
-    &lt;div class="tab"&gt;
-        &lt;h3&gt; Content first tabs &lt;/h3&gt;
-        &lt;p&gt;
-           First text.
-        &lt;/p&gt;
-    &lt;/div&gt;
-
-    &lt;input type="radio" name="tabs" id="tabtwo"&gt;
-    &lt;label for="tabtwo"&gt; Second tab &lt;/label&gt;
-
-    &lt;div class="tab"&gt;
-        &lt;h3&gt; Content second tab&lt;/h3&gt;
-        &lt;p&gt;
-            Second tab
-        &lt;/p&gt;
-    &lt;/div&gt;
-
-    &lt;input type="radio" name="tabs" id="tabthree"&gt;
-    &lt;label for="tabthree"&gt; Third tab&lt;/label&gt;
-
-    &lt;div class="tab"&gt;
-        &lt;h3&gt;Content third tab&lt;/h3&gt;
-        &lt;p&gt;
-            Third text
-        &lt;/p&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-</code>
-</pre>
-</div>
-</div>
-<input type="radio" name="tabs" id="tabtwo" checked="checked">
-<label for="tabtwo">CSS</label>
-<div class="tab">
-<pre>
-<code class="language-css">
-/* backlight html */
-.code-wrapper{
-    position:relative;
-    overflow:hidden;
-    background:#2b2b2b;
-    border:1px solid #444;
-    box-shadow:0 0 20px rgba(0,0,0,0.25);
-    width:520px;
-}
-
-.code-wrapper pre{
-    margin:0;
-    padding:25px;
-    overflow:auto;
-    font-size:15px;
-    line-height:1.7;
-    font-family:Consolas, monospace;
-    background:#2b2b2b;
-}
-
-.copy-btn{
-    position:absolute;
-    top:12px;
-    right:12px;
-    border:none;
-    padding:8px 16px;
-    border-radius:8px;
-    cursor:pointer;
-    background:#444;
-    color:#fff;
-    font-size:14px;
-    transition:0.3s;
-}
-
-.copy-btn:hover{
-    background:#666;
-}
-</code>
-</pre>
-</div>
-</div> <!-- ./tabs -->
-<!-- -->
-<hr>
-<h2 id="up">Button "Up"</h2>
-<div class="tabs2">
-
-    <input type="radio" name="tabs2" id="tab1" checked="checked">
-    <label for="tab1"> HTML </label>
-
-    <div class="tab">
-        <div class="code-wrapper">
-            <pre>
-                <code class="language-html">
-                &lt;button id="scrollToTopBtn" aria-label="up"&gt;&amp;#9650; up&lt;/button&gt;
-                </code>
-            </pre>
+        <div class="item__script">
+            <a href="js-scripts/APPS/1-todo/index.html" target="_blank" title="">simple to do</a>
+            <a href="js-scripts/APPS/2-dice/index.html" target="_blank" title="">game dice</a>
+            <a href="js-scripts/APPS/3-arkanoid/index.html" target="_blank" title="мячом сбиваешь плиты">arcanoid</a>
+            <a href="js-scripts/APPS/4-memory_fruit/index.html" target="_blank" title="простая игра где ты запоминаешь где назодятся фрукты и угадываешь их">memory fruit</a>
         </div>
-    </div>
-    <input type="radio" name="tabs2" id="tab2">
-    <label for="tab2"> CSS Code </label>
 
-    <div class="tab">
-<pre><code class="language-css">
-#scrollToTopBtn {
-  display: none; /* Скрыта по умолчанию */
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  padding: 12px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  opacity: 0;
-  transition: opacity 0.3s ease, background-color 0.3s;
-}
+			<h2>JS scripts</h2>
 
-#scrollToTopBtn.show {
-  display: block;
-  opacity: 1;
-}
+		<div class="item__script">
+            <a href="js-scripts/toggle.html" target="_blank" title="при нажатии клавно открывается блок, при посторном нажатии плавно закрывается">toggle</a>
+            <a href="js-scripts/gsap/index.html" target="_blank" title="эффект плавного перемещения букв в единый текст">set letters</a>
+            <a href="js-scripts/scrolltrigger/index.html" target="_blank" title="при скролле элементы сайта плавно переменающся">scrolltrigger</a>
+            <a href="js-scripts/tabs_for_js/index.html" target="_blank" title="табы на чистом js">tabs for js</a>
+            <a href="js-scripts/simple_burger_menu/index.html" target="_blank" title="простое бургер меню">simple burger menu</a>
+            <a href="js-scripts/modal_windows/index.html" target="_blank" title="простые модальные окна">modal windows</a>
+            <a href="js-scripts/active_scroll/index.html" target="_blank" title="при скролле кнопка меня становится активной">active scroll</a>
+            <a href="js-scripts/accordions/index.html" target="_blank" title="Аккордион варианты реализации">accordion 1</a>
+            <a href="js-scripts/accordions/ex-2.html" target="_blank" title="Аккордион варианты реализации">accordion 2</a>
 
-#scrollToTopBtn:hover {
-  background-color: #0056b3;
-}
-</code></pre>
-    </div>
-
-    <input type="radio" name="tabs2" id="tab3">
-    <label for="tab3"> JS Code</label>
-
-    <div class="tab">
-<pre><code class="language-js">
-const btn = document.getElementById('scrollToTopBtn');
-
-// Показываем кнопку, если прокрутили страницу более чем на 300px
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    btn.classList.add('show');
-  } else {
-    btn.classList.remove('show');
-  }
-});
-
-// Возвращаем в начало при клике
-btn.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth' // Обеспечивает плавную прокрутку
-  });
-});
-</code></pre>
-    </div>
-</div>
+                <a href="js-scripts/accordions/ex-3.html" target="_blank" title="Аккордион варианты реализации">accordions 3</a><a href="js-scripts/plugin_accordion/index.html" target="_blank" title="свой плагин для аккордеона">plugin accordion</a>
+                <a href="js-scripts/powerange/example/example.html" target="_blank" title="кастомизированный плагин скролла">powerange</a>
+                <a href="js-scripts/video_bg/index.html" target="_blank" title="страница с видео фон">video background</a>
+                <a href="js-scripts/multitool/index.html" target="_blank" title="при наведении появляется подсказка">multi tool</a>
+                <a href="js-scripts/custom_select/index.html" target="_blank" title="кастомизированный плагин для настройки селектов">custom select</a>
+                <a href="js-scripts/scroll_js/index.html" target="_blank" title="блок с кастомизированным скроллом">scroll js</a>
+                <a href="js-scripts/мagic_menu/index.html" target="_blank" title="эффект меню при наведении перемещается полоска на js">мagic line menu</a>
+                <a href="js-scripts/js_modal/index.html" target="_blank" title="модальные окна на чистом js">js modal windows</a>
+                <a href="js-scripts/burger_menu_2/index.html" target="_blank" title="адаптивное меню">burger menu</a>
+                <a href="js-scripts/video_plugin/index.html" target="_blank" title="плагин видео">video plugin</a>
+                <a href="js-scripts/filter_cell/index.html" target="_blank" title="список елементов при фильтрации некоторые исчезают и плавно перемещаются">filter cell</a>
+                <a href="js-scripts/slider_vert_prew/index.html" target="_blank" title="слайдер с вертикальным превью">slider vertical preview</a>
+                <a href="js-scripts/plugin_accordion/index.html" target="_blank" title="">plugin accordion</a>
+                <a href="js-scripts/image-zoom/index.html" target="_blank" title="при наведении показывается блок с увеличенным фото товара">js-image-zoom.js</a>
+                <a href="js-scripts/css_tabs.html" target="_blank" title="css табы">css tabs</a>
+                <a href="js-scripts/css_accordion.html" target="_blank" title="css аккордион">css accordion</a>
+                <a href="js-scripts/button_up.html" target="_blank" title="кнопка при нажатии на которую страница пондимается вверх">button up</a>
 
 
-<hr>
-<!---->
-<h2 id="ac">Accordion code only in CSS without JavaScript.</h2>
+                <a href="js-scripts/simple_slider/index.html" target="_blank" title="простой слайдер на чистом js">simple slider</a>
+                <a href="js-scripts/responsive_simple_slider/index.html" target="_blank" title="простой адавтивный слайдер на чистом js">responsive slider</a>
 
-<div class="tabs2">
-    <input type="radio" name="tabs3" id="tabone3" checked="checked">
-    <label for="tabone3"> HTML </label>
+                <a href="js-scripts/move_text/index.html" target="_blank" title="текстовая лента как в новостях">animation move text</a>
 
-    <div class="tab">
-        <div class="code-wrapper">
-            <pre>
-                <code class="language-html">
-&lt;div class="accordion"&gt;
-    &lt;div class="accordion-item"&gt;
-        &lt;input type="checkbox" id="item1" class="accordion-input"&gt;
-        &lt;label for="item1" class="accordion-title"&gt;
-            Section 1&lt;/label&gt; 
-        &lt;div class="accordion-content"&gt;
-            &lt;p&gt;Content for section 1.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
+                <a href="js-scripts/dark_light/index.html" target="_blank" title="смена светлой и тесной темы на local storage">dark theme</a>
 
-    &lt;div class="accordion-item"&gt;
-        &lt;input type="checkbox" id="item2" class="accordion-input"&gt;
-        &lt;label for="item2" class="accordion-title"&gt;
-            Section 2&lt;/label&gt; 
-        &lt;div class="accordion-content"&gt;
-            &lt;p&gt;Content for section 2.&lt;/p&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/div&gt;
-                </code>
-            </pre>
-        </div>
-    </div>
+                
+                <a href="js-scripts/test_words/index.html" target="_blank" title="напиши слово на английском по картинке">test words</a>
+                <a href="js-scripts/sound_words/index.html" target="_blank" title="слайдер но есть кнопка при нажатии на нее воспроизводится слово">sound words</a>
+                <a href="js-scripts/localstorage/index.html" target="_blank" title="при переключении сохраняет позицию">local storage</a>
+                <a href="js-scripts/hamburger_menu/index.html" target="_blank" title="вариант реализации меню на js которое при нажатии полностью выводит меню на всю страницу">hamburger menu</a>
+                <a href="js-scripts/bottle/index.html" target="_blank" title="нажимаешь и крутится бутылка и останавливается к определенном месте как в игре бутылочка">bottle</a>
+                <a href="js-scripts/hide_show.html" target="_blank" title="при нажатии блок открывается при повторном нажатии он закрывается">hide / show</a>
+                <a href="js-scripts/kolotilshikov_slider/index.html" target="_blank" title="слайдер на чистом js по урокам колотильщикова пишу вернее копирую сам">kolotilshikov slider</a>
 
-    <input type="radio" name="tabs3" id="tabtwo3">
-    <label for="tabtwo3"> CSS </label>
+                <a href="js-scripts/checkbox/index.html" target="_blank" title="стилизованный нестандартно чекбокс">checkbox</a>
+                <a href="js-scripts/placeholder/index.html" target="_blank" title="красивый эффект при фокусе поля">placeholder</a>
+                <a href="js-scripts/custom_select2/index.html" target="_blank" title="нестандарнтый селект">custom select</a>
+                <a href="js-scripts/button/index.html" target="_blank" title="красивая кнопка">button</a>
+                <a href="js-scripts/mobil_menu/index.html" target="_blank" title="бургер меню">mobil menu</a>
+                <a href="js-scripts/multi_menu/index.html" target="_blank" title="выпалающее древовидное меню">multi menu</a>
+                <a href="js-scripts/modal_window/index.html" target="_blank" title=" крутое модальное окно">modal window</a>
+                <a href="js-scripts/theme/index.html" target="_blank" title="localstorage сохранение темы сайта темная и светлая">dark light theme</a>
+                <a href="js-scripts/accordion_4/index.html" target="_blank" title="еще одна реализация аккордиона">accordion</a>
+                <a href="js-scripts/slider_2/index.html" target="_blank" title="очередная адаптация слайдера">slider</a>
+                <a href="js-scripts/jquery_slider/index.html" target="_blank" title="jquery слайдер красивый">jquery slider</a>
+                <a href="js-scripts/hosting/index.html" target="_blank" title="страница с курса валака, тут реализован аккордион плавная прокрутка модальное окно и всплывающие подсказки сама страница не адаптирована ">hosting</a>
+                <a href="js-scripts/array/index.html" target="_blank" title="массив в js который в dom дереве выводит елементы. На основе этого я могу сделать себе меню на сайте">array</a>
 
-    <div class="tab">
-        <div class="code-wrapper">
-            <pre>
-                <code class="language-css">
-.accordion {
-    width: 100%;
-    margin: 0 auto;
-    font-family: Arial, sans-serif;
-}
+                <a href="js-scripts/tabs_hash.html" target="_blank" title="табы с сохранение хэша">tabs hash</a>
+			</div>
 
-.accordion-item {
-    margin-bottom: 10px;
-    border: 1px solid #39383a;
-    overflow: hidden;
-}
-
-.accordion-input {
-    display: none;
-}
-
-.accordion-title {
-    display: block;
-    padding: 15px;
-    background: #39383a;
-    cursor: pointer;
-    font-weight: bold;
-    transition: opacity 0.3s;
-    color: #fff;
-}
-
-.accordion-title:hover {
-    opacity: 0.8;
-}
-
-.accordion-content {
-    max-height: 0;
-    padding: 0 15px;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    background: white;
-}
-
-.accordion-input:checked ~ .accordion-content {
-    max-height: 500px;
-    padding: 15px;
-}
-
-.accordion-input:checked ~ .accordion-title {
-    opacity: 0.8;
-}
-                </code>
-            </pre>
-        </div>
-    </div>
-</div>
-
-
-<h3>Example</h3>
-<div class="accordion">
-    <div class="accordion-item">
-        <input type="checkbox" id="item1" class="accordion-input">
-        <label for="item1" class="accordion-title">
-            Section 1</label> 
-        <div class="accordion-content">
-            <p>Content for section 1.</p>
-        </div>
-    </div>
-
-    <div class="accordion-item">
-        <input type="checkbox" id="item2" class="accordion-input">
-        <label for="item2" class="accordion-title">
-            Section 2</label> 
-        <div class="accordion-content">
-            <p>Content for section 2.</p>
-        </div>
-    </div>
-</div>
-
-<hr>
-
-<br>
-
-</div>
-</div>
 <button id="scrollToTopBtn" aria-label="up">&#9650; up</button>
 </body>
 <script src="js/main.js"></script>

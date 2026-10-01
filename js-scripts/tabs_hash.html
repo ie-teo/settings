@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вкладки с сохранением состояния через URL Hash</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* CSS transitions for dynamic visibility */
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.2s ease-in-out;
+        }
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 min-h-screen flex items-center justify-center p-4 text-slate-800 font-sans">
+
+    <main class="w-full max-w-2xl bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200/80">
+        <!-- Header Section -->
+        <header class="p-6 pb-4 border-b border-slate-100">
+            <h1 class="text-2xl font-bold text-slate-900">Сохранение вкладок через URL</h1>
+            <p class="text-sm text-slate-500 mt-1">
+                Выбранная вкладка сохраняется в адресе страницы (<code class="bg-slate-100 px-1.5 py-0.5 rounded text-indigo-600 font-mono text-xs">#tab=1</code>, <code class="bg-slate-100 px-1.5 py-0.5 rounded text-indigo-600 font-mono text-xs">#tab=2</code> и т.д.). Без использования localStorage или Cookies.
+            </p>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="flex border-b border-slate-200 bg-slate-50/50 p-2 gap-2" role="tablist">
+            <button 
+                id="tab-btn-1" 
+                onclick="setTab('1')" 
+                class="tab-btn flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-200 text-slate-600 hover:text-slate-900 hover:bg-slate-200/50 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                role="tab">
+                Вкладка 1
+            </button>
+            <button 
+                id="tab-btn-2" 
+                onclick="setTab('2')" 
+                class="tab-btn flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-200 text-slate-600 hover:text-slate-900 hover:bg-slate-200/50 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                role="tab">
+                Вкладка 2
+            </button>
+            <button 
+                id="tab-btn-3" 
+                onclick="setTab('3')" 
+                class="tab-btn flex-1 py-2.5 px-4 rounded-lg font-medium text-sm transition-all duration-200 text-slate-600 hover:text-slate-900 hover:bg-slate-200/50 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
+                role="tab">
+                Вкладка 3
+            </button>
+        </nav>
+
+        <!-- Tab Content Panels -->
+        <section class="p-6">
+            <div id="tab-content-1" class="tab-content" role="tabpanel">
+                <h2 class="text-lg font-semibold text-slate-900 mb-2">Содержимое первой вкладки</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Это текст первой вкладки. При обновлении страницы или передаче ссылки другу со штампом <code class="bg-slate-100 px-1 py-0.5 rounded text-slate-800 font-mono text-xs">#tab=1</code> откроется именно эта страница.
+                </p>
+            </div>
+
+            <div id="tab-content-2" class="tab-content" role="tabpanel">
+                <h2 class="text-lg font-semibold text-slate-900 mb-2">Содержимое второй вкладки</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Вы выбрали вторую вкладку! Обратите внимание на адресную строку браузера: в конце адреса добавилось <code class="bg-slate-100 px-1 py-0.5 rounded text-slate-800 font-mono text-xs">#tab=2</code>.
+                </p>
+            </div>
+
+            <div id="tab-content-3" class="tab-content" role="tabpanel">
+                <h2 class="text-lg font-semibold text-slate-900 mb-2">Содержимое третьей вкладки</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Добро пожаловать на третью вкладку! Состояние полностью синхронизировано с хэшем в URL без применения хранилища браузера.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const DEFAULT_TAB = '1';
+
+        /**
+         * Sets tab by changing URL hash which triggers hashchange listener
+         * @param {string} tabNum - Tab number identifier ('1', '2', '3')
+         */
+        function setTab(tabNum) {
+            window.location.hash = `tab=${tabNum}`;
+        }
+
+        /**
+         * Reads active tab from window.location.hash and updates UI
+         */
+        function updateTabFromHash() {
+            // Match pattern #tab=1, #tab=2, etc.
+            const match = window.location.hash.match(/^#tab=([1-3])$/);
+            const activeTabNum = match ? match[1] : DEFAULT_TAB;
+
+            // Update tab contents
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            const activeContent = document.getElementById(`tab-content-${activeTabNum}`);
+            if (activeContent) activeContent.classList.add('active');
+
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('bg-white', 'text-indigo-600', 'shadow-sm', 'font-semibold');
+                btn.classList.add('text-slate-600');
+                btn.setAttribute('aria-selected', 'false');
+            });
+
+            const activeBtn = document.getElementById(`tab-btn-${activeTabNum}`);
+            if (activeBtn) {
+                activeBtn.classList.add('bg-white', 'text-indigo-600', 'shadow-sm', 'font-semibold');
+                activeBtn.classList.remove('text-slate-600');
+                activeBtn.setAttribute('aria-selected', 'true');
+            }
+        }
+
+        // React to hash changes in URL
+        window.addEventListener('hashchange', updateTabFromHash);
+
+        // Initialize state on page load
+        document.addEventListener('DOMContentLoaded', updateTabFromHash);
+    </script>
+</body>
+</html>

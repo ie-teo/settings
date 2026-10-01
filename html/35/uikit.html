@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>UI&#160;KIT | ВебКадеми</title>
+		<link rel="stylesheet" href="./css/main.css" />
+
+		<link rel="icon" type="image/x-icon" href="./img/favicons/favicon.svg" />
+		<link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png" />
+	</head>
+
+	<body>
+		<header class="header">
+			<div class="container">
+				<div class="header__row">
+					<div class="header__logo">
+						<div class="logo">
+							<a href="index.html" class="logo__link">MY&#160;BLOG</a>
+						</div>
+					</div>
+					<div class="header__btns">
+						<a href="create-post.html" class="button">Добавить пост</a>
+						<a href="login.html" class="button">Вход</a>
+						<a href="uikit.html" class="button">UI&#160;Kit</a>
+						<a href="#" class="button toggleDarkModeBtn">🌘</a>
+					</div>
+					<div class="header__mobile-nav-btn">
+						<button class="mobile-nav-btn">
+							<div class="nav-icon"></div>
+						</button>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="mobile-nav">
+			<a href="create-post.html" class="button">Добавить пост</a>
+			<a href="login.html" class="button">Вход</a>
+			<a href="#" class="button toggleDarkModeBtn">🌘</a>
+		</div>
+
+		<main class="docs">
+			<section>
+				<div class="container">
+					<h3 class="title-3">Кнопки</h3>
+
+					<div class="ui-block">
+						<a href="#" class="button">Добавить пост</a>
+						<a href="#" class="button">Вход</a>
+						<a href="#" class="button">Выход</a>
+						<a href="#" class="button">☀️</a>
+						<a href="#" class="button">🌘</a>
+					</div>
+
+					<code>
+						&lt;a href="#" class="button"&gt;Добавить пост&lt;/a&gt;
+					</code>
+
+					<div class="ui-block mt-20">
+						<a href="#" class="button button--secondary">Редактировать</a>
+						<a href="#" class="button button--secondary">Удалить</a>
+					</div>
+					<div class="ui-block dark">
+						<a href="#" class="button button--secondary">Редактировать</a>
+						<a href="#" class="button button--secondary">Удалить</a>
+					</div>
+					<code>
+						&lt;a href="#" class="button button--secondary"&gt;Редактировать&lt;/a&gt;
+					</code>
+
+					<div class="ui-block mt-20">
+						<a href="#" class="button button--loadmore">Загрузить еще</a>
+					</div>
+					<code>
+						&lt;a href="#" class="button button--loadmore"&gt;Загрузить еще&lt;/a&gt;
+					</code>
+
+					<div class="ui-block mt-20">
+						<a href="#" class="button button--lg">Обновить</a>
+						<a href="#" class="button button--secondary button--lg">Отмена</a>
+					</div>
+					<code>
+						&lt;a href="#" class="button button--lg"&gt;Обновить&lt;/a&gt; <br />
+						&lt;a href="#" class="button button--secondary button--lg"&gt;Отмена&lt;/a&gt;
+					</code>
+
+					<h3 class="title-3">Формы</h3>
+					<div class="ui-block ui-block--form mt-20">
+						<label class="fieldset">
+							<div class="label">Email</div>
+							<input type="text" class="input" />
+						</label>
+						<label class="fieldset">
+							<div class="label">Пароль</div>
+							<input type="password" class="input" />
+						</label>
+						<label class="fieldset">
+							<div class="label">Название</div>
+							<input type="text" class="input" />
+						</label>
+						<label class="fieldset">
+							<div class="label">Содержание</div>
+							<textarea name="" id="" class="textarea"></textarea>
+						</label>
+						<fieldset class="fieldset">
+							<div class="label">Обложка</div>
+							<label class="fieldset fieldset--checkbox">
+								<input type="checkbox" />
+								Удалить обложку
+							</label>
+							<input type="file" />
+						</fieldset>
+					</div>
+
+					<h3 class="title-3">Пост</h3>
+					<div class="ui-block ui-block--page-bg mt-20">
+						<article class="post">
+							<div class="post__date">16.03.2025</div>
+							<h2 class="post__title">Сила, заключённая в&#160;металле</h2>
+							<div class="post__img-wrapper">
+								<picture>
+									<source srcset="./img/01.webp 1x, ./img/01@2x.webp 2x" type="image/webp" />
+									<source srcset="./img/01.jpg 1x, ./img/01@2x.jpg 2x" type="image/jpeg" />
+									<img src="./img/01.jpg" alt="" class="post__img" />
+								</picture>
+							</div>
+							<div class="post__text">
+								<p>
+									Некоторые автомобили созданы не&#160;просто для передвижения&#160;&#8212; они олицетворяют мощь, свободу и&#160;стиль. Этот мускулистый Dodge
+									Challenger в&#160;бирюзовом цвете&#160;&#8212; настоящий символ американской автомобильной культуры. Его агрессивный силуэт, заниженная посадка
+									и&#160;черные диски говорят сами за&#160;себя: это машина, которая требует дороги.
+								</p>
+							</div>
+							<div class="post__readmore">
+								<a href="post.html" class="link">Читать далее</a>
+							</div>
+							<div class="post__buttons">
+								<a href="edit-post.html" class="button button--secondary">Редактировать</a>
+								<a href="delete-post.html" class="button button--secondary">Удалить</a>
+							</div>
+						</article>
+						<article class="post">
+							<div class="post__date">16.03.2025</div>
+							<div class="post__text post__text--md">
+								<p>Горы в&#160;тишине, отражение в&#160;воде&#160;&#8212; мир застыл, дыша. Шепчет бриз траве, солнце тает за холмами, чайка вдаль летит. 🌿✨</p>
+							</div>
+							<div class="post__buttons">
+								<a href="edit-post.html" class="button button--secondary">Редактировать</a>
+								<a href="delete-post.html" class="button button--secondary">Удалить</a>
+							</div>
+						</article>
+					</div>
+					<code>
+						@include('blocks/post.html')<br />
+						@include('blocks/post-mini.html')
+					</code>
+
+					<h3 class="title-3">Секции</h3>
+					<div class="ui-block ui-block--page-bg mt-20">
+						<header class="header">
+							<div class="container">
+								<div class="header__row">
+									<div class="header__logo">
+										<div class="logo">
+											<a href="index.html" class="logo__link">MY&#160;BLOG</a>
+										</div>
+									</div>
+									<div class="header__btns">
+										<a href="create-post.html" class="button">Добавить пост</a>
+										<a href="login.html" class="button">Вход</a>
+										<a href="uikit.html" class="button">UI&#160;Kit</a>
+										<a href="#" class="button toggleDarkModeBtn">🌘</a>
+									</div>
+									<div class="header__mobile-nav-btn">
+										<button class="mobile-nav-btn">
+											<div class="nav-icon"></div>
+										</button>
+									</div>
+								</div>
+							</div>
+						</header>
+						<div class="mobile-nav">
+							<a href="create-post.html" class="button">Добавить пост</a>
+							<a href="login.html" class="button">Вход</a>
+							<a href="#" class="button toggleDarkModeBtn">🌘</a>
+						</div>
+
+						<footer class="footer">
+							<div class="container">
+								<div class="footer__copyright">&#169; 2025 ВебКадеми</div>
+							</div>
+						</footer>
+					</div>
+					<code>
+						@include('blocks/header.html')<br />
+						@include('blocks/footer.html')
+					</code>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__copyright">&#169; 2025 ВебКадеми</div>
+			</div>
+		</footer>
+		<script src="./js/index.bundle.js"></script>
+	</body>
+</html>

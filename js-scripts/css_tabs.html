@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            font-family: Verdana;
+        }
+        /* backlight html */
+/* tabs */
+.tabs, .tabs2, .tabs3 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tabs label, .tabs2 label, .tabs3 label {
+    order: 1;
+    color: #fff;
+    display: block;
+    padding: 6px 5px;
+    background: #39383a;
+    cursor: pointer;
+    font-weight: normal;
+    transition: background ease 0.2s;
+    outline: 1px solid #fff;
+}
+
+.tabs .tab, 
+.tabs2 .tab, 
+.tabs3 .tab,
+.tabs4 .tab {
+  order: 99;
+  flex-grow: 1;
+  width: 100%;
+  display: none;
+  padding: 16px 0px;
+  background: #fff;
+}
+
+.tabs input[type="radio"],
+.tabs2 input[type="radio"],
+.tabs3 input[type="radio"],
+.tabs4 input[type="radio"],
+.tabs5 input[type="radio"] {
+  display: none;
+}
+
+.tabs input[type="radio"]:checked+label,
+.tabs2 input[type="radio"]:checked+label,
+.tabs3 input[type="radio"]:checked+label,
+.tabs4 input[type="radio"]:checked+label,
+.tabs5 input[type="radio"]:checked+label {
+    background: #cccc;
+    color: #000;
+}
+
+.tabs input[type="radio"]:checked+label+.tab,
+.tabs2 input[type="radio"]:checked+label+.tab, 
+.tabs3 input[type="radio"]:checked+label+.tab,
+.tabs4 input[type="radio"]:checked+label+.tab,
+.tabs5 input[type="radio"]:checked+label+.tab {
+  display: block;
+    </style>
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>CSS tabs</h1>
+
+<div class="tabs">
+    <input type="radio" name="tabs" id="tabone" checked="checked">
+    <label for="tabone"> First tab </label>
+
+    <div class="tab">
+        <h3> Content first tabs </h3>
+        <p>
+           First text.
+        </p>
+    </div>
+
+    <input type="radio" name="tabs" id="tabtwo">
+    <label for="tabtwo"> Second tab </label>
+
+    <div class="tab">
+        <h3> Content second tab</h3>
+        <p>
+            Second tab
+        </p>
+    </div>
+
+    <input type="radio" name="tabs" id="tabthree">
+    <label for="tabthree"> Third tab</label>
+
+    <div class="tab">
+        <h3>Content third tab</h3>
+        <p>
+            Third text
+        </p>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+@keyframes caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.typingText {
+  font-family: monospace;
+  width: 11ch;
+  border-right: 0.08em solid;
+  overflow: hidden;
+  font-size: 4em;
+  white-space: nowrap;
+  animation: typing 5s steps(11, end), caret 0.5s step-end infinite;
+}
