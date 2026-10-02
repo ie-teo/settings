@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function () {
 
     const btn = document.querySelector('.pass_link');
@@ -49,23 +51,101 @@ function hideTabs() {
 
 // Ф-я показывает переданный номер таба и делает соответствующую ему кнопку активной.
 function showTab(index) {
-  tabsItems[index].classList.remove("hide");
-  tabsBtns[index].classList.add("active");
+  //tabsItems[index].classList.remove("hide");
+  //tabsBtns[index].classList.add("active");
 }
-
+//alert(11);
 hideTabs();
 showTab(0);
 
 
 tabsBtns.forEach((btn, index) => btn.addEventListener("click", () => {
-  console.log('click');
-  console.log(btn);
-  console.log(index);
+  //console.log('click');
+  //console.log(btn);
+  //console.log(index);
   hideTabs();
   showTab(index);
 }));
 
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Структура элементов меню
+    const menuData = [
+        { type: 'link', href: 'telegram.html', text: 'Telegram' },
+        {
+            type: 'group',
+            className: 'menu_option2',
+            items: [
+                { href: 'html_template.html', text: 'HTML temp.' },
+                { href: 'img.html', text: 'Images' }
+            ]
+        },
+        {
+            type: 'group',
+            className: 'menu_option',
+            items: [
+                { href: 'html.html', text: 'Html' },
+                { href: 'css.html', text: 'Css' },
+                { href: 'scripts.html', text: 'Js' }
+            ]
+        },
+        {
+            type: 'group',
+            className: 'menu_option',
+            items: [
+                { href: 'seo.html', text: 'SEO' },
+                { href: 'git.html', text: 'Git' },
+                { href: 'linux.html', text: 'Linux' }
+            ]
+        },
+        { 
+            type: 'link', 
+            href: 'eng/index.html', 
+            text: 'English', 
+            className: 'active_eng', 
+            target: '_blank' 
+        }
+    ];
 
+    // Определение текущей страницы для сопоставления ссылок
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+
+    // Функция генерации HTML для отдельной ссылки
+    function createLinkHTML(item) {
+        // Проверяем, совпадает ли ссылка с текущей страницей
+        const isCurrentPage = item.href === currentPath;
+        
+        // Формируем список классов
+        let classes = [];
+        if (item.className) classes.push(item.className);
+        if (isCurrentPage) classes.push('checked');
+
+        const classAttr = classes.length > 0 ? ` class="${classes.join(' ')}"` : '';
+        const targetAttr = item.target ? ` target="${item.target}"` : '';
+
+        return `<a href="${item.href}"${classAttr}${targetAttr}>${item.text}</a>`;
+    }
+
+    // Построение итоговой разметки меню
+    let menuHTML = '';
+    
+    menuData.forEach(item => {
+        if (item.type === 'link') {
+            menuHTML += createLinkHTML(item);
+        } else if (item.type === 'group') {
+            menuHTML += `<div class="${item.className}">`;
+            item.items.forEach(subItem => {
+                menuHTML += createLinkHTML(subItem);
+            });
+            menuHTML += `</div>`;
+        }
+    });
+
+    // Вставка меню во все контейнеры с классом .menu-add
+    const menuContainers = document.querySelectorAll('.menu-add');
+    menuContainers.forEach(container => {
+        container.innerHTML = menuHTML;
+    });
+});
 
 

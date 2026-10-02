@@ -190,18 +190,7 @@ display: flex;
     line-height: 1.6;
 }
 
-/* adaptiv */
-@media (max-width: 992px){
-	.container {
-		flex-direction: column;
-		width: 70%;
-	}
-}
 
-@media (max-width: 768px){
-	.container {width: 80%;}
-}
-@media (max-width: 567px){}
 
 
 pre[class*=language-] {
@@ -755,4 +744,30 @@ hr {
     display: block;
     color: #666;
 }
+
+/* adaptiv */
+@media (max-width: 992px){
+    .container {
+        flex-direction: column;
+        width: 70%;
+    }
+
+    .slider {
+        --display: grid;
+         grid-template-columns: repeat(1, 1fr);
+         --gap: 5px 10px;
+         --justify-items: center;
+         --border: 2px solid blue;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column; /* Выстраивает дочерние элементы в колонку */
+    }
+}
+
+@media (max-width: 768px){
+    .container {width: 80%;}
+}
+@media (max-width: 567px){}
 
