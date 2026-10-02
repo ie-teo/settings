@@ -798,3 +798,48 @@ footer a {
     text-decoration: none;
     color: #464545;
 }
+
+/* Контейнер сферы */
+.sphere-container {
+    position: relative;
+    width: 350px;       /* Задайте явную ширину */
+    height: 350px;      /* Задайте явную высоту */
+    margin: -20px auto 40px auto;  /* Центрирование */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+
+
+}
+
+.sphere {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+/* Элементы слов в сфере */
+.word {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-origin: center;
+    padding: 4px 7px;
+    color: #58a6ff;     /* Цвет текста слов */
+    font-size: 15px;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    transition: color 0.2s, text-shadow 0.2s;
+}
+
+.center-info {
+        display: block;
+        margin: 0 auto;
+        /* width: 200px; */
+        text-align: center;
+        position: absolute;
+        bottom: -10px;
+}
