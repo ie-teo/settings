@@ -254,7 +254,7 @@ ul li {
 @media (max-width: 992px){
 	.container {
 		flex-direction: column;
-		width: 80%;
+		width: 100%;
 	}
 
     .profile {
@@ -279,7 +279,7 @@ ul li {
 }
 
 @media (max-width: 760px){
-	.container {width: 80%;}
+	.container {width: 100%;}
 }
 @media (max-width: 567px){}
 
