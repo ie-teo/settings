@@ -802,7 +802,7 @@ footer a {
 /* Контейнер сферы */
 .sphere-container {
     position: relative;
-    width: 350px;       /* Задайте явную ширину */
+    width: 100%;       /* Задайте явную ширину */
     height: 350px;      /* Задайте явную высоту */
     margin: -20px auto 40px auto;  /* Центрирование */
     display: flex;
