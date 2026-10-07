@@ -827,7 +827,7 @@ footer a {
     top: 50%;
     transform-origin: center;
     padding: 4px 7px;
-    color: #58a6ff;     /* Цвет текста слов */
+    color: #000;     /* Цвет текста слов */
     font-size: 15px;
     white-space: nowrap;
     cursor: pointer;
