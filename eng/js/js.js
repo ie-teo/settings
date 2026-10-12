@@ -52,20 +52,22 @@ document.addEventListener('DOMContentLoaded', () => {
     menuData.forEach(item => {
         if (item.type === 'link') {
             menuHTML += createLinkHTML(item);
-        //} else if (item.type === 'group') {
-        //    menuHTML += `<div class="${item.className}">`;
-        //    item.items.forEach(subItem => {
-        //        menuHTML += createLinkHTML(subItem);
-        //    });
-        //    menuHTML += `</div>`;
         }
     });
 
     // Вставка меню во все контейнеры с классом .menu-add
     const menuContainers = document.querySelectorAll('.menu-add');
+
+
+    //console.log(menuContainers);
     menuContainers.forEach(container => {
-        container.innerHTML = menuHTML;
+        //container.innerHTML = menuHTML;
+        container.innerHTML = `<span> Pages</span>` + menuHTML;
     });
+
+    // вторая меню с играми
+    const menuContainer2 = document.querySelector('.menu-add_2');
+    menuContainer2.innerHTML = "<span> games</span><a href='#'>Dinosour</a></span>";
 });
 
 //ниже код сгенировированный ии о списке новых слов

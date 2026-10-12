@@ -71,7 +71,15 @@ tabsBtns.forEach((btn, index) => btn.addEventListener("click", () => {
 document.addEventListener('DOMContentLoaded', () => {
     // Структура элементов меню
     const menuData = [
-        { type: 'link', href: 'telegram.html', text: 'Telegram' },
+        //{ type: 'link', href: 'telegram.html', text: 'Telegram' },
+        {
+            type: 'group',
+            className: 'menu_option2',
+            items: [
+                { href: 'telegram.html', text: 'Telegram' },
+                { href: 'links.html', text: 'Links' }
+            ]
+        },
         {
             type: 'group',
             className: 'menu_option2',
