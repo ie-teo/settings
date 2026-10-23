@@ -21,13 +21,49 @@
             </div>
         </div>
 		<div class="resume">
-			<h1>Main git commants</h1>
-            <p>git config --global user.name "Alex Yakovlev"</p>
-			<p>git config --global user.email "teod@gmail.com"</p>
-			<p title="выводит список файлов и папок с деталями на win">dir</p>
+			<h1>Konspect Useinov</h1>
+
+<p>git config --global user.name "Alex Yakovlev"</p>
+<p>git config --global user.email "teod3663@gmail.com"</p>
+<p><b>git init</b> - регистрируем репозиторий</p>
+<p><b>git add .</b> - добавление в репозиторий всех измененных файлов</p>
+<p><b>git commit -m "first commit"</b> - добавление коммита</p>
+<p><b>git remote add origin ссылка</b> - чтоб зайти в сам github</p>
+<p><b>git push -u origin master</b> - заливка изминений на сервер</p>
+<p><b>git pull</b> - скачать все файлы которых нехватает</p>
+<p></p>
+<h3>алиасы</h3>
+<p>Алиасы - C:\Users\ismail\.gitconfig</p>
+<p></p>
+<p>s = status --short</p>
+<p>st = status</p>
+<p></p>
+<p>l = log --oneline --graph --decorate --all</p>
+<p>g = log --graph --abbrev-commit --decorate --all --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)'</p>
+<p>br = branch</p>
+<p>co = checkout</p>
+<p></p>
+<p>//Отменить изменения до команды add</p>
+<p><b>git checkout -- index.html</b> - один файл</p>
+<p><b>git checkout -- .</b> - все файлы</p>
+<p></p>
+<p><b>git reset --soft HEAD^1</b> - сбросить на 1 комминт назад и сохранить все изменнеия локально</p>
+<p></p>
+<p><b>git log -5</b> - посмотреть последние пять коммитов</p>
+<p>git log --oneline --graph --decorate --all</b> - для удобного просмотра коммитов</p>
+<p><b>git branch</b> - посмотреть ветки, со звездочкой - текущая</p>
+<p><b>git branch -v</b> - посмотреть ветки, и последние коммиты в них</p>
+<p><b>git branch название_новой_ветки</b> - создать ветку</p>
+<p><b>git checkout</b> название_ветки - переключиться на другую ветку</p>
+<p><b>git checkout -b fix_about</b> - cоздать ветку и перейти к ней</p>
+<p><b>git graph</b> - расширение в vs code, для удобного переключения веток</p>
+
+<p>расширение vs code markdown preview enhanced - позаоляет работать с markdown делать превью</p>
+
+            <p title="выводит список файлов и папок с деталями на win">dir</p>
 			<p title="выводит список файлов и папок без деталей с полным путем">dir /b /s</p>
 			<p title="выводит только файлы и папки без полного пути">dir /b</p>
-			<p title="создание репозитория">git init .</p>
+			
 			<p title="показывает отслеживание изминений">git status</b>
 			<p title="загрузить в репозиторий все файлы">git add * | git add .</p>
 			<p title="делает снимок нашей дирректории">git commit -m "First commit"</p>

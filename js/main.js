@@ -74,9 +74,10 @@ document.addEventListener('DOMContentLoaded', () => {
         //{ type: 'link', href: 'telegram.html', text: 'Telegram' },
         {
             type: 'group',
-            className: 'menu_option2',
+            className: 'menu_option',
             items: [
                 { href: 'telegram.html', text: 'Telegram' },
+                { href: 'books.html', text: 'Books' },
                 { href: 'links.html', text: 'Links' }
             ]
         },
@@ -85,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             className: 'menu_option2',
             items: [
                 { href: 'html_template.html', text: 'HTML temp.' },
+                //{ href: 'media.html', text: 'Media' },
                 { href: 'img.html', text: 'Images' }
             ]
         },
@@ -106,13 +108,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 { href: 'linux.html', text: 'Linux' }
             ]
         },
+
         { 
             type: 'link', 
-            href: 'eng/index.html', 
-            text: 'English', 
+            href: 'https://wisebook.com.ua/', 
+            text: 'wisebook.com.ua', 
+            className: 'active_eng', 
+            target: '_blank' 
+        },
+        { 
+            type: 'link', 
+            href: 'horizontal_bar/index.html', 
+            text: 'life-extrim.ru', 
             className: 'active_eng', 
             target: '_blank' 
         }
+
+    
     ];
 
     // Определение текущей страницы для сопоставления ссылок

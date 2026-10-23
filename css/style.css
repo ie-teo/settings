@@ -285,6 +285,10 @@ pre[class*=language-] {
     font-weight: normal;
 }
 
+.active {
+    display: block;
+}
+
 .active2 {
     border-bottom: 2px solid blue;
 }
@@ -718,12 +722,11 @@ hr {
     width: 100%;
 }
 
-.active_eng {
+.active_eng, .active_web {
     background-color: #167099c9;
-    --color: #999;
 }
 
-.menu-add >.active_eng:hover {
+.menu-add >.active_eng:hover, .menu-add >.active_web:hover {
     background-color: #167099c9!important;
     color: #ffffff!important;
 }

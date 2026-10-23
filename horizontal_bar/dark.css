@@ -1,0 +1,153 @@
+@charset "UTF-8";
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+a {
+    color: #009adf;
+}
+
+a:hover {
+    color: #0077ac;
+}
+
+.site-header {
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.logo {
+    color: #ffffff;
+}
+
+.logo i {
+    color: #009adf;
+}
+
+.top-nav_menu li a {
+    color: #e0e0e0;
+}
+
+.top-nav_menu li a::after {
+    background-color: #009adf;
+}
+
+.menu-toggle {
+    color: #ffffff;
+}
+
+.sidebar-title {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.left-sidebar_menu {
+    background-color: #1e1e1e;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.left-sidebar_menu li a {
+    color: #cccccc;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.left-sidebar_menu li a:hover,
+.left-sidebar_menu li a[aria-current="page"] {
+    background-color: #009adf;
+    color: #ffffff !important;
+}
+
+.article-single {
+    background-color: #1e1e1e;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.hero-section h1,
+.hero-section h2 {
+    color: #ffffff;
+}
+
+hr {
+    background-color: #2a2a2a;
+}
+
+.btn {
+    background-color: #009adf;
+    color: #ffffff;
+}
+
+.btn:hover {
+    background-color: #0077ac;
+}
+
+.sidebar-post-card {
+    background-color: #1e1e1e;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar-post-card__img {
+    background-color: #2a2a2a;
+}
+
+.sidebar-post-card__title a {
+    color: #ffffff;
+}
+
+.sidebar-post-card__title a:hover {
+    color: #009adf;
+}
+
+.sidebar-post-card__excerpt {
+    color: #cccccc;
+}
+
+.sidebar-post-card__link {
+    color: #009adf;
+}
+
+.sidebar-post-card__link:hover {
+    color: #0077ac;
+}
+
+.site-footer {
+    background-color: #0d0d0d;
+    color: #888888;
+}
+
+.footer-cookie {
+    color: #777777;
+}
+
+.footer-menu li a {
+    color: #999999;
+}
+
+.footer-menu li a:hover {
+    color: #ffffff;
+}
+
+.footer-phone {
+    color: #009adf;
+}
+
+.footer-address {
+    color: #888888;
+}
+
+.footer-socials a {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+
+.footer-socials a:hover {
+    background-color: #009adf;
+}
+
+@media (max-width: 992px) {
+    .top-nav_menu {
+        background-color: #1e1e1e;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.5);
+    }
+}
