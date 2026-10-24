@@ -82,10 +82,14 @@
         }
 
         async function verifyAndOpen(password) {
+            console.log("Отправка запроса к API:", API_URL);
             try {
                 const res = await fetch(API_URL, {
                     headers: { 'X-Password': password }
                 });
+                
+                console.log("Статус ответа:", res.status);
+
                 if (res.ok) {
                     currentPassword = password;
                     sessionStorage.setItem('app_password', currentPassword);
@@ -93,11 +97,13 @@
                     document.getElementById('appScreen').classList.remove('hidden');
                     loadPasswords();
                 } else {
+                    console.error("Ошибка авторизации. Сервер вернул код:", res.status);
                     document.getElementById('authError').classList.remove('hidden');
                     sessionStorage.removeItem('app_password');
                 }
             } catch (err) {
-                alert('Ошибка соединения с сервером life-extrim.ru');
+                console.error("Сетевая ошибка или CORS:", err);
+                alert('Ошибка соединения с сервером life-extrim.ru. Откройте консоль (F12) для деталей.');
             }
         }
 
@@ -163,7 +169,7 @@
             const id = document.getElementById('recordId').value;
             const link = document.getElementById('modalLink').value;
             const login = document.getElementById('modalLogin').value;
-            const password = document.getElementById('modalPassword'].value;
+            const password = document.getElementById('modalPassword').value;
             const info = document.getElementById('modalInfo').value;
 
             await fetch(API_URL, {
