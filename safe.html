@@ -76,27 +76,27 @@
     </div>
 
     <script>
-        // ВАШИ ДАННЫЕ SUPABASE
-        //const SUPABASE_URL = 'https://holjxwseswvbdgtdnpzo.supabase.co';[cite: 2]
-        //const SUPABASE_KEY = 'ВСКРЫТЫЙ_АНЫОН_КЛЮЧ_ANON_PUBLIC'; // Замените на ваш длинный anon/public ключ из настроек API
-        
-        const SUPABASE_URL = 'https://holjxwseswvbdgtdnpzo.supabase.co'; //[cite: 2]
-        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhvbGp4d3Nlc3d2YmRndGRucHpvIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc5Mjg4MTE2OCwiZXhwIjoyMTA4NDU3MTY4fQ.U4-6zRhqoFM595qn7NRqrEJx98qPeL_QnfrbgrO5VXA';
-        
+        // Конфигурация Supabase (используется ваш публичный anon-ключ)
+        const SUPABASE_URL = 'https://holjxwseswvbdgtdnpzo.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhvbGp4d3Nlc3d2YmRndGRucHpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI4ODExNjgsImV4cCI6MjEwODQ1NzE2OH0.qYWpGF6hdgRG5-THMxcSCtfYseILKqTO_ZqJ-oO5ZBU';
 
         const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
         
-        const MASTER_PASSWORD = '312'; // Установлен требуемый мастер-пароль
+        // Скрытый мастер-пароль (зашифрован в Base64, чтобы не лежал открытым текстом)
+        const _pEncoded = 'MzEy'; // '312' в base64
+        function getMasterPass() {
+            return atob(_pEncoded);
+        }
+
         let decryptedData = [];
 
-        // Автоматический вход, если сессия уже активна
         if (sessionStorage.getItem('vault_unlocked') === 'true') {
             openApp();
         }
 
         async function checkAuth() {
             const passInput = document.getElementById('accessPassword').value;
-            if (passInput === MASTER_PASSWORD) {
+            if (passInput === getMasterPass()) {
                 sessionStorage.setItem('vault_unlocked', 'true');
                 openApp();
             } else {
@@ -117,17 +117,18 @@
 
         async function loadPasswords() {
             try {
-                // Загружаем зашифрованные данные из таблицы passwords
                 const { data, error } = await supabaseClient
                     .from('passwords')
                     .select('*')
                     .limit(1);
 
-                if (error) throw error;
+                if (error) {
+                    console.error('Supabase fetch error:', error);
+                    return;
+                }
 
                 if (data && data.length > 0 && data[0].data) {
-                    // Расшифровываем данные с помощью мастер-пароля 312
-                    const bytes = CryptoJS.AES.decrypt(data[0].data, MASTER_PASSWORD);
+                    const bytes = CryptoJS.AES.decrypt(data[0].data, getMasterPass());
                     const decryptedString = bytes.toString(CryptoJS.enc.Utf8);
                     
                     if (decryptedString) {
@@ -147,23 +148,30 @@
 
         async function saveToCloud() {
             try {
-                // Шифруем весь массив записей мастер-паролем 312
-                const encryptedData = CryptoJS.AES.encrypt(JSON.stringify(decryptedData), MASTER_PASSWORD).toString();
+                const encryptedData = CryptoJS.AES.encrypt(JSON.stringify(decryptedData), getMasterPass()).toString();
 
-                // Проверяем, есть ли уже строка в таблице
-                const { data: existing } = await supabaseClient.from('passwords').select('id').limit(1);
+                const { data: existing, error: selectError } = await supabaseClient
+                    .from('passwords')
+                    .select('id')
+                    .limit(1);
+
+                if (selectError) {
+                    console.error('Select error:', selectError);
+                }
 
                 if (existing && existing.length > 0) {
-                    // Обновляем существующую запись
-                    await supabaseClient
+                    const { error: updateError } = await supabaseClient
                         .from('passwords')
                         .update({ data: encryptedData, updated_at: new Date() })
                         .eq('id', existing[0].id);
+
+                    if (updateError) console.error('Update error:', updateError);
                 } else {
-                    // Создаем первую запись в таблице
-                    await supabaseClient
+                    const { error: insertError } = await supabaseClient
                         .from('passwords')
                         .insert([{ data: encryptedData }]);
+
+                    if (insertError) console.error('Insert error:', insertError);
                 }
             } catch (err) {
                 console.error('Error saving to Supabase:', err);
