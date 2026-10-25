@@ -8,8 +8,181 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- CryptoJS для шифрования на стороне клиента -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
-    <!-- Supabase JS Client -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- Firebase SDK (Modular v13) -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
+        import { getFirestore, doc, getDoc, setDoc } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyC22BB4AIsCxJndZcH-riSwiQ0VsrjWuCE",
+            authDomain: "my-vault-36.firebaseapp.com",
+            projectId: "my-vault-36",
+            storageBucket: "my-vault-36.firebasestorage.app",
+            messagingSenderId: "117687816843",
+            appId: "1:117687816843:web:f51b0b4a8bd9263fae7a8e",
+            measurementId: "G-LSNCV555GL"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const _pEncoded = 'MzEy';
+        function getMasterPass() {
+            return atob(_pEncoded);
+        }
+
+        let decryptedData = [];
+
+        window.checkAuth = async function() {
+            const passInput = document.getElementById('accessPassword').value;
+            if (passInput === getMasterPass()) {
+                sessionStorage.setItem('vault_unlocked', 'true');
+                openApp();
+            } else {
+                document.getElementById('authError').classList.remove('hidden');
+            }
+        }
+
+        async function openApp() {
+            document.getElementById('authScreen').classList.add('hidden');
+            document.getElementById('appScreen').classList.remove('hidden');
+            await loadPasswords();
+        }
+
+        window.logout = function() {
+            sessionStorage.removeItem('vault_unlocked');
+            location.reload();
+        }
+
+        async function loadPasswords() {
+            try {
+                const docRef = doc(db, "vaults", "my_passwords");
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists() && docSnap.data().data) {
+                    const encrypted = docSnap.data().data;
+                    const bytes = CryptoJS.AES.decrypt(encrypted, getMasterPass());
+                    const decryptedString = bytes.toString(CryptoJS.enc.Utf8);
+                    decryptedData = decryptedString ? JSON.parse(decryptedString) : [];
+                } else {
+                    decryptedData = [];
+                }
+                renderTable(decryptedData);
+            } catch (err) {
+                console.error('Error loading from Firebase:', err);
+            }
+        }
+
+        async function saveToCloud() {
+            try {
+                const encryptedData = CryptoJS.AES.encrypt(JSON.stringify(decryptedData), getMasterPass()).toString();
+                const docRef = doc(db, "vaults", "my_passwords");
+                await setDoc(docRef, { data: encryptedData, updated_at: new Date().toISOString() });
+            } catch (err) {
+                console.error('Error saving to Firebase:', err);
+                alert('Error saving data to cloud!');
+            }
+        }
+
+        // Рендер таблицы с поддержкой фильтрации
+        window.renderTable = function(dataToRender = decryptedData) {
+            const tbody = document.getElementById('passwordTable');
+            tbody.innerHTML = '';
+
+            if (dataToRender.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="5" class="p-6 text-center text-slate-400">No records found</td></tr>`;
+                return;
+            }
+
+            dataToRender.forEach((item) => {
+                // Ищем реальный индекс элемента в исходном массиве, чтобы корректно редактировать/удалять при фильтрации
+                const originalIndex = decryptedData.indexOf(item);
+
+                tbody.innerHTML += `
+                    <tr class="hover:bg-slate-50">
+                        <td class="p-4"><a href="${item.link}" target="_blank" class="text-blue-600 underline">${item.link}</a></td>
+                        <td class="p-4">${item.login}</td>
+                        <td class="p-4 font-mono">${item.password}</td>
+                        <td class="p-4">${item.info || ''}</td>
+                        <td class="p-4 text-center space-x-2">
+                            <button onclick="editRecord(${originalIndex})" class="text-blue-500 font-bold hover:underline">Edit</button>
+                            <button onclick="deleteRecord(${originalIndex})" class="text-red-500 font-bold hover:underline">Delete</button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        // Функция поиска по вводу
+        window.filterPasswords = function() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = decryptedData.filter(item => {
+                return (item.link && item.link.toLowerCase().includes(query)) ||
+                       (item.login && item.login.toLowerCase().includes(query)) ||
+                       (item.info && item.info.toLowerCase().includes(query));
+            });
+            renderTable(filtered);
+        }
+
+        window.openModal = function() {
+            document.getElementById('modalTitle').innerText = 'New Entry';
+            document.getElementById('recordIndex').value = '';
+            document.getElementById('modalLink').value = '';
+            document.getElementById('modalLogin').value = '';
+            document.getElementById('modalPassword').value = '';
+            document.getElementById('modalInfo').value = '';
+            document.getElementById('passwordModal').classList.remove('hidden');
+        }
+
+        window.editRecord = function(index) {
+            const item = decryptedData[index];
+            document.getElementById('modalTitle').innerText = 'Edit Entry';
+            document.getElementById('recordIndex').value = index;
+            document.getElementById('modalLink').value = item.link;
+            document.getElementById('modalLogin').value = item.login;
+            document.getElementById('modalPassword').value = item.password;
+            document.getElementById('modalInfo').value = item.info || '';
+            document.getElementById('passwordModal').classList.remove('hidden');
+        }
+
+        window.closeModal = function() {
+            document.getElementById('passwordModal').classList.add('hidden');
+        }
+
+        window.saveRecord = async function() {
+            const index = document.getElementById('recordIndex').value;
+            const newItem = {
+                link: document.getElementById('modalLink').value,
+                login: document.getElementById('modalLogin').value,
+                password: document.getElementById('modalPassword').value,
+                info: document.getElementById('modalInfo').value
+            };
+
+            if (index === '') {
+                decryptedData.push(newItem);
+            } else {
+                decryptedData[index] = newItem;
+            }
+
+            closeModal();
+            document.getElementById('searchInput').value = ''; // сбрасываем поиск при сохранении
+            renderTable();
+            await saveToCloud();
+        }
+
+        window.deleteRecord = async function(index) {
+            if (confirm('Are you sure you want to delete this entry?')) {
+                decryptedData.splice(index, 1);
+                document.getElementById('searchInput').value = ''; // сбрасываем поиск при удалении
+                renderTable();
+                await saveToCloud();
+            }
+        }
+
+        if (sessionStorage.getItem('vault_unlocked') === 'true') {
+            openApp();
+        }
+    </script>
 </head>
 <body class="bg-slate-100 min-h-screen p-6">
 
@@ -24,11 +197,13 @@
 
     <!-- Main Dashboard -->
     <div id="appScreen" class="max-w-6xl mx-auto hidden">
-        <div class="flex justify-between items-center mb-6">
-            <h1 class="text-3xl font-extrabold text-slate-800">🔐 Password Manager (Encrypted via Supabase)</h1>
-            <div class="space-x-3">
-                <button onclick="openModal()" class="bg-green-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-green-700 transition">+ Add Item</button>
-                <button onclick="logout()" class="bg-slate-300 text-slate-700 px-4 py-2 rounded-lg font-bold hover:bg-slate-400 transition">Lock Vault</button>
+        <div class="flex flex-col md:flex-row justify-between items-center mb-6 gap-4">
+            <h1 class="text-3xl font-extrabold text-slate-800">🔐 Password Manager</h1>
+            <div class="flex items-center gap-3 w-full md:w-auto">
+                <!-- Поле поиска -->
+                <input type="text" id="searchInput" oninput="filterPasswords()" placeholder="Search vault..." class="p-2 border rounded-lg bg-white w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm">
+                <button onclick="openModal()" class="bg-green-600 text-white px-4 py-2 rounded-lg font-bold hover:bg-green-700 transition whitespace-nowrap">+ Add</button>
+                <button onclick="logout()" class="bg-slate-300 text-slate-700 px-4 py-2 rounded-lg font-bold hover:bg-slate-400 transition whitespace-nowrap">Lock</button>
             </div>
         </div>
 
@@ -44,7 +219,7 @@
                     </tr>
                 </thead>
                 <tbody id="passwordTable" class="divide-y divide-slate-200 text-sm text-slate-600">
-                    <!-- Loaded dynamically via JS -->
+                    <!-- Loaded dynamically -->
                 </tbody>
             </table>
         </div>
@@ -74,178 +249,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        const SUPABASE_URL = 'https://holjxwseswvbdgtdnpzo.supabase.co';
-        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhvbGp4d3Nlc3d2YmRndGRucHpvIiwicm9sZSI6InNub24iLCJpYXQiOjE3OTI4ODExNjgsImV4cCI6MjEwODQ1NzE2OH0.qYWpGF6hdgRG5-THMxcSCtfYseILKqTO_ZqJ-oO5ZBU'.replace('sn', 'an'); // фикс ключа
-
-        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-        
-        const _pEncoded = 'MzEy'; // '312'
-        function getMasterPass() {
-            return atob(_pEncoded);
-        }
-
-        let decryptedData = [];
-        let existingRecordId = null; // ID существующей строки в базе
-
-        if (sessionStorage.getItem('vault_unlocked') === 'true') {
-            openApp();
-        }
-
-        async function checkAuth() {
-            const passInput = document.getElementById('accessPassword').value;
-            if (passInput === getMasterPass()) {
-                sessionStorage.setItem('vault_unlocked', 'true');
-                openApp();
-            } else {
-                document.getElementById('authError').classList.remove('hidden');
-            }
-        }
-
-        async function openApp() {
-            document.getElementById('authScreen').classList.add('hidden');
-            document.getElementById('appScreen').classList.remove('hidden');
-            await loadPasswords();
-        }
-
-        function logout() {
-            sessionStorage.removeItem('vault_unlocked');
-            location.reload();
-        }
-
-        async function loadPasswords() {
-            try {
-                const { data, error } = await supabaseClient
-                    .from('passwords')
-                    .select('*')
-                    .limit(1);
-
-                if (error) {
-                    console.error('Supabase fetch error:', error);
-                    return;
-                }
-
-                if (data && data.length > 0) {
-                    existingRecordId = data[0].id; // Запоминаем реальный ID строки в базе
-                    if (data[0].data) {
-                        const bytes = CryptoJS.AES.decrypt(data[0].data, getMasterPass());
-                        const decryptedString = bytes.toString(CryptoJS.enc.Utf8);
-                        decryptedData = decryptedString ? JSON.parse(decryptedString) : [];
-                    }
-                } else {
-                    decryptedData = [];
-                    existingRecordId = null;
-                }
-
-                renderTable();
-            } catch (err) {
-                console.error('Error loading data from Supabase:', err);
-            }
-        }
-
-        async function saveToCloud() {
-            try {
-                const encryptedData = CryptoJS.AES.encrypt(JSON.stringify(decryptedData), getMasterPass()).toString();
-
-                if (existingRecordId !== null) {
-                    // Обновляем найденную строку по её реальному ID
-                    const { error } = await supabaseClient
-                        .from('passwords')
-                        .update({ data: encryptedData, updated_at: new Date() })
-                        .eq('id', existingRecordId);
-
-                    if (error) throw error;
-                } else {
-                    // Создаем первую запись, если таблица была пустой
-                    const { data, error } = await supabaseClient
-                        .from('passwords')
-                        .insert([{ data: encryptedData }])
-                        .select();
-
-                    if (error) throw error;
-                    if (data && data.length > 0) {
-                        existingRecordId = data[0].id;
-                    }
-                }
-            } catch (err) {
-                console.error('Error saving to Supabase:', err);
-                alert('Error saving data to cloud!');
-            }
-        }
-
-        function renderTable() {
-            const tbody = document.getElementById('passwordTable');
-            tbody.innerHTML = '';
-
-            decryptedData.forEach((item, index) => {
-                tbody.innerHTML += `
-                    <tr class="hover:bg-slate-50">
-                        <td class="p-4"><a href="${item.link}" target="_blank" class="text-blue-600 underline">${item.link}</a></td>
-                        <td class="p-4">${item.login}</td>
-                        <td class="p-4 font-mono">${item.password}</td>
-                        <td class="p-4">${item.info || ''}</td>
-                        <td class="p-4 text-center space-x-2">
-                            <button onclick="editRecord(${index})" class="text-blue-500 font-bold hover:underline">Edit</button>
-                            <button onclick="deleteRecord(${index})" class="text-red-500 font-bold hover:underline">Delete</button>
-                        </td>
-                    </tr>
-                `;
-            });
-        }
-
-        function openModal() {
-            document.getElementById('modalTitle').innerText = 'New Entry';
-            document.getElementById('recordIndex').value = '';
-            document.getElementById('modalLink').value = '';
-            document.getElementById('modalLogin').value = '';
-            document.getElementById('modalPassword').value = '';
-            document.getElementById('modalInfo').value = '';
-            document.getElementById('passwordModal').classList.remove('hidden');
-        }
-
-        function editRecord(index) {
-            const item = decryptedData[index];
-            document.getElementById('modalTitle').innerText = 'Edit Entry';
-            document.getElementById('recordIndex').value = index;
-            document.getElementById('modalLink').value = item.link;
-            document.getElementById('modalLogin').value = item.login;
-            document.getElementById('modalPassword').value = item.password;
-            document.getElementById('modalInfo').value = item.info || '';
-            document.getElementById('passwordModal').classList.remove('hidden');
-        }
-
-        function closeModal() {
-            document.getElementById('passwordModal').classList.add('hidden');
-        }
-
-        async function saveRecord() {
-            const index = document.getElementById('recordIndex').value;
-            const newItem = {
-                link: document.getElementById('modalLink').value,
-                login: document.getElementById('modalLogin').value,
-                password: document.getElementById('modalPassword').value,
-                info: document.getElementById('modalInfo').value
-            };
-
-            if (index === '') {
-                decryptedData.push(newItem);
-            } else {
-                decryptedData[index] = newItem;
-            }
-
-            closeModal();
-            renderTable();
-            await saveToCloud();
-        }
-
-        async function deleteRecord(index) {
-            if (confirm('Are you sure you want to delete this entry?')) {
-                decryptedData.splice(index, 1);
-                renderTable();
-                await saveToCloud();
-            }
-        }
-    </script>
 </body>
 </html>

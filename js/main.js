@@ -169,3 +169,29 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+// добавление блока ссылок в footer
+// 1. Находим первый блок .container на странице
+        const firstContainer = document.querySelector('.container');
+
+        // 2. Создаем HTML-код нового блока, который хотим добавить
+        const newBlockHTML = `
+            <div class="container non-margin footer-block">
+                <div class="footer-block-link">
+                    <a target="_blank" href="safe.html">safe</a> <!-- | <a href="#">link</a>-->
+                </div>
+            </div>
+        `;
+
+        // 3. Вставляем новый блок сразу после первого контейнера
+        if (firstContainer) {
+            firstContainer.insertAdjacentHTML('afterend', newBlockHTML);
+        }
+
+        // на странице html_template есть миниатюры шаблонов этот скрипт открывает страницу при нажатии на картинку
+        document.addEventListener('click', (e) => {
+            const img = e.target.closest('img');
+            if (!img) return;
+            
+            const link = img.closest('div').querySelector('a');
+            if (link) window.open(link.href, '_blank');
+        });

@@ -71,7 +71,7 @@ table th {
 	display: flex;
 	max-width: 960px;
 	justify-content: spase-between;
-	margin: 20px auto;
+	margin: 20px auto 5px auto;
 }
 
 .profile {
@@ -774,3 +774,18 @@ hr {
 }
 @media (max-width: 567px){}
 
+.footer-block-link {
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    color: #ccc;
+}
+
+.footer-block-link a {
+    color: #909090;
+    text-decoration: none;
+}
+
+.non-margin {
+    margin-top: 0px;
+}
