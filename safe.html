@@ -77,17 +77,17 @@
 
     <script>
         const SUPABASE_URL = 'https://holjxwseswvbdgtdnpzo.supabase.co';
-        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhvbGp4d3Nlc3d2YmRndGRucHpvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI4ODExNjgsImV4cCI6MjEwODQ1NzE2OH0.qYWpGF6hdgRG5-THMxcSCtfYseILKqTO_ZqJ-oO5ZBU';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhvbGp4d3Nlc3d2YmRndGRucHpvIiwicm9sZSI6InNub24iLCJpYXQiOjE3OTI4ODExNjgsImV4cCI6MjEwODQ1NzE2OH0.qYWpGF6hdgRG5-THMxcSCtfYseILKqTO_ZqJ-oO5ZBU'.replace('sn', 'an'); // фикс ключа
 
         const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
         
-        // Мастер-пароль зашифрован в Base64 ('312')
-        const _pEncoded = 'MzEy'; 
+        const _pEncoded = 'MzEy'; // '312'
         function getMasterPass() {
             return atob(_pEncoded);
         }
 
         let decryptedData = [];
+        let existingRecordId = null; // ID существующей строки в базе
 
         if (sessionStorage.getItem('vault_unlocked') === 'true') {
             openApp();
@@ -119,24 +119,23 @@
                 const { data, error } = await supabaseClient
                     .from('passwords')
                     .select('*')
-                    .eq('id', 1)
-                    .single();
+                    .limit(1);
 
-                if (error && error.code !== 'PGRST116') { // PGRST116 — строка еще не создана, это нормально
+                if (error) {
                     console.error('Supabase fetch error:', error);
+                    return;
                 }
 
-                if (data && data.data) {
-                    const bytes = CryptoJS.AES.decrypt(data.data, getMasterPass());
-                    const decryptedString = bytes.toString(CryptoJS.enc.Utf8);
-                    
-                    if (decryptedString) {
-                        decryptedData = JSON.parse(decryptedString);
-                    } else {
-                        decryptedData = [];
+                if (data && data.length > 0) {
+                    existingRecordId = data[0].id; // Запоминаем реальный ID строки в базе
+                    if (data[0].data) {
+                        const bytes = CryptoJS.AES.decrypt(data[0].data, getMasterPass());
+                        const decryptedString = bytes.toString(CryptoJS.enc.Utf8);
+                        decryptedData = decryptedString ? JSON.parse(decryptedString) : [];
                     }
                 } else {
                     decryptedData = [];
+                    existingRecordId = null;
                 }
 
                 renderTable();
@@ -149,14 +148,25 @@
             try {
                 const encryptedData = CryptoJS.AES.encrypt(JSON.stringify(decryptedData), getMasterPass()).toString();
 
-                // Используем upsert: сохраняет или обновляет запись с id = 1 автоматически
-                const { error } = await supabaseClient
-                    .from('passwords')
-                    .upsert({ id: 1, data: encryptedData, updated_at: new Date() });
+                if (existingRecordId !== null) {
+                    // Обновляем найденную строку по её реальному ID
+                    const { error } = await supabaseClient
+                        .from('passwords')
+                        .update({ data: encryptedData, updated_at: new Date() })
+                        .eq('id', existingRecordId);
 
-                if (error) {
-                    console.error('Supabase save error:', error);
-                    alert('Error saving data to cloud: ' + error.message);
+                    if (error) throw error;
+                } else {
+                    // Создаем первую запись, если таблица была пустой
+                    const { data, error } = await supabaseClient
+                        .from('passwords')
+                        .insert([{ data: encryptedData }])
+                        .select();
+
+                    if (error) throw error;
+                    if (data && data.length > 0) {
+                        existingRecordId = data[0].id;
+                    }
                 }
             } catch (err) {
                 console.error('Error saving to Supabase:', err);
