@@ -60,9 +60,6 @@ showTab(0);
 
 
 tabsBtns.forEach((btn, index) => btn.addEventListener("click", () => {
-  //console.log('click');
-  //console.log(btn);
-  //console.log(index);
   hideTabs();
   showTab(index);
 }));
@@ -118,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         { 
             type: 'link', 
-            href: 'horizontal_bar/index.html', 
+            href: 'https://life-extrim.ru/', 
             text: 'life-extrim.ru', 
             className: 'active_eng', 
             target: '_blank' 
