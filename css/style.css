@@ -721,7 +721,7 @@ hr {
 .img-flex img {
     width: 100%;
 }
-
+/*
 .active_eng, .active_web {
     background-color: #167099c9;
 }
@@ -729,6 +729,22 @@ hr {
 .menu-add >.active_eng:hover, .menu-add >.active_web:hover {
     background-color: #167099c9!important;
     color: #ffffff!important;
+}
+*/
+
+.style_wisebook {
+    background: white;
+    color: #39383a!important;
+}
+
+.style_lifextrim {
+    background: #1f2937;
+    color: #10b981!important;
+}
+
+.irongym {
+    background: #fff;
+    color: #009adf !important;
 }
 
 .tab-content {

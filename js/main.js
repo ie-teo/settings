@@ -110,14 +110,22 @@ document.addEventListener('DOMContentLoaded', () => {
             type: 'link', 
             href: 'https://wisebook.com.ua/', 
             text: 'wisebook.com.ua', 
-            className: 'active_eng', 
+            className: 'style_wisebook', 
             target: '_blank' 
         },
         { 
             type: 'link', 
             href: 'https://life-extrim.ru/', 
             text: 'life-extrim.ru', 
-            className: 'active_eng', 
+            className: 'style_lifextrim', 
+            target: '_blank' 
+        }
+        ,
+        { 
+            type: 'link', 
+            href: 'https://---.com/', 
+            text: 'new irom-gym', 
+            className: 'irongym', 
             target: '_blank' 
         }
 
