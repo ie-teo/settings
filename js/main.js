@@ -105,7 +105,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 { href: 'linux.html', text: 'Linux' }
             ]
         },
-
+        { 
+            type: 'link', 
+            href: 'https://metrika.yandex.ru/list', 
+            text: 'yandex metrika', 
+            className: 'style_mitrika', 
+            target: '_blank' 
+        },
         { 
             type: 'link', 
             href: 'https://wisebook.com.ua/', 

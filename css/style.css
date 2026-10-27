@@ -805,3 +805,6 @@ hr {
 .non-margin {
     margin-top: 0px;
 }
+.footer-socials li a[title="X (Twitter)"]:hover svg {
+    fill: #ffffff;
+}
