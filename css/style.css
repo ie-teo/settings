@@ -6,7 +6,8 @@ html {
 
 body {
     margin: 0;
-    background-color: #eef3f5;
+    --background-color: #eef3f5;
+    background-color: #dce5f0;
     color: #131313;
     font-family: 'Roboto', Arial, sans-serif;
     line-height: 1.5;
@@ -76,7 +77,8 @@ table th {
 
 .profile {
 	flex-basis: 35%;
-	background-color:  #39383a;
+	--background-color:  #39383a;
+    background-color:  #3b5998;
 	color: #ababab;	
 }
 
@@ -116,7 +118,8 @@ table th {
     width: 80%;
     aspect-ratio: 2 / 1;
     margin: 0 auto;
-    background: #999;
+    --background: #999;
+    background: #fff;
     margin: 60px auto;
     clip-path: polygon(
         0 0,
@@ -134,7 +137,8 @@ table th {
 
 .menu-add a:hover, .checked {
 	color: #39383a!important;
-	background-color: #c6c6c6;
+	--background-color: #c6c6c6;
+    background-color: #fff;
 }
 
 .menu-add a {
